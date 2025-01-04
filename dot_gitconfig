@@ -1,0 +1,17 @@
+[color]
+	ui = true
+[core]
+	editor = nvim
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	process = git-lfs filter-process
+	required = true
+	smudge = git-lfs smudge -- %f
+[github]
+	user = peucastro
+[help]
+	autocorrect = 1
+[include]
+	path = ~/.gitconfig.local
+[init]
+	defaultBranch = main
