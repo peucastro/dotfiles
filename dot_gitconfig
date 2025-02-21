@@ -1,5 +1,7 @@
 [color]
 	ui = true
+[commit]
+	gpgsign = true
 [core]
 	editor = nvim
 [filter "lfs"]
@@ -9,6 +11,8 @@
 	smudge = git-lfs smudge -- %f
 [github]
 	user = peucastro
+[gpg]
+	format = ssh
 [help]
 	autocorrect = 1
 [include]
@@ -17,3 +21,5 @@
 	defaultBranch = main
 [pull]
 	rebase = false
+[user]
+	signingkey = /home/peu/.ssh/id_ed25519
