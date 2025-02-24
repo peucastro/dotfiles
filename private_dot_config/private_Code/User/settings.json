@@ -37,10 +37,17 @@
     "terminal.integrated.fontFamily": "'FiraCode Nerd Font Mono'",
     "terminal.integrated.fontSize": 15,
     /*
-    / Other */
-    "github.copilot.editor.enableAutoCompletions": false,
+    / Extensions */
+    "extensions.autoUpdate": false,
+    "extensions.ignoreRecommendations": true,
+    /*
+    / Git */
     "git.autofetch": true,
     "git.openRepositoryInParentFolders": "always",
+    /*
+    / Other */
+    "github.copilot.editor.enableAutoCompletions": false,
+    "gitlens.telemetry.enabled": false,
     "telemetry.telemetryLevel": "off",
     "update.mode": "manual",
     "window.zoomLevel": 0.25,
@@ -76,9 +83,12 @@
         "terminal.integrated.cursorBlinking",
         "terminal.integrated.fontFamily",
         "terminal.integrated.fontSize",
-        "github.copilot.editor.enableAutoCompletions",
+        "extensions.autoUpdate",
+        "extensions.ignoreRecommendations",
         "git.autofetch",
         "git.openRepositoryInParentFolders",
+        "github.copilot.editor.enableAutoCompletions",
+        "gitlens.telemetry.enabled",
         "telemetry.telemetryLevel",
         "update.mode",
         "window.zoomLevel"
