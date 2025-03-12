@@ -24,9 +24,7 @@
     "files.insertFinalNewline": true,
     "files.trimFinalNewlines": true,
     "files.trimTrailingWhitespace": true,
-    /*
-    / Workbench configuration */
-    "workbench.colorTheme": "One Dark Pro Darker",
+    "workbench.colorTheme": "One Dark Pro Night Flat",
     "workbench.iconTheme": "material-icon-theme",
     "workbench.productIconTheme": "material-product-icons",
     "workbench.sideBar.location": "right",
@@ -40,9 +38,14 @@
     / Extensions */
     "extensions.autoUpdate": false,
     "extensions.ignoreRecommendations": true,
+    "gitlens.launchpad.indicator.enabled": false,
+    "oneDarkPro.bold": true,
+    "oneDarkPro.italic": true,
+    "oneDarkPro.vivid": true,
     /*
     / Git */
     "git.autofetch": true,
+    "git.blame.statusBarItem.enabled": false,
     "git.openRepositoryInParentFolders": "always",
     /*
     / Other */
@@ -85,7 +88,12 @@
         "terminal.integrated.fontSize",
         "extensions.autoUpdate",
         "extensions.ignoreRecommendations",
+        "gitlens.launchpad.indicator.enabled",
+        "oneDarkPro.bold",
+        "oneDarkPro.italic",
+        "oneDarkPro.vivid",
         "git.autofetch",
+        "git.blame.statusBarItem.enabled",
         "git.openRepositoryInParentFolders",
         "github.copilot.editor.enableAutoCompletions",
         "gitlens.telemetry.enabled",
