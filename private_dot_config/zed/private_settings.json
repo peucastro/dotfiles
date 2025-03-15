@@ -40,7 +40,7 @@
   "show_completions_on_input": false,
   "show_edit_predictions": false,
   "tabs": {
-    "always_show_close_button": true,
+    "show_close_button": "always",
     "file_icons": true,
     "git_status": true
   },

@@ -1,11 +1,11 @@
 font-family = "FiraCode Nerd Font Mono"
 font-size = 13.5
-theme = "iTerm2 Default"
-background = "black"
-foreground = "white"
+theme = "iTerm2 Smoooooth"
+background = black
 cursor-style = block
 cursor-style-blink = true
 background-opacity = 0.98
+background-blur = true
 link-url = true
 window-theme = ghostty
 window-height = 35
