@@ -14,9 +14,6 @@ zstyle ':omz:update' mode reminder
 # Disable auto-setting terminal title
 DISABLE_AUTO_TITLE="true"
 
-# Enable command auto-correction
-ENABLE_CORRECTION="true"
-
 # ohmyzsh plugins
 plugins=(eza fzf gh git man sudo tldr z zsh-syntax-highlighting zsh-autosuggestions)
 
