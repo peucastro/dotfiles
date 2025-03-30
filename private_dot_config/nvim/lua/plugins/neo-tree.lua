@@ -4,13 +4,11 @@ return {
     dependencies = {
       "nvim-lua/plenary.nvim",
       "nvim-tree/nvim-web-devicons",
-      "MunifTanjim/nui.nvim",
+      "MunifTanjim/nui.nvim"
     },
     lazy = false,
     opts = {
-      window = {
-        position = "right",
-      },
+      window = { position = "right" },
     },
   }
 }
