@@ -15,7 +15,7 @@ zstyle ':omz:update' mode reminder
 DISABLE_AUTO_TITLE="true"
 
 # ohmyzsh plugins
-plugins=(eza fzf gh git man sudo tldr z zsh-syntax-highlighting zsh-autosuggestions)
+plugins=(fzf gh git man sudo tldr z zsh-syntax-highlighting zsh-autosuggestions)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -46,8 +46,6 @@ fi
 # Personal aliases
 alias zshconfig="nvim ~/.zshrc"
 alias ohmyzsh="nvim ~/.oh-my-zsh"
-alias rcat="$(which cat)"
-alias cat="$(which bat)"
 
 # nvm
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
