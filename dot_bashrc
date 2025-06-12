@@ -25,6 +25,7 @@ unset rc
 # User configuration
 
 # Environment variables
+export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/keyring/ssh"
 export JAVA_HOME="/usr/lib/jvm/java-21-openjdk"
 export ANDROID_HOME="$HOME/Android/Sdk/platform-tools"
 export NVM_DIR="$HOME/.nvm"
