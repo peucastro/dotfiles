@@ -1,0 +1,65 @@
+[global]
+# Display settings
+monitor = 0
+follow = none
+
+# Geometry & positioning
+width = 350
+height = (0, 200)
+origin = top-center
+offset = (0, 50)
+
+scale = 0
+notification_limit = 10
+
+# Padding, spacing & styling
+frame_width = 2
+frame_color = "#665c54"
+gap_size = 8
+
+separator_height = 2
+separator_color = "#665c54"
+horizontal_padding = 12
+padding = 12
+text_icon_padding = 10
+
+# Transparency & icons
+transparency = 5
+icon_corner_radius = 6
+icon_corners = all
+
+# Progress bar
+progress_bar = true
+progress_bar_height = 6
+progress_bar_frame_width = 1
+progress_bar_min_width = 100
+progress_bar_max_width = 300
+progress_bar_corner_radius = 3
+progress_bar_corners = all
+
+# Text layout
+font = Adwaita Sans
+markup = full
+format = "<span weight='bold'>%s</span>\n%b"
+alignment = left
+vertical_alignment = center
+
+[urgency_low]
+background = "#282828"
+foreground = "#a89984"
+timeout = 6
+default_icon = dialog-information
+
+[urgency_normal]
+background = "#3c3836"
+foreground = "#ebdbb2"
+timeout = 8
+default_icon = dialog-information
+
+[urgency_critical]
+background = "#cc241d"
+foreground = "#fbf1c7"
+frame_color = "#fb4934"
+timeout = 0
+default_icon = dialog-warning
+
