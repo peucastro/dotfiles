@@ -37,6 +37,12 @@
         "tooltip": false
     },
 
+    "hyprland/window": {
+        "max-length": 65,
+        "rewrite": true,
+        "rewrite-empty": ""
+    },
+
     "clock": {
         "format": "{:%H:%M - %a, %d %b %Y}",
         "tooltip": false
