@@ -1,0 +1,132 @@
+{
+    "layer": "top",
+    "spacing": 0,
+    "height": 0,
+
+    "margin-top": 5,
+    "margin-right": 5,
+    "margin-bottom": 2,
+    "margin-left": 5,
+    "fixed-center": true,
+
+    "modules-left": [
+        "hyprland/workspaces",
+        "hyprland/window"
+    ],
+
+    "modules-center": [
+        "clock"
+    ],
+
+    "modules-right": [
+        "tray",
+        "cpu",
+        "memory",
+        "temperature",
+        "battery",
+        "power-profiles-daemon",
+        "network",
+        "bluetooth",
+        "pulseaudio",
+        "pulseaudio#mic"
+    ],
+
+    "hyprland/workspaces": {
+        "disable-scroll": true,
+        "all-outputs": true,
+        "tooltip": false
+    },
+
+    "clock": {
+        "format": "{:%H:%M - %a, %d %b %Y}",
+        "tooltip": false
+    },
+
+    "tray": {
+        "spacing": 10,
+        "tooltip": false
+    },
+ 
+    "cpu": {
+        "format": "cpu {usage}%",
+        "interval": 2,
+
+        "states": {
+            "critical": 85
+        }
+    },
+
+    "memory": {
+        "format": "mem {percentage}%",
+        "interval": 2,
+
+        "states": {
+            "critical": 80
+        }
+    },
+
+    "temperature": {
+        "format": "{temperatureC}°C",
+        "interval": 10,
+        "critical-threshold": 75
+    },
+
+    "battery": {
+        "format": "bat {capacity}%",
+        "interval": 5,
+        "states": {
+            "warning": 35,
+            "critical": 10
+        },
+        "tooltip": false
+    },
+
+    "power-profiles-daemon": {
+        "format": "{icon}",
+        "tooltip-format": "Power profile: {profile}\nDriver: {driver}",
+        "tooltip": true,
+        "format-icons": {
+            "default": "",
+            "performance": "",
+            "balanced": "",
+            "power-saver": ""
+        }
+    },
+
+    "network": {
+        "format-wifi" : "wifi {bandwidthDownBits}",
+        "format-ethernet": "enth {bandwidthDownBits}",
+        "format-disconnected" : "no network",
+        "interval": 5,
+        "on-click": "networkmanager_dmenu"
+    },
+
+    "bluetooth": {
+        "format": "{icon} {status}",
+        "tooltip": true,
+        "format-icons": {
+            "enabled": "",
+            "disabled": ""
+        },
+        "on-click": "dmenu-bluetooth"
+    },
+
+    "pulseaudio": {
+        "scroll-step": 5,
+        "max-volume": 150,
+        "format": "vol {volume}%",
+        "format-bluetooth": "vol {volume}%",
+        "format-muted": " mute",
+        "nospacing": 1,
+        "on-click": "pavucontrol",
+        "tooltip": false
+    },
+
+    "pulseaudio#mic": {
+        "format": "{icon}",
+        "format-muted": "",
+        "format-icons": { "default": "" },
+        "on-click": "pactl set-source-mute @DEFAULT_SOURCE@ toggle"
+    },
+}
+
