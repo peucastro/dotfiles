@@ -47,7 +47,7 @@ vertical_alignment = center
 [urgency_low]
 background = "#282828"
 foreground = "#a89984"
-timeout = 6
+timeout = 5
 default_icon = dialog-information
 
 [urgency_normal]
