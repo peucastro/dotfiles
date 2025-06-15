@@ -2,7 +2,7 @@
   border: none;
   border-radius: 2px;
   min-height: 0;
-  font-family: "Iosevka Nerd Font";
+  font-family: "Adwaita Sans", "Font Awesome 6 Free";
   font-weight: 500;
   font-size: 14px;
   padding: 0;
@@ -28,7 +28,8 @@ tooltip {
 #power-profiles-daemon,
 #network,
 #bluetooth,
-#pulseaudio {
+#pulseaudio,
+#custom-wlogout {
   margin: 6px 6px 6px 0px;
   padding: 2px 8px;
 }
@@ -48,8 +49,8 @@ tooltip {
   color: #c7ab7a;
 }
 
-#workspaces button.focused {
-  background-color: #a9b665;
+#workspaces button.active {
+  background-color: #ddc7a1;
   color: #1d2021;
   border: 2px solid #c7ab7a;
 }
@@ -81,23 +82,24 @@ tooltip {
 #power-profiles-daemon,
 #network,
 #bluetooth,
-#pulseaudio {
+#pulseaudio,
+#custom-wlogout {
   background-color: #ddc7a1;
   border: 2px solid #c7ab7a;
   color: #1d2021;
 }
 
+#cpu.warning,
+#memory.warning,
+#temperature.warning {
+  background-color: #ddc7a1;
+  border: 2px solid #d79921;
+}
+
 #cpu.critical,
 #memory.critical,
 #temperature.critical {
-  color: #c14a4a;
-}
-
-#battery.warning,
-#battery.critical,
-#battery.urgent {
   background-color: #ddc7a1;
-  border: 2px solid #c7ab7a;
-  color: #c14a4a;
+  border: 2px solid #cc241d;
 }
 
