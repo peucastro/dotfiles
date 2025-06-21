@@ -115,8 +115,8 @@
     },
 
     "network": {
-        "format-wifi" : " {bandwidthDownBits}",
-        "format-ethernet": " {bandwidthDownBits}",
+        "format-wifi" : " {bandwidthDownBytes}",
+        "format-ethernet": " {bandwidthDownBytes}",
         "format-disconnected" : "no network",
         "interval": 5,
         "on-click": "networkmanager_dmenu"
@@ -138,7 +138,7 @@
         "max-volume": 100,
         "format-muted": " muted",
         "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
-        "on-right": "pavucontrol",
+        "on-click-right": "pavucontrol",
         "scroll-step": 5,
         "format-icons": {
             "headphone": "",
