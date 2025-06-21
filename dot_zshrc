@@ -24,7 +24,6 @@ source $ZSH/oh-my-zsh.sh
 
 # Environment variables
 export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/keyring/ssh"
-export JAVA_HOME="/usr/lib/jvm/java-21-openjdk"
 export ANDROID_HOME="$HOME/Android/Sdk/platform-tools"
 export NVM_DIR="$HOME/.nvm"
 export PNPM_HOME="$HOME/.local/share/pnpm"
@@ -57,3 +56,7 @@ case ":$PATH:" in
   *":$PNPM_HOME:"*) ;;
   *) export PATH="$PATH:$PNPM_HOME" ;;
 esac
+
+# sdkman
+export SDKMAN_DIR="$HOME/.sdkman"
+[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"

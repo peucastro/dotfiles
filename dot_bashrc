@@ -2,36 +2,36 @@
 
 # Source global definitions
 if [ -f /etc/bashrc ]; then
-    . /etc/bashrc
+  . /etc/bashrc
 fi
 
 # User specific environment
 if ! [[ "$PATH" =~ "$HOME/.local/bin:$HOME/bin:" ]]; then
-    PATH="$HOME/.local/bin:$HOME/bin:$PATH"
+  PATH="$HOME/.local/bin:$HOME/bin:$PATH"
 fi
 export PATH
 
 # User specific aliases and functions
 if [ -d ~/.bashrc.d ]; then
-    for rc in ~/.bashrc.d/*; do
-        if [ -f "$rc" ]; then
-            . "$rc"
-        fi
-    done
+  for rc in ~/.bashrc.d/*; do
+    if [ -f "$rc" ]; then
+      . "$rc"
+    fi
+  done
 fi
 unset rc
-
 
 # User configuration
 
 # Environment variables
 export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/keyring/ssh"
-export JAVA_HOME="/usr/lib/jvm/java-21-openjdk"
 export ANDROID_HOME="$HOME/Android/Sdk/platform-tools"
 export NVM_DIR="$HOME/.nvm"
 export PNPM_HOME="$HOME/.local/share/pnpm"
+export DMENU_BLUETOOTH_LAUNCHER="fuzzel"
 
 # Path entries
+export PATH="$PATH:$HOME/.local/bin"
 export PATH="$PATH:$JAVA_HOME/bin"
 export PATH="$PATH:$ANDROID_HOME"
 export PATH="$PATH:$HOME/.local/share/JetBrains/Toolbox/scripts"
@@ -44,6 +44,10 @@ export PATH="$PATH:$HOME/.pub-cache/bin"
 
 # pnpm
 case ":$PATH:" in
-  *":$PNPM_HOME:"*) ;;
-  *) export PATH="$PATH:$PNPM_HOME" ;;
+*":$PNPM_HOME:"*) ;;
+*) export PATH="$PATH:$PNPM_HOME" ;;
 esac
+
+# sdkman
+export SDKMAN_DIR="$HOME/.sdkman"
+[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
