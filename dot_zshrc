@@ -1,4 +1,6 @@
+#
 # ~/.zshrc
+#
 
 export PATH=$HOME/bin:$HOME/.local/bin:/usr/local/bin:$PATH
 
@@ -27,6 +29,7 @@ export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/keyring/ssh"
 export ANDROID_HOME="$HOME/Android/Sdk/platform-tools"
 export NVM_DIR="$HOME/.nvm"
 export PNPM_HOME="$HOME/.local/share/pnpm"
+export CHROME_EXECUTABLE="chromium"
 export DMENU_BLUETOOTH_LAUNCHER="fuzzel"
 
 # Path entries
@@ -56,7 +59,3 @@ case ":$PATH:" in
   *":$PNPM_HOME:"*) ;;
   *) export PATH="$PATH:$PNPM_HOME" ;;
 esac
-
-# sdkman
-export SDKMAN_DIR="$HOME/.sdkman"
-[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
