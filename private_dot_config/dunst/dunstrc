@@ -56,21 +56,21 @@ show_indicators = true
 [urgency_low]
 background = "#282828"
 foreground = "#a89984"
-highlight = "#b8bb26"
+highlight = "#a9b665"
 timeout = 5
 default_icon = dialog-information
 
 [urgency_normal]
 background = "#3c3836"
 foreground = "#ebdbb2"
-highlight = "#fabd2f"
+highlight = "#d79921"
 timeout = 8
 default_icon = dialog-information
 
 [urgency_critical]
 background = "#cc241d"
 foreground = "#fbf1c7"
-highlight = "#fb4934"
-frame_color = "#fb4934"
+highlight = "#cc241d"
+frame_color = "#cc241d"
 timeout = 0
 default_icon = dialog-warning

@@ -36,7 +36,7 @@ volume_notify() {
 
     notify-send -h int:value:$volume \
         -h string:x-canonical-private-synchronous:volume \
-        -h string:hlcolor:#fabd2f \
+        -h string:hlcolor:#d79921 \
         -i "$icon" \
         "Volume" "$message"
 }
@@ -47,7 +47,7 @@ brightness_notify() {
 
     notify-send -h int:value:$brightness \
         -h string:x-canonical-private-synchronous:brightness \
-        -h string:hlcolor:#b8bb26 \
+        -h string:hlcolor:#a9b665 \
         -i "$icon" \
         "Brightness" "${brightness}%"
 }
