@@ -40,20 +40,44 @@
 
     "hyprland/window": {
         "max-length": 65,
-        "rewrite": true,
-        "rewrite-empty": ""
+        "icon": true,
+        "icon-size": 18,
+        "rewrite": {
+            "(.*) — Mozilla Firefox": "$1",
+            "(.*) - Visual Studio Code": "$1"
+        },
+        "rewrite-empty": "",
+        "separate-outputs": true
     },
 
     "clock": {
         "format": "{:%H:%M - %a, %d %b %Y}",
-        "tooltip": false
+        "tooltip-format": "<tt><small>{calendar}</small></tt>",
+        "calendar": {
+            "mode": "year",
+            "mode-mon-col": 3,
+            "weeks-pos": "right",
+            "on-scroll": 1,
+            "format": {
+                "months": "<span color='#ebdbb2'><b>{}</b></span>",
+                "days": "<span color='#d4be98'><b>{}</b></span>",
+                "weeks": "<span color='#a89984'><b>W{}</b></span>",
+                "weekdays": "<span color='#d79921'><b>{}</b></span>",
+                "today": "<span color='#c7ab7a'><b><u>{}</u></b></span>"
+            }
+        },
+        "actions": {
+            "on-click-right": "mode",
+            "on-scroll-up": "shift_up",
+            "on-scroll-down": "shift_down"
+        }
     },
 
     "tray": {
         "spacing": 10,
         "tooltip": false
     },
- 
+
     "cpu": {
         "format": " {usage}%",
         "interval": 2,
@@ -73,7 +97,7 @@
             "critical": 80
         }
     },
- 
+
     "temperature": {
         "format": "{icon} {temperatureC}°C",
         "interval": 10,
@@ -165,4 +189,3 @@
         "on-click": "wlogout"
     }
 }
-

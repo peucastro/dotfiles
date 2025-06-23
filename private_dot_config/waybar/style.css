@@ -6,16 +6,20 @@
   font-weight: 500;
   font-size: 14px;
   padding: 0;
+  margin: 0;
 }
 
 window#waybar {
   background: #1d2021;
   border: 2px solid #3c3836;
+  border-radius: 4px;
 }
 
 tooltip {
-  background-color: #1d2021;
-  border: 2px solid #7c6f64;
+  background-color: #282828;
+  border: 2px solid #665c54;
+  color: #ebdbb2;
+  border-radius: 4px;
 }
 
 #window,
@@ -36,9 +40,10 @@ tooltip {
 
 #workspaces,
 #window {
-  background-color: #303536;
+  background-color: #3c3836;
   margin: 6px 0px 6px 6px;
-  border: 2px solid #434a4c;
+  border: 2px solid #504945;
+  border-radius: 2px;
 }
 
 #workspaces button {
@@ -57,6 +62,11 @@ tooltip {
 
 #workspaces button.urgent {
   background-color: #e78a4e;
+}
+
+window#waybar.empty #window {
+  background-color: transparent;
+  border-style: none;
 }
 
 #clock {
@@ -102,4 +112,3 @@ tooltip {
   background-color: #ddc7a1;
   border: 2px solid #cc241d;
 }
-
