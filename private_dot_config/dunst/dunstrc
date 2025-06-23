@@ -1,65 +1,76 @@
 [global]
 # Display settings
 monitor = 0
-follow = none
+follow = mouse
 
 # Geometry & positioning
-width = 350
-height = (0, 200)
-origin = top-center
-offset = (0, 50)
+width = (200, 400)
+height = (80, 300)
+origin = top-right
+offset = (15, 15)
 
 scale = 0
 notification_limit = 10
+indicate_hidden = true
+sort = true
 
 # Padding, spacing & styling
-frame_width = 2
-frame_color = "#665c54"
-gap_size = 8
-
+frame_width = 3
+frame_color = "#c7ab7a"
+gap_size = 6
 separator_height = 2
-separator_color = "#665c54"
+separator_color = "#504945"
 horizontal_padding = 12
 padding = 12
 text_icon_padding = 10
 
 # Transparency & icons
-transparency = 5
-icon_corner_radius = 6
+transparency = 8
+icon_corner_radius = 4
 icon_corners = all
+max_icon_size = 48
+min_icon_size = 24
 
 # Progress bar
 progress_bar = true
-progress_bar_height = 6
+progress_bar_height = 10
 progress_bar_frame_width = 1
-progress_bar_min_width = 100
+progress_bar_min_width = 150
 progress_bar_max_width = 300
 progress_bar_corner_radius = 3
-progress_bar_corners = all
+progress_bar_horizontal_alignment = center
 
 # Text layout
-font = Adwaita Sans
+font =  "Adwaita Sans" 11
 markup = full
-format = "<span weight='bold'>%s</span>\n%b"
+format = "<span weight='bold' size='larger'>%s</span>\n%b"
 alignment = left
 vertical_alignment = center
+show_age_threshold = 60
+ellipsize = middle
+ignore_newline = false
+stack_duplicates = true
+hide_duplicate_count = false
+show_indicators = true
 
 [urgency_low]
 background = "#282828"
 foreground = "#a89984"
+highlight = "#b8bb26"
 timeout = 5
 default_icon = dialog-information
 
 [urgency_normal]
 background = "#3c3836"
 foreground = "#ebdbb2"
+highlight = "#fabd2f"
 timeout = 8
 default_icon = dialog-information
 
 [urgency_critical]
 background = "#cc241d"
 foreground = "#fbf1c7"
+highlight = "#fb4934"
 frame_color = "#fb4934"
 timeout = 0
 default_icon = dialog-warning
-
