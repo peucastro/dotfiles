@@ -1,6 +1,7 @@
 # 🏠 Dotfiles
 
 ![Setup screenshot](screenshots/screenshot1.png)
+![Lock screen screenshot](screenshots/screenshot2.png)
 
 A clean and minimal [`Arch Linux`](https://archlinux.org/) setup, powered by [**`Hyprland`**](https://hypr.land/). It's build for software development, focusing on simplicity, speed and a **distraction-free** workflow.
 
@@ -45,71 +46,39 @@ A clean and minimal [`Arch Linux`](https://archlinux.org/) setup, powered by [**
 
 ## 🎨 Color Palette
 
-The setup uses the **Gruvbox Dark** color scheme.
+The setup uses the **Gruvbox Dark** color scheme consistently across all applications and configurations.
 
 ### Background Colors
 
-<div style="display: flex; gap: 10px; margin: 10px 0;">
-  <div style="background: #1d2021; width: 50px; height: 50px; border-radius: 5px; display: inline-block;"></div>
-  <div style="background: #282828; width: 50px; height: 50px; border-radius: 5px; display: inline-block;"></div>
-  <div style="background: #3c3836; width: 50px; height: 50px; border-radius: 5px; display: inline-block;"></div>
-  <div style="background: #504945; width: 50px; height: 50px; border-radius: 5px; display: inline-block;"></div>
-  <div style="background: #665c54; width: 50px; height: 50px; border-radius: 5px; display: inline-block;"></div>
-  <div style="background: #928374; width: 50px; height: 50px; border-radius: 5px; display: inline-block;"></div>
-</div>
-
-- **bg0_hard**: `#1d2021` ■
-- **bg0**: `#282828` ■
-- **bg1**: `#3c3836` ■
-- **bg2**: `#504945` ■
-- **bg3**: `#665c54` ■
-- **gray**: `#928374` ■
+- **bg0_hard**: `#1d2021` ![#1d2021](https://placehold.co/15/1d2021/1d2021.png)
+- **bg0**: `#282828` ![#282828](https://placehold.co/15/282828/282828.png)
+- **bg1**: `#3c3836` ![#3c3836](https://placehold.co/15/3c3836/3c3836.png)
+- **bg2**: `#504945` ![#504945](https://placehold.co/15/504945/504945.png)
+- **bg3**: `#665c54` ![#665c54](https://placehold.co/15/665c54/665c54.png)
+- **gray**: `#928374` ![#928374](https://placehold.co/15/928374/928374.png)
 
 ### Foreground Colors
 
-<div style="display: flex; gap: 10px; margin: 10px 0;">
-  <div style="background: #fbf1c7; width: 50px; height: 50px; border-radius: 5px; display: inline-block; border: 1px solid #ccc;"></div>
-  <div style="background: #ebdbb2; width: 50px; height: 50px; border-radius: 5px; display: inline-block;"></div>
-  <div style="background: #a89984; width: 50px; height: 50px; border-radius: 5px; display: inline-block;"></div>
-  <div style="background: #ffffff; width: 50px; height: 50px; border-radius: 5px; display: inline-block; border: 1px solid #ccc;"></div>
-</div>
-
-- **fg0**: `#fbf1c7` ■
-- **fg1**: `#ebdbb2` ■
-- **fg2**: `#a89984` ■
-- **white**: `#ffffff` ■
+- **fg0**: `#fbf1c7` ![#fbf1c7](https://placehold.co/15/fbf1c7/fbf1c7.png)
+- **fg1**: `#ebdbb2` ![#ebdbb2](https://placehold.co/15/ebdbb2/ebdbb2.png)
+- **fg2**: `#a89984` ![#a89984](https://placehold.co/15/a89984/a89984.png)
+- **white**: `#ffffff` ![#ffffff](https://placehold.co/15/ffffff/ffffff.png)
 
 ### Neutral Colors
 
-<div style="display: flex; gap: 10px; margin: 10px 0;">
-  <div style="background: #c7ab7a; width: 50px; height: 50px; border-radius: 5px; display: inline-block;"></div>
-  <div style="background: #ddc7a1; width: 50px; height: 50px; border-radius: 5px; display: inline-block;"></div>
-  <div style="background: #d4be98; width: 50px; height: 50px; border-radius: 5px; display: inline-block;"></div>
-</div>
-
-- **neutral**: `#c7ab7a` ■
-- **light_neutral**: `#ddc7a1` ■
-- **medium_neutral**: `#d4be98` ■
+- **neutral**: `#c7ab7a` ![#c7ab7a](https://placehold.co/15/c7ab7a/c7ab7a.png)
+- **light_neutral**: `#ddc7a1` ![#ddc7a1](https://placehold.co/15/ddc7a1/ddc7a1.png)
+- **medium_neutral**: `#d4be98` ![#d4be98](https://placehold.co/15/d4be98/d4be98.png)
 
 ### Accent Colors
 
-<div style="display: flex; gap: 10px; margin: 10px 0;">
-  <div style="background: #cc241d; width: 50px; height: 50px; border-radius: 5px; display: inline-block;"></div>
-  <div style="background: #d79921; width: 50px; height: 50px; border-radius: 5px; display: inline-block;"></div>
-  <div style="background: #a9b665; width: 50px; height: 50px; border-radius: 5px; display: inline-block;"></div>
-  <div style="background: #6c782e; width: 50px; height: 50px; border-radius: 5px; display: inline-block;"></div>
-  <div style="background: #83a598; width: 50px; height: 50px; border-radius: 5px; display: inline-block;"></div>
-  <div style="background: #d3869b; width: 50px; height: 50px; border-radius: 5px; display: inline-block;"></div>
-  <div style="background: #e78a4e; width: 50px; height: 50px; border-radius: 5px; display: inline-block;"></div>
-</div>
-
-- **red**: `#cc241d` ■
-- **yellow**: `#d79921` ■
-- **light_green**: `#a9b665` ■
-- **dark_green**: `#6c782e` ■
-- **blue**: `#83a598` ■
-- **purple**: `#d3869b` ■
-- **orange**: `#e78a4e` ■
+- **red**: `#cc241d` ![#cc241d](https://placehold.co/15/cc241d/cc241d.png)
+- **yellow**: `#d79921` ![#d79921](https://placehold.co/15/d79921/d79921.png)
+- **light_green**: `#a9b665` ![#a9b665](https://placehold.co/15/a9b665/a9b665.png)
+- **dark_green**: `#6c782e` ![#6c782e](https://placehold.co/15/6c782e/6c782e.png)
+- **blue**: `#83a598` ![#83a598](https://placehold.co/15/83a598/83a598.png)
+- **purple**: `#d3869b` ![#d3869b](https://placehold.co/15/d3869b/d3869b.png)
+- **orange**: `#e78a4e` ![#e78a4e](https://placehold.co/15/e78a4e/e78a4e.png)
 
 ## 📄 License
 
