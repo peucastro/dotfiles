@@ -16,4 +16,4 @@ else
 fi
 
 sudo ddcutil --display="$DISPLAY_ID" setvcp 10 "$new"
-~/.config/hypr/scripts/notifications/media-notify.sh external-brightness "$DISPLAY_ID"
+swayosd-client --custom-message "External Brightness ${new}%" --custom-icon display-brightness-symbolic
