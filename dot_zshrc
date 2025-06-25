@@ -21,7 +21,6 @@ plugins=(fzf gh git man sudo tldr z zsh-syntax-highlighting zsh-autosuggestions)
 
 source $ZSH/oh-my-zsh.sh
 
-
 # User configuration
 
 # Environment variables
@@ -33,8 +32,6 @@ export CHROME_EXECUTABLE="chromium"
 export DMENU_BLUETOOTH_LAUNCHER="fuzzel"
 
 # Path entries
-export PATH="$PATH:$HOME/.local/bin"
-export PATH="$PATH:$JAVA_HOME/bin"
 export PATH="$PATH:$ANDROID_HOME"
 export PATH="$PATH:$HOME/.local/share/JetBrains/Toolbox/scripts"
 export PATH="$PATH:$HOME/development/flutter/bin"
@@ -59,3 +56,7 @@ case ":$PATH:" in
   *":$PNPM_HOME:"*) ;;
   *) export PATH="$PATH:$PNPM_HOME" ;;
 esac
+
+# sdkman
+export SDKMAN_DIR="$HOME/.sdkman"
+[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
