@@ -19,6 +19,7 @@ A clean and minimal [`Arch Linux`](https://archlinux.org/) setup, powered by [**
 - **Screen Locker:** [`hyprlock`](https://wiki.hypr.land/Hypr-Ecosystem/hyprlock/)
 - **Logout Menu:** [`wlogout`](https://github.com/ArtsyMacaw/wlogout/)
 - **Notification Daemon:** [`Dunst`](https://dunst-project.org/)
+- **OSD:** [`SwayOSD`](https://github.com/ErikReider/SwayOSD/)
 - **Display Manager**: [`greetd`](https://sr.ht/~kennylevinsen/greetd/) + [`tuigreet`](https://github.com/apognu/tuigreet/)
 - **Clipboard Manager:** [`wl-clipboard`](https://github.com/bugaevc/wl-clipboard/) + [`cliphist`](https://github.com/sentriz/cliphist/)
 
