@@ -1,9 +1,7 @@
-{ ... }:
-{
+{ ... }: {
   imports = [
     ./packages
     ./bat.nix
-    ./browser.nix
     ./btop.nix
     ./git.nix
     ./gnome.nix

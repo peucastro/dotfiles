@@ -1,15 +1,11 @@
-{ ... }:
+{ config, pkgs, host, user, ... }:
+
 {
-  imports = [
-    ./hardware-configuration.nix
-    ./../../modules/core
-  ];
+  imports = [ ./hardware-configuration.nix ../../modules/core ];
 
-  services = {
-    power-profiles-daemon.enable = true;
-  };
-
+  services.power-profiles-daemon.enable = true;
   powerManagement.cpuFreqGovernor = "performance";
-  networking.hostName = "ideapad";
+
+  networking.hostName = host;
   system.stateVersion = "25.05";
 }

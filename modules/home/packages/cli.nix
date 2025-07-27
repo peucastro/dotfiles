@@ -1,5 +1,4 @@
-{ pkgs, ... }:
-{
+{ pkgs, ... }: {
   home.packages = with pkgs; [
     # Better core utils
     duf
@@ -13,6 +12,7 @@
     # Tools
     bitwise
     broot
+    nixfmt
 
     # Monitoring
     htop

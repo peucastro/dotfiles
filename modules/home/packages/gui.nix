@@ -1,5 +1,4 @@
-{ pkgs, ... }:
-{
+{ pkgs, ... }: {
   home.packages = with pkgs; [
     # Communication
     webcord-vencord
@@ -13,7 +12,6 @@
 
     # Office
     libreoffice
-    obsidian
     gnome-calculator
 
     # Utility

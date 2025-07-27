@@ -1,5 +1,4 @@
-{ pkgs, username, ... }:
-{
+{ pkgs, username, ... }: {
   programs.git = {
     enable = true;
 
@@ -10,12 +9,7 @@
       init.defaultBranch = "main";
       pull.ff = "only";
       color.ui = true;
-      url = {
-        "git@github.com:".insteadOf = [
-          "gh:"
-          "https://github.com/"
-        ];
-      };
+      url = { "git@github.com:".insteadOf = [ "gh:" "https://github.com/" ]; };
       core.excludesFile = "/home/${username}/.config/git/.gitignore";
     };
 
