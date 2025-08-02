@@ -3,6 +3,8 @@ let username = user.login;
 in {
   imports = [ inputs.home-manager.nixosModules.default ];
 
+  nixpkgs.config.allowUnfree = true;
+
   home-manager = {
     useUserPackages = true;
     useGlobalPkgs = true;

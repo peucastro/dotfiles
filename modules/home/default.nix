@@ -12,6 +12,7 @@
     ./nvim.nix
     ./ssh.nix
     ./tmux.nix
+    ./vscode.nix
     ./zed.nix
     ./zsh.nix
   ];
