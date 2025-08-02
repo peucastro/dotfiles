@@ -1,9 +1,9 @@
-{ user, pkgs, ... }: {
-  users.users."${user.login}" = {
+{ lib, user, initialPassword, ... }: {
+  users.users.${user.login} = {
     isNormalUser = true;
-    description = user.displayName;
-    extraGroups = [ "networkmanager" "wheel" ];
+    description = lib.mkDefault user.displayName;
+    extraGroups = lib.mkDefault user.groups;
+    initialPassword = lib.mkDefault initialPassword;
+    home = "/home/${user.login}";
   };
-
-  nix.settings.allowed-users = [ user.login ];
 }

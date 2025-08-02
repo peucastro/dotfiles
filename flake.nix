@@ -12,29 +12,40 @@
   outputs = { nixpkgs, self, ... }@inputs:
     let
       system = "x86_64-linux";
-
-      user = {
-        login = "peu";
-        displayName = "Pedro Castro";
-      };
-
       pkgs = import nixpkgs {
         inherit system;
         config.allowUnfree = true;
       };
-    in {
-      nixosConfigurations = {
-        laptop = nixpkgs.lib.nixosSystem {
-          inherit system;
 
-          modules = [ ./hosts/laptop/configuration.nix ];
+      commonSystemArgs = {
+        initialPassword = "nixos";
 
-          specialArgs = {
-            host = "laptop";
-            inherit self inputs user;
-          };
+        user = {
+          login = "peu";
+          displayName = "Pedro Castro";
+          email = "falecompedroac@gmail.com";
+          groups = [ "networkmanager" "wheel" ];
         };
       };
+
+      mkSystem = extraSpecialArgs: nixpkgs.lib.nixosSystem {
+        inherit system;
+        specialArgs = commonSystemArgs // {
+          inherit self inputs;
+          host = extraSpecialArgs.hostname;
+        } // extraSpecialArgs;
+        modules = [
+          ./hosts/${extraSpecialArgs.hostname}/configuration.nix
+        ];
+      };
+
+    in {
+      nixosConfigurations = {
+        laptop = mkSystem {
+          hostname = "laptop";
+        };
+      };
+
+      meta.hosts = builtins.attrNames self.nixosConfigurations;
     };
 }
-
