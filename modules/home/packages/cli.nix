@@ -1,6 +1,6 @@
 { pkgs, ... }: {
   home.packages = with pkgs; [
-    # Better core utils
+    # Core utilities
     duf
     eza
     fd
@@ -9,10 +9,24 @@
     ripgrep
     tldr
 
+    # Utilities
+    ffmpeg
+    file
+    fzf
+    openssl
+    playerctl
+    unzip
+    wget
+    wl-clipboard
+    tree
+    zip
+
     # Tools
     bitwise
     broot
     nixfmt
+    bottom
+    gdu
 
     # Monitoring
     htop
@@ -31,16 +45,14 @@
     ani-cli
     mpv
 
-    # Utilities
-    ffmpeg
-    file
-    fzf
-    openssl
-    playerctl
-    unzip
-    wget
-    wl-clipboard
-    xdg-utils
+    # Development
+    act
+    android-tools
+    lazydocker
+    vim
+
+    # Security
+    bitwarden
 
     # Zsh plugins
     zsh-syntax-highlighting
