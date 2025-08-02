@@ -68,10 +68,9 @@ in
     enable = true;
     package = pkgs.vscode.fhs;
 
-    extensions = defaultExtensions;
-    userSettings = defaultUserSettings;
-
     profiles = {
+      default = mkProfile {};
+
       python = mkProfile {
         extensions = with pkgs.vscode-extensions; [
           charliermarsh.ruff
