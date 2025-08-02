@@ -11,5 +11,6 @@
     ./nvim.nix
     ./ssh.nix
     ./tmux.nix
+    ./zed.nix
   ];
 }
