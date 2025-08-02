@@ -1,16 +1,16 @@
-{ username, ... }: {
+{ user, ... }: {
   programs.git = {
     enable = true;
 
-    userName = "Pedro Castro";
-    userEmail = "falecompedroac@gmail.com";
+    userName = user.displayName;
+    userEmail = user.email;
 
     extraConfig = {
       init.defaultBranch = "main";
       pull.ff = "only";
       color.ui = true;
       url = { "git@github.com:".insteadOf = [ "gh:" "https://github.com/" ]; };
-      core.excludesFile = "/home/${username}/.config/git/.gitignore";
+      core.excludesFile = "/home/${user.login}/.config/git/.gitignore";
     };
 
     delta = {

@@ -16,7 +16,6 @@
 
     # Utility
     dconf-editor
-    ghostty
     gnome-disk-utility
     mission-center
   ];
