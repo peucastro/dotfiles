@@ -1,6 +1,7 @@
 { ... }: {
   imports = [
     ./packages
+    ./bash.nix
     ./bat.nix
     ./btop.nix
     ./ghostty.nix

@@ -22,8 +22,6 @@
       ohmyzsh = "nvim ~/.oh-my-zsh";
     };
     envExtra = ''
-      export PATH=$HOME/bin:$HOME/.local/bin:/usr/local/bin:$PATH
-      export ZSH="$HOME/.oh-my-zsh"
       export ANDROID_HOME="$HOME/Android/Sdk/platform-tools"
       export NVM_DIR="$HOME/.nvm"
       export PNPM_HOME="$HOME/.local/share/pnpm"
@@ -32,7 +30,7 @@
       export PATH="$PATH:$HOME/development/flutter/bin"
       export PATH="$PATH:$HOME/.pub-cache/bin"
     '';
-    initExtra = ''
+    initContent = ''
       zstyle ':omz:update' mode reminder
 
       # Preferred editor for local and remote sessions

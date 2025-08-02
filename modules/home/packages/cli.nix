@@ -34,11 +34,16 @@
     # Utilities
     ffmpeg
     file
+    fzf
     openssl
     playerctl
     unzip
     wget
     wl-clipboard
     xdg-utils
+
+    # Zsh plugins
+    zsh-syntax-highlighting
+    zsh-autosuggestions
   ];
 }
