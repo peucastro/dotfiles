@@ -4,6 +4,7 @@
     ./bash.nix
     ./bat.nix
     ./btop.nix
+    ./gh.nix
     ./ghostty.nix
     ./git.nix
     ./gnome.nix
