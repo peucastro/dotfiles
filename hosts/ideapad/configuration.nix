@@ -1,5 +1,4 @@
-{ config, pkgs, host, user, ... }:
-
+{ ... }:
 {
     imports = [
     ./hardware-configuration.nix
@@ -10,6 +9,4 @@
 
   services.power-profiles-daemon.enable = true;
   powerManagement.cpuFreqGovernor = "performance";
-
-  networking.hostName = host;
 }

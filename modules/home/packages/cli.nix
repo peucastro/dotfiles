@@ -24,7 +24,6 @@
     # Tools
     bitwise
     broot
-    nixfmt-classic
     bottom
     gdu
 
