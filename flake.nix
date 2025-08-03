@@ -48,8 +48,8 @@
 
     in {
       nixosConfigurations = {
-        laptop = mkSystem {
-          hostname = "laptop";
+        ideapad = mkSystem {
+          hostname = "ideapad";
         };
       };
 
