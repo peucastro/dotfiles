@@ -1,4 +1,3 @@
-{ ... }:
 {
   disko.devices = {
     disk = {
@@ -35,20 +34,21 @@
               content = {
                 type = "btrfs";
                 mountpoint = "/";
+                extraArgs = ["-f"];
                 subvolumes = {
-                  "@" = {
+                  "@root" = {
                     mountpoint = "/";
                   };
                   "@home" = {
                     mountOptions = ["compress=zstd:2"];
                     mountpoint = "/home";
                   };
+                  "@home/.snapshots" = {
+                    mountpoint = "/home/.snapshots";
+                  };
                   "@nix" = {
                     mountOptions = ["compress=zstd:2" "noatime"];
                     mountpoint = "/nix";
-                  };
-                  "@snapshots" = {
-                    mountpoint = "/.snapshots";
                   };
                 };
               };
