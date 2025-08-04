@@ -52,9 +52,5 @@
 
     # Security
     bitwarden
-
-    # Zsh plugins
-    zsh-syntax-highlighting
-    zsh-autosuggestions
   ];
 }

@@ -1,6 +1,4 @@
-{ pkgs, ... }: {
-  home.packages = with pkgs; [ evince file-roller gnome-text-editor ];
-
+{
   dconf.settings = {
     "org/gnome/TextEditor" = {
       highlight-current-line = true;

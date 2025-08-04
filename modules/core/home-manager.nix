@@ -1,5 +1,7 @@
 { inputs, user, ... }:
-let username = user.login;
+let
+  username = user.login;
+  homeDir = user.homeDirectory or "/home/${username}";
 in {
   imports = [ inputs.home-manager.nixosModules.default ];
 
@@ -14,7 +16,7 @@ in {
     users."${username}" = {
       imports = [ ./../home ];
       home.username = username;
-      home.homeDirectory = "/home/${username}";
+      home.homeDirectory = homeDir;
       programs.home-manager.enable = true;
     };
   };
