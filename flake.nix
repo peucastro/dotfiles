@@ -4,18 +4,13 @@
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-25.05";
 
-    disko = {
-      url = "github:nix-community/disko";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
     home-manager = {
       url = "github:nix-community/home-manager/release-25.05";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
 
-  outputs = { self, nixpkgs, disko, home-manager, ... }@inputs:
+  outputs = { self, nixpkgs, home-manager, ... }@inputs:
     let
       system = "x86_64-linux";
       pkgs = import nixpkgs {
@@ -28,7 +23,7 @@
 
         user = {
           login = "peu";
-          displayName = "Pedro Castro";
+          displayName = "pedro castro";
           email = "falecompedroac@gmail.com";
           groups = [ "networkmanager" "wheel" ];
         };
@@ -41,7 +36,6 @@
           host = extraSpecialArgs.hostname;
         } // extraSpecialArgs;
         modules = [
-          inputs.disko.nixosModules.disko
           ./hosts/${extraSpecialArgs.hostname}/configuration.nix
         ];
       };

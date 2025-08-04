@@ -10,7 +10,6 @@
     ./locale.nix
     ./networking.nix
     ./nix.nix
-    ./snapper.nix
     ./user.nix
   ];
 }
