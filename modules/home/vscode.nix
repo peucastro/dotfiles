@@ -1,6 +1,8 @@
-{ lib, pkgs, ... }:
-
-let
+{
+  lib,
+  pkgs,
+  ...
+}: let
   defaultExtensions = with pkgs.vscode-extensions; [
     adpyke.codesnap
     usernamehw.errorlens
@@ -15,55 +17,54 @@ let
   ];
 
   defaultUserSettings = {
-    "editor.fontFamily"              = "'JetBrains Mono'";
-    "editor.fontSize"                = 18;
-    "editor.lineHeight"              = 1.5;
+    "editor.fontFamily" = "'JetBrains Mono'";
+    "editor.fontSize" = 18;
+    "editor.lineHeight" = 1.5;
     "diffEditor.ignoreTrimWhitespace" = false;
-    "editor.accessibilitySupport"     = "off";
-    "editor.folding"                 = false;
-    "editor.formatOnPaste"           = true;
-    "editor.formatOnSave"            = true;
-    "editor.formatOnType"            = true;
-    "editor.guides.bracketPairs"     = true;
-    "editor.linkedEditing"           = true;
-    "editor.minimap.enabled"         = false;
-    "editor.renderLineHighlight"     = "gutter";
-    "editor.renderWhitespace"        = "boundary";
-    "editor.wordWrap"                = "on";
-    "explorer.compactFolders"        = false;
+    "editor.accessibilitySupport" = "off";
+    "editor.folding" = false;
+    "editor.formatOnPaste" = true;
+    "editor.formatOnSave" = true;
+    "editor.formatOnType" = true;
+    "editor.guides.bracketPairs" = true;
+    "editor.linkedEditing" = true;
+    "editor.minimap.enabled" = false;
+    "editor.renderLineHighlight" = "gutter";
+    "editor.renderWhitespace" = "boundary";
+    "editor.wordWrap" = "on";
+    "explorer.compactFolders" = false;
     "explorer.sortOrderLexicographicOptions" = "unicode";
-    "files.autoSave"                 = "afterDelay";
-    "files.insertFinalNewline"      = true;
-    "files.trimFinalNewlines"       = true;
-    "files.trimTrailingWhitespace"   = true;
-    "workbench.colorTheme"           = "Gruvbox Dark Hard";
-    "workbench.iconTheme"            = "material-icon-theme";
-    "workbench.productIconTheme"     = "material-product-icons";
-    "workbench.sideBar.location"     = "right";
-    "debug.console.closeOnEnd"       = true;
+    "files.autoSave" = "afterDelay";
+    "files.insertFinalNewline" = true;
+    "files.trimFinalNewlines" = true;
+    "files.trimTrailingWhitespace" = true;
+    "workbench.colorTheme" = "Gruvbox Dark Hard";
+    "workbench.iconTheme" = "material-icon-theme";
+    "workbench.productIconTheme" = "material-product-icons";
+    "workbench.sideBar.location" = "right";
+    "debug.console.closeOnEnd" = true;
     "terminal.integrated.cursorBlinking" = true;
     "terminal.integrated.fontFamily" = "'FiraCode Nerd Font Mono'";
-    "terminal.integrated.fontSize"   = 15;
-    "extensions.autoUpdate"          = false;
+    "terminal.integrated.fontSize" = 15;
+    "extensions.autoUpdate" = false;
     "extensions.ignoreRecommendations" = true;
-    "github.copilot.enable"          = { "*" = false; };
+    "github.copilot.enable" = {"*" = false;};
     "gitlens.launchpad.indicator.enabled" = false;
-    "gitlens.telemetry.enabled"      = false;
-    "git.autofetch"                  = true;
+    "gitlens.telemetry.enabled" = false;
+    "git.autofetch" = true;
     "git.blame.statusBarItem.enabled" = false;
     "git.openRepositoryInParentFolders" = "always";
-    "telemetry.feedback.enabled"     = false;
-    "telemetry.telemetryLevel"       = "off";
-    "update.mode"                   = "manual";
-    "window.zoomLevel"               = 0.25;
+    "telemetry.feedback.enabled" = false;
+    "telemetry.telemetryLevel" = "off";
+    "update.mode" = "manual";
+    "window.zoomLevel" = 0.25;
   };
 
   mkProfile = extra: {
     extensions = defaultExtensions ++ (extra.extensions or []);
     userSettings = lib.recursiveUpdate defaultUserSettings (extra.userSettings or {});
   };
-in
-{
+in {
   programs.vscode = {
     enable = true;
     package = pkgs.vscode.fhs;
@@ -87,7 +88,7 @@ in
           ms-toolsai.vscode-jupyter-slideshow
         ];
         userSettings = {
-          "[python]" = { "editor.defaultFormatter" = "charliermarsh.ruff"; };
+          "[python]" = {"editor.defaultFormatter" = "charliermarsh.ruff";};
         };
       };
 
@@ -97,10 +98,10 @@ in
           streetsidesoftware.code-spell-checker
         ];
         userSettings = {
-          "latex-workshop.formatting.latex"                = "tex-fmt";
-          "latex-workshop.latex.autoClean.run"             = "onBuilt";
-          "latex-workshop.latex.build.rootfileInStatus"    = true;
-          "[latex]"                                        = { "editor.defaultFormatter" = "James-Yu.latex-workshop"; };
+          "latex-workshop.formatting.latex" = "tex-fmt";
+          "latex-workshop.latex.autoClean.run" = "onBuilt";
+          "latex-workshop.latex.build.rootfileInStatus" = true;
+          "[latex]" = {"editor.defaultFormatter" = "James-Yu.latex-workshop";};
         };
       };
 
@@ -116,8 +117,8 @@ in
         ];
         userSettings = {
           "editor.defaultFormatter" = "esbenp.prettier-vscode";
-          "[astro]" = { "editor.defaultFormatter" = "esbenp.prettier-vscode"; };
-          "[php]"   = { "editor.defaultFormatter" = "bmewburn.vscode-intelephense-client"; };
+          "[astro]" = {"editor.defaultFormatter" = "esbenp.prettier-vscode";};
+          "[php]" = {"editor.defaultFormatter" = "bmewburn.vscode-intelephense-client";};
         };
       };
 
@@ -126,8 +127,8 @@ in
           xaver.clang-format
         ];
         userSettings = {
-          "[c]"   = { "editor.defaultFormatter" = "xaver.clang-format"; };
-          "[cpp]" = { "editor.defaultFormatter" = "xaver.clang-format"; };
+          "[c]" = {"editor.defaultFormatter" = "xaver.clang-format";};
+          "[cpp]" = {"editor.defaultFormatter" = "xaver.clang-format";};
           "makefile.configureOnOpen" = false;
           "editor.largeFileOptimizations" = false;
         };
@@ -145,7 +146,7 @@ in
               id = "pixel9";
               name = "Pixel 9";
               executable = "flutter";
-              args = [ "emulator" "--launch" "Pixel_9" ];
+              args = ["emulator" "--launch" "Pixel_9"];
             }
           ];
         };

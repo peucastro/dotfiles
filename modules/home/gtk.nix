@@ -1,4 +1,4 @@
-{ pkgs, ... }: {
+{pkgs, ...}: {
   fonts.fontconfig.enable = true;
   home.packages = with pkgs; [
     inter
@@ -18,7 +18,7 @@
       name = "Inter";
       size = 12;
     };
-    theme = { name = "Adwaita Dark"; };
-    iconTheme = { name = "Adwaita Dark"; };
+    theme = {name = "Adwaita Dark";};
+    iconTheme = {name = "Adwaita Dark";};
   };
 }

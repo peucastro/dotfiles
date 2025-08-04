@@ -10,43 +10,51 @@
     };
   };
 
-  outputs = { self, nixpkgs, home-manager, ... }@inputs:
-    let
-      system = "x86_64-linux";
-      pkgs = import nixpkgs {
-        inherit system;
-        config.allowUnfree = true;
+  outputs = {
+    self,
+    nixpkgs,
+    home-manager,
+    ...
+  } @ inputs: let
+    system = "x86_64-linux";
+    pkgs = import nixpkgs {
+      inherit system;
+      config.allowUnfree = true;
+    };
+
+    commonSystemArgs = {
+      initialPassword = "nixos";
+
+      user = {
+        login = "peu";
+        displayName = "pedro castro";
+        email = "falecompedroac@gmail.com";
+        groups = ["networkmanager" "wheel"];
       };
+    };
 
-      commonSystemArgs = {
-        initialPassword = "nixos";
-
-        user = {
-          login = "peu";
-          displayName = "pedro castro";
-          email = "falecompedroac@gmail.com";
-          groups = [ "networkmanager" "wheel" ];
-        };
-      };
-
-      mkSystem = extraSpecialArgs: nixpkgs.lib.nixosSystem {
+    mkSystem = extraSpecialArgs:
+      nixpkgs.lib.nixosSystem {
         inherit system;
-        specialArgs = commonSystemArgs // {
-          inherit self inputs;
-          host = extraSpecialArgs.hostname;
-        } // extraSpecialArgs;
+        specialArgs =
+          commonSystemArgs
+          // {
+            inherit self inputs;
+            host = extraSpecialArgs.hostname;
+          }
+          // extraSpecialArgs;
         modules = [
           ./hosts/${extraSpecialArgs.hostname}/configuration.nix
         ];
       };
-
-    in {
-      nixosConfigurations = {
-        ideapad = mkSystem {
-          hostname = "ideapad";
-        };
+  in {
+    formatter.${system} = pkgs.alejandra;
+    nixosConfigurations = {
+      ideapad = mkSystem {
+        hostname = "ideapad";
       };
-
-      meta.hosts = builtins.attrNames self.nixosConfigurations;
     };
+
+    meta.hosts = builtins.attrNames self.nixosConfigurations;
+  };
 }

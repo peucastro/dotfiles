@@ -24,7 +24,7 @@
       buffer_line_height = {
         custom = 1.5;
       };
-      edit_predictions_disabled_in = [ "comment" "string" ];
+      edit_predictions_disabled_in = ["comment" "string"];
       journal = {
         hour_format = "hour24";
       };
