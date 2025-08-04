@@ -8,5 +8,8 @@
       style-scheme = "builder-dark";
       wrap-text = false;
     };
+    "org/gnome/desktop/interface" = {
+      color-scheme = "prefer-dark";
+    };
   };
 }

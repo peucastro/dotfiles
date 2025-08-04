@@ -18,7 +18,10 @@
       name = "Inter";
       size = 12;
     };
-    theme = {name = "Adwaita Dark";};
-    iconTheme = {name = "Adwaita Dark";};
+    theme = {
+      name = "Adwaita-dark";
+      package = pkgs.gnome-themes-extra;
+    };
+    iconTheme = {name = "Adwaita";};
   };
 }
