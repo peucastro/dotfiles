@@ -14,7 +14,6 @@
     simple-scan
     gnome-console
     gnome-calculator
-    gnome-font-viewe
     gnome-music
     gnome-maps
     gnome-photos
