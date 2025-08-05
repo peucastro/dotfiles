@@ -22,6 +22,5 @@
     gnome-weather
     gnome-tour
     gnome-connections
-    # gnome-settings
   ];
 }

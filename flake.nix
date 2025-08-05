@@ -43,7 +43,7 @@
           // {
             inherit self inputs;
             host = extraSpecialArgs.hostname;
-            pkgs-unstable = import nixpkgs-unstable { inherit system; };
+            pkgs-unstable = import nixpkgs-unstable {inherit system;};
           }
           // extraSpecialArgs;
         modules = [

@@ -24,7 +24,6 @@
     # Office
     calibre
     libreoffice
-    texstudio
     obsidian
     qalculate-gtk
 

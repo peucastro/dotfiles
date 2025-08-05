@@ -16,7 +16,7 @@
     jnoortheen.nix-ide
   ];
 
-  defaultExtensionsUnstable = with pkgs-unstable.vscode-extensions; [ github.copilot-chat ];
+  defaultExtensionsUnstable = with pkgs-unstable.vscode-extensions; [github.copilot-chat];
 
   defaultUserSettings = {
     "editor.fontFamily" = "'JetBrains Mono'";

@@ -10,6 +10,8 @@
     ./locale.nix
     ./networking.nix
     ./nix.nix
+    ./printing.nix
+    ./rebuild.nix
     ./user.nix
   ];
 }
