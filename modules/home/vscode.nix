@@ -1,13 +1,13 @@
 {
   lib,
   pkgs,
+  pkgs-unstable,
   ...
 }: let
   defaultExtensions = with pkgs.vscode-extensions; [
     adpyke.codesnap
     usernamehw.errorlens
     github.copilot
-    github.copilot-chat
     eamodio.gitlens
     jdinhlife.gruvbox
     davidanson.vscode-markdownlint
@@ -15,6 +15,8 @@
     pkief.material-product-icons
     jnoortheen.nix-ide
   ];
+
+  defaultExtensionsUnstable = with pkgs-unstable.vscode-extensions; [ github.copilot-chat ];
 
   defaultUserSettings = {
     "editor.fontFamily" = "'JetBrains Mono'";
@@ -58,16 +60,17 @@
     "telemetry.telemetryLevel" = "off";
     "update.mode" = "manual";
     "window.zoomLevel" = 0.25;
+    "nix.formatterPath" = "alejandra";
   };
 
   mkProfile = extra: {
-    extensions = defaultExtensions ++ (extra.extensions or []);
+    extensions = defaultExtensions ++ defaultExtensionsUnstable ++ (extra.extensions or []);
     userSettings = lib.recursiveUpdate defaultUserSettings (extra.userSettings or {});
   };
 in {
   programs.vscode = {
     enable = true;
-    package = pkgs.vscode.fhs;
+    package = pkgs.vscode-fhs;
 
     profiles = {
       default = mkProfile {};
