@@ -33,6 +33,21 @@
         "AlphabeticalAppGrid@stuarthayhurst"
       ];
     };
+    "org/gnome/shell/extensions/alphabetical-app-grid" = {
+      folder-order-position = "start";
+    };
+    "org/gnome/shell/extensions/caffeine" = {
+      show-notifications = false;
+      toggle-shortcut = ["<Control><Super>c"];
+    };
+    "org/gnome/shell/extensions/dash-to-dock" = {
+      dash-max-icon-size = 36;
+      show-mounts-only-mounted = false;
+      show-mounts-network = true;
+    };
+    "org/gnome/shell/extensions/net/gfxmonk/impatience" = {
+      speed-factor = 0.25;
+    };
     "org/gnome/desktop/interface" = {
       color-scheme = "prefer-dark";
       show-battery-percentage = true;
