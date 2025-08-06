@@ -48,6 +48,9 @@
     "org/gnome/shell/extensions/net/gfxmonk/impatience" = {
       speed-factor = 0.25;
     };
+    "org/gnome/desktop/wm/preferences" = {
+      button-layout = "appmenu:minimize,maximize,close";
+    };
     "org/gnome/desktop/interface" = {
       color-scheme = "prefer-dark";
       show-battery-percentage = true;
@@ -68,6 +71,11 @@
     };
     "org/gnome/shell/app-switcher" = {
       current-workspace-only = true;
+    };
+    "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0" = {
+      binding = "<Control><Alt>t";
+      command = "ghostty";
+      name = "Open the terminal";
     };
     "org/gnome/settings-daemon/plugins/color" = {
       night-light-enabled = true;
