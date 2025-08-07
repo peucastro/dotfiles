@@ -14,6 +14,7 @@
     pkief.material-icon-theme
     pkief.material-product-icons
     jnoortheen.nix-ide
+    ms-vsliveshare.vsliveshare
   ];
 
   defaultExtensionsUnstable = with pkgs-unstable.vscode-extensions; [github.copilot-chat];
