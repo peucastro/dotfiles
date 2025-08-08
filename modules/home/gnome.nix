@@ -1,11 +1,13 @@
 {pkgs, ...}: {
-  home.packages = with pkgs; [
-    gnomeExtensions.dash-to-dock
-    gnomeExtensions.caffeine
-    gnomeExtensions.clipboard-indicator
-    gnomeExtensions.vitals
-    gnomeExtensions.impatience
-    gnomeExtensions.alphabetical-app-grid
+  home.packages = with pkgs.gnomeExtensions; [
+    dash-to-dock
+    caffeine
+    clipboard-indicator
+    vitals
+    impatience
+    alphabetical-app-grid
+    places-status-indicator
+    applications-menu
   ];
 
   dconf.settings = {
@@ -31,6 +33,8 @@
         "Vitals@CoreCoding.com"
         "impatience@gfxmonk.net"
         "AlphabeticalAppGrid@stuarthayhurst"
+        "places-status-indicator@gnome-shell-extensions.gcampax.github.com"
+        "apps-menu@gnome-shell-extensions.gcampax.github.com"
       ];
     };
     "org/gnome/shell/extensions/alphabetical-app-grid" = {
