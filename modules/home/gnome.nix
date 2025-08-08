@@ -33,7 +33,7 @@
         "Vitals@CoreCoding.com"
         "impatience@gfxmonk.net"
         "AlphabeticalAppGrid@stuarthayhurst"
-        "places-status-indicator@gnome-shell-extensions.gcampax.github.com"
+        "places-menu@gnome-shell-extensions.gcampax.github.com"
         "apps-menu@gnome-shell-extensions.gcampax.github.com"
       ];
     };
