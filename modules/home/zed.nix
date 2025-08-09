@@ -1,8 +1,21 @@
 {
   programs.zed-editor = {
     enable = true;
+    extensions = [
+      "astro"
+      "dart"
+      "dockerfile"
+      "latex"
+      "make"
+      "markdownlint"
+      "material-icon-theme"
+      "nix"
+      "php"
+      "sql"
+      "svelte"
+    ];
     userSettings = {
-      theme = "Gruvbox Dark";
+      theme = "Gruvbox Dark Hard";
       icon_theme = "Material Icon Theme";
       assistant = {
         default_model = {
@@ -19,7 +32,7 @@
       };
       current_line_highlight = "gutter";
       base_keymap = "VSCode";
-      buffer_font_family = "JetBrains Mono";
+      buffer_font_family = "JetBrainsMono Nerd Font Mono";
       buffer_font_size = 16;
       buffer_line_height = {
         custom = 1.5;
