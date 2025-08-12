@@ -29,7 +29,7 @@
 
       user = {
         login = "peu";
-        displayName = "pedro castro";
+        displayName = "Pedro Castro";
         email = "falecompedroac@gmail.com";
         groups = ["networkmanager" "wheel"];
       };
