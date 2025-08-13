@@ -8,7 +8,6 @@
     adpyke.codesnap
     usernamehw.errorlens
     github.copilot
-    eamodio.gitlens
     jdinhlife.gruvbox
     davidanson.vscode-markdownlint
     pkief.material-icon-theme
@@ -105,6 +104,7 @@ in {
           "latex-workshop.formatting.latex" = "tex-fmt";
           "latex-workshop.latex.autoClean.run" = "onBuilt";
           "latex-workshop.latex.build.rootfileInStatus" = true;
+          "latex-workshop.latex.build.forceRecipeUsage" = false;
           "[latex]" = {"editor.defaultFormatter" = "James-Yu.latex-workshop";};
         };
       };
@@ -121,6 +121,7 @@ in {
         ];
         userSettings = {
           "editor.defaultFormatter" = "esbenp.prettier-vscode";
+          "svelte.enable-ts-plugin" = true;
           "[astro]" = {"editor.defaultFormatter" = "esbenp.prettier-vscode";};
           "[php]" = {"editor.defaultFormatter" = "bmewburn.vscode-intelephense-client";};
         };
