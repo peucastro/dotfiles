@@ -13,6 +13,12 @@
       core.excludesFile = "/home/${user.login}/.config/git/.gitignore";
     };
 
+    signing = {
+      format = "ssh";
+      key = "/home/${user.login}/.ssh/id_ed25519.pub";
+      signByDefault = true;
+    };
+
     delta = {
       enable = true;
       options = {
