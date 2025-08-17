@@ -4,5 +4,6 @@
   nix.gc = {
     automatic = true;
     dates = "weekly";
+    options = "-d";
   };
 }
