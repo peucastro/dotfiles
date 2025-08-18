@@ -56,35 +56,31 @@
           installation_mode = "force_installed";
           install_url = "https://addons.mozilla.org/firefox/downloads/latest/ublock-origin/latest.xpi";
         };
-        "bitwarden-password-manager@mozilla" = {
+        "{446900e4-71c2-419f-a6a7-df9c091e268b}" = {
           installation_mode = "force_installed";
           install_url = "https://addons.mozilla.org/firefox/downloads/latest/bitwarden-password-manager/latest.xpi";
         };
-        "languagetool@languagetool.org" = {
+        "languagetool-webextension@languagetool.org" = {
           installation_mode = "force_installed";
           install_url = "https://addons.mozilla.org/firefox/downloads/latest/languagetool/latest.xpi";
         };
-        "authenticator@gsuite" = {
-          installation_mode = "force_installed";
-          install_url = "https://addons.mozilla.org/firefox/downloads/latest/authenticator/latest.xpi";
-        };
-        "clearurls@absolut.k" = {
+        "{74145f27-f039-47ce-a470-a662b129930a}" = {
           installation_mode = "force_installed";
           install_url = "https://addons.mozilla.org/firefox/downloads/latest/clearurls/latest.xpi";
         };
-        "tampermonkey@tampermonkey.net" = {
+        "firefox@tampermonkey.net" = {
           installation_mode = "force_installed";
           install_url = "https://addons.mozilla.org/firefox/downloads/latest/tampermonkey/latest.xpi";
         };
-        "auto-tab-discard@mik-stu" = {
+        "{c2c003ee-bd69-42a2-b0e9-6f34222cb046}" = {
           installation_mode = "force_installed";
           install_url = "https://addons.mozilla.org/firefox/downloads/latest/auto-tab-discard/latest.xpi";
         };
-        "skip-redirect@bogachenko" = {
+        "skipredirect@sblask" = {
           installation_mode = "force_installed";
           install_url = "https://addons.mozilla.org/firefox/downloads/latest/skip-redirect/latest.xpi";
         };
-        "gnome-shell-integration@gnome" = {
+        "chrome-gnome-shell@gnome.org" = {
           installation_mode = "force_installed";
           install_url = "https://addons.mozilla.org/firefox/downloads/latest/gnome-shell-integration/latest.xpi";
         };
