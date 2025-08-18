@@ -15,6 +15,7 @@
     ./tmux.nix
     ./vscode.nix
     ./zed.nix
+    ./zen-browser.nix
     ./zsh.nix
   ];
 }
