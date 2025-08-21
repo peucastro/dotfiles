@@ -1,4 +1,4 @@
-{
+{inputs, ...}: {
   nix.settings.experimental-features = ["nix-command" "flakes"];
 
   nix.gc = {
@@ -6,4 +6,6 @@
     dates = "weekly";
     options = "-d";
   };
+
+  nix.nixPath = ["nixpkgs=${inputs.nixpkgs}"];
 }

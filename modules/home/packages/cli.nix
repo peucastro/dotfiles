@@ -48,6 +48,7 @@
     act
     android-tools
     lazydocker
+    nixd
 
     # Security
     bitwarden

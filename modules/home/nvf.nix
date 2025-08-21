@@ -34,7 +34,6 @@
 
         # Languages
         languages = {
-          enableLSP = true;
           enableFormat = true;
           enableTreesitter = true;
           enableExtraDiagnostics = true;
@@ -58,7 +57,10 @@
           kotlin.enable = true;
           lua.enable = true;
           markdown.enable = true;
-          nix.enable = true;
+          nix = {
+            enable = true;
+            lsp.package = pkgs.nixd;
+          };
           php.enable = true;
           python.enable = true;
           rust.enable = true;
