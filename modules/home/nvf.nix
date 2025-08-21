@@ -34,31 +34,47 @@
 
         # Languages
         languages = {
+          enableLSP = true;
           enableFormat = true;
           enableTreesitter = true;
           enableExtraDiagnostics = true;
 
-          nix.enable = true;
-          html.enable = true;
-          ts = {
+          assembly.enable = true;
+          astro = {
             enable = true;
-            lsp.enable = true;
             format.type = "prettierd";
-            extensions.ts-error-translator.enable = true;
           };
+          bash.enable = true;
+          clang.enable = true;
           css = {
             enable = true;
             format.type = "prettierd";
           };
-          python.enable = true;
-          bash.enable = true;
+          dart.enable = true;
+          go.enable = true;
+          haskell.enable = true;
+          html.enable = true;
+          java.enable = true;
+          kotlin.enable = true;
           lua.enable = true;
           markdown.enable = true;
-          yaml.enable = true;
+          nix.enable = true;
+          php.enable = true;
+          python.enable = true;
           rust.enable = true;
-          go.enable = true;
-          java.enable = true;
-          clang.enable = true;
+          scala.enable = true;
+          sql.enable = true;
+          svelte = {
+            enable = true;
+            format.package = pkgs.prettierd;
+          };
+          tailwind.enable = true;
+          ts = {
+            enable = true;
+            format.type = "prettierd";
+            extensions.ts-error-translator.enable = true;
+          };
+          yaml.enable = true;
         };
 
         # Autocomplete
