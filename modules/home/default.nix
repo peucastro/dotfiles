@@ -10,7 +10,7 @@
     ./gnome.nix
     ./gtk.nix
     ./lazygit.nix
-    ./nvim.nix
+    ./nvf.nix
     ./ssh.nix
     ./tmux.nix
     ./vscode.nix

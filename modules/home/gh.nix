@@ -4,7 +4,7 @@
     settings = {
       version = 1;
       git_protocol = "ssh";
-      editor = "nvim";
+      editor = "vim";
       prompt = "enabled";
       prefer_editor_prompt = "disabled";
       pager = "less -FR";

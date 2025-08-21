@@ -48,7 +48,6 @@
     act
     android-tools
     lazydocker
-    vim
 
     # Security
     bitwarden

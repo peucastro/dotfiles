@@ -1,6 +1,6 @@
 {
   environment.sessionVariables = rec {
     TERMINAL = "ghostty";
-    EDITOR = "nvim";
+    EDITOR = "vim";
   };
 }

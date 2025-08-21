@@ -91,7 +91,7 @@
       NoDefaultBookmarks = true;
       DisablePocket = true;
 
-      # Bookmarkss
+      # Bookmarks
       ManagedBookmarks = [
         {URL = "https://web.whatsapp.com";}
         {URL = "https://messages.google.com/web/conversations";}

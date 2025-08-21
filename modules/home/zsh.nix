@@ -17,9 +17,9 @@
       ];
     };
     shellAliases = {
-      zshconfig = "nvim ~/.zshrc";
-      ohmyzsh = "nvim ~/.oh-my-zsh";
-      dotconfig = "code ~/dotfiles";
+      zshconfig = "vim ~/.zshrc";
+      ohmyzsh = "vim ~/.oh-my-zsh";
+      dotconfig = "cd ~dotfiles && code ~/dotfiles";
     };
   };
 }
