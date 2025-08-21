@@ -51,8 +51,6 @@
     "extensions.autoUpdate" = false;
     "extensions.ignoreRecommendations" = true;
     "github.copilot.enable" = {"*" = false;};
-    "gitlens.launchpad.indicator.enabled" = false;
-    "gitlens.telemetry.enabled" = false;
     "git.autofetch" = true;
     "git.blame.statusBarItem.enabled" = false;
     "git.openRepositoryInParentFolders" = "always";
@@ -62,6 +60,13 @@
     "window.zoomLevel" = 0.25;
     "nix.enableLanguageServer" = true;
     "nix.serverPath" = "nixd";
+    "nix.serverSettings" = {
+      "nixd" = {
+        "formatting" = {
+          "command" = ["alejandra"];
+        };
+      };
+    };
     "nix.formatterPath" = "alejandra";
   };
 
