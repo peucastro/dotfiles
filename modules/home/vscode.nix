@@ -60,6 +60,8 @@
     "telemetry.telemetryLevel" = "off";
     "update.mode" = "manual";
     "window.zoomLevel" = 0.25;
+    "nix.enableLanguageServer" = true;
+    "nix.serverPath" = "nixd";
     "nix.formatterPath" = "alejandra";
   };
 

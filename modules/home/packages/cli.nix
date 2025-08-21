@@ -46,6 +46,7 @@
 
     # Development
     act
+    alejandra
     android-tools
     lazydocker
     nixd
