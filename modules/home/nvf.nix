@@ -10,6 +10,7 @@
         withNodeJs = true;
         withPython3 = true;
         enableLuaLoader = true;
+        searchCase = "smart";
         options = {
           tabstop = 4;
           shiftwidth = 2;
@@ -30,6 +31,7 @@
           lspkind.enable = true;
           trouble.enable = true;
           lspSignature.enable = true;
+          inlayHints.enable = true;
         };
 
         # Languages
@@ -41,13 +43,13 @@
           assembly.enable = true;
           astro = {
             enable = true;
-            format.type = "prettierd";
+            format.package = pkgs.prettierd;
           };
           bash.enable = true;
           clang.enable = true;
           css = {
             enable = true;
-            format.type = "prettierd";
+            format.package = pkgs.prettierd;
           };
           dart.enable = true;
           go.enable = true;
@@ -73,7 +75,7 @@
           tailwind.enable = true;
           ts = {
             enable = true;
-            format.type = "prettierd";
+            format.package = pkgs.prettierd;
             extensions.ts-error-translator.enable = true;
           };
           yaml.enable = true;
@@ -88,6 +90,10 @@
               path = "[Path]";
               buffer = "[Buffer]";
               luasnip = "[LuaSnip]";
+              nvim_lua = "[Lua]";
+              treesitter = "[Treesitter]";
+              calc = "[Calc]";
+              emoji = "[Emoji]";
             };
           };
         };
@@ -122,7 +128,19 @@
         # Git integration
         git = {
           enable = true;
-          gitsigns.enable = true;
+          gitsigns = {
+            enable = true;
+            setupOpts = {
+              numhl = true;
+              linehl = false;
+              current_line_blame = true;
+            };
+            mappings = {
+              toggleBlame = "<leader>gb";
+              toggleDeleted = "<leader>gd";
+            };
+          };
+          neogit.enable = true;
         };
 
         # Treesitter
@@ -141,7 +159,6 @@
           fidget-nvim.enable = true;
           highlight-undo.enable = true;
           rainbow-delimiters.enable = true;
-
           indent-blankline = {
             enable = true;
             setupOpts.scope.enabled = true;
@@ -151,11 +168,93 @@
         # Autopairs
         autopairs.nvim-autopairs.enable = true;
 
-        # Key bindings
+        # Keybindings
         binds = {
-          whichKey.enable = true;
+          whichKey = {
+            enable = true;
+            register = {
+              "<leader>b" = "Buffers";
+              "<leader>c" = "Git conflicts";
+              "<leader>f" = "Find/Files";
+              "<leader>g" = "Git";
+              "<leader>l" = "LSP";
+              "<leader>t" = "Terminal";
+              "<leader>w" = "Windows";
+            };
+          };
           cheatsheet.enable = true;
         };
+
+        keymaps = [
+          # Window navigation
+          {
+            mode = "n";
+            key = "<leader>wv";
+            action = ":vsplit<CR>";
+          }
+          {
+            mode = "n";
+            key = "<leader>ws";
+            action = ":split<CR>";
+          }
+          {
+            mode = "n";
+            key = "<leader>wq";
+            action = ":q<CR>";
+          }
+          {
+            mode = "n";
+            key = "<leader>wh";
+            action = "<C-w>h";
+          }
+          {
+            mode = "n";
+            key = "<leader>wj";
+            action = "<C-w>j";
+          }
+          {
+            mode = "n";
+            key = "<leader>wk";
+            action = "<C-w>k";
+          }
+          {
+            mode = "n";
+            key = "<leader>wl";
+            action = "<C-w>l";
+          }
+
+          # Terminal actions
+          {
+            mode = "n";
+            key = "<C-t>";
+            action = ":ToggleTerm<CR>";
+          }
+          {
+            mode = "n";
+            key = "<leader>lg";
+            action = ":ToggleTerm lazygit<CR>";
+          }
+          {
+            mode = "n";
+            key = "<leader>tt";
+            action = ":ToggleTerm direction=tab<CR>";
+          }
+          {
+            mode = "n";
+            key = "<leader>tf";
+            action = ":ToggleTerm direction=float<CR>";
+          }
+          {
+            mode = "n";
+            key = "<leader>tv";
+            action = ":ToggleTerm direction=vertical<CR>";
+          }
+          {
+            mode = "n";
+            key = "<leader>th";
+            action = ":ToggleTerm direction=horizontal<CR>";
+          }
+        ];
 
         # Terminal
         terminal.toggleterm = {
@@ -193,8 +292,11 @@
         # Notifications
         notify.nvim-notify.enable = true;
 
-        # Dashboard
-        dashboard.dashboard-nvim.enable = true;
+        # Project management
+        projects.project-nvim = {
+          enable = true;
+          setupOpts.detection_methods = ["lsp" "pattern"];
+        };
       };
     };
   };
