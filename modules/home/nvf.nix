@@ -178,7 +178,6 @@
               "<leader>f" = "Find/Files";
               "<leader>g" = "Git";
               "<leader>l" = "LSP";
-              "<leader>t" = "Terminal";
               "<leader>w" = "Windows";
             };
           };
@@ -222,45 +221,7 @@
             key = "<leader>wl";
             action = "<C-w>l";
           }
-
-          # Terminal actions
-          {
-            mode = "n";
-            key = "<C-t>";
-            action = ":ToggleTerm<CR>";
-          }
-          {
-            mode = "n";
-            key = "<leader>lg";
-            action = ":ToggleTerm lazygit<CR>";
-          }
-          {
-            mode = "n";
-            key = "<leader>tt";
-            action = ":ToggleTerm direction=tab<CR>";
-          }
-          {
-            mode = "n";
-            key = "<leader>tf";
-            action = ":ToggleTerm direction=float<CR>";
-          }
-          {
-            mode = "n";
-            key = "<leader>tv";
-            action = ":ToggleTerm direction=vertical<CR>";
-          }
-          {
-            mode = "n";
-            key = "<leader>th";
-            action = ":ToggleTerm direction=horizontal<CR>";
-          }
         ];
-
-        # Terminal
-        terminal.toggleterm = {
-          enable = true;
-          lazygit.enable = true;
-        };
 
         # Utility
         utility = {
