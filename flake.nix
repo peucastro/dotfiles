@@ -30,14 +30,18 @@
     ...
   } @ inputs: let
     system = "x86_64-linux";
+
     pkgs = import nixpkgs {
+      inherit system;
+      config.allowUnfree = true;
+    };
+    pkgs-unstable = import nixpkgs-unstable {
       inherit system;
       config.allowUnfree = true;
     };
 
     commonSystemArgs = {
       initialPassword = "nixos";
-
       user = {
         login = "peu";
         displayName = "Pedro Castro";
@@ -52,9 +56,8 @@
         specialArgs =
           commonSystemArgs
           // {
-            inherit self inputs;
+            inherit self inputs pkgs pkgs-unstable;
             host = extraSpecialArgs.hostname;
-            pkgs-unstable = import nixpkgs-unstable {inherit system;};
           }
           // extraSpecialArgs;
         modules = [
