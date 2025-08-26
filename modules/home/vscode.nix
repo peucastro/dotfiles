@@ -14,6 +14,7 @@
     pkief.material-product-icons
     jnoortheen.nix-ide
     ms-vsliveshare.vsliveshare
+    vscodevim.vim
   ];
 
   defaultExtensionsUnstable = with pkgs-unstable.vscode-extensions; [github.copilot-chat];
@@ -29,6 +30,7 @@
     "editor.formatOnSave" = true;
     "editor.formatOnType" = true;
     "editor.guides.bracketPairs" = true;
+    "editor.lineNumbers" = "relative";
     "editor.linkedEditing" = true;
     "editor.minimap.enabled" = false;
     "editor.renderLineHighlight" = "gutter";
@@ -68,6 +70,52 @@
       };
     };
     "nix.formatterPath" = "alejandra";
+    "vim.easymotion" = true;
+    "vim.useSystemClipboard" = true;
+    "vim.hlsearch" = true;
+    "vim.insertModeKeyBindings" = [
+      {
+        "before" = ["j" "j"];
+        "after" = ["<Esc>"];
+      }
+    ];
+    "vim.normalModeKeyBindingsNonRecursive" = [
+      {
+        "before" = ["<leader>" "w"];
+        "commands" = ["workbench.action.files.save"];
+      }
+      {
+        "before" = ["<C-n>"];
+        "commands" = ["workbench.action.toggleSidebarVisibility"];
+      }
+      {
+        "before" = ["<leader>" "f"];
+        "commands" = ["workbench.action.quickOpen"];
+      }
+      {
+        "before" = ["<leader>" "q"];
+        "commands" = ["workbench.action.closeActiveEditor"];
+      }
+    ];
+    "vim.visualModeKeyBindingsNonRecursive" = [
+      {
+        "before" = [">"];
+        "after" = [">" "g" "v"];
+      }
+      {
+        "before" = ["<"];
+        "after" = ["<" "g" "v"];
+      }
+    ];
+    "vim.leader" = "<space>";
+    "vim.handleKeys" = {
+      "<C-a>" = false;
+      "<C-f>" = false;
+      "<C-c>" = false;
+      "<C-v>" = false;
+      "<C-x>" = false;
+      "<C-z>" = false;
+    };
   };
 
   mkProfile = extra: {
