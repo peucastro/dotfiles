@@ -67,8 +67,8 @@
   in {
     formatter.${system} = pkgs.alejandra;
     nixosConfigurations = {
-      ideapad = mkSystem {
-        hostname = "ideapad";
+      yoga = mkSystem {
+        hostname = "yoga";
       };
     };
 
