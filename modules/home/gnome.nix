@@ -52,6 +52,12 @@
     "org/gnome/shell/extensions/net/gfxmonk/impatience" = {
       speed-factor = 0.25;
     };
+    "org/gnome/mutter" = {
+      experimental-features = [
+        "scale-monitor-framebuffer"
+        "xwayland-native-scaling"
+      ];
+    };
     "org/gnome/desktop/wm/preferences" = {
       button-layout = "appmenu:minimize,maximize,close";
     };
