@@ -27,24 +27,15 @@
           dwt = "enabled";
         };
       };
-
-      startup = [
-        {command = "waybar";}
-        {command = "swaynotificationcenter";}
-      ];
     };
   };
 
   home.packages = with pkgs; [
-    fuzzel
     wl-clipboard
-    swaynotificationcenter
-    waybar
     grim
     slurp
     brightnessctl
     wlsunset
-    swaybg
     libsForQt5.qt5ct
   ];
 }

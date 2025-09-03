@@ -16,5 +16,6 @@
     ./services.nix
     ./snapper.nix
     ./user.nix
+    ./xdg.nix
   ];
 }
