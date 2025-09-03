@@ -7,11 +7,11 @@
     ./gh.nix
     ./ghostty.nix
     ./git.nix
-    ./gnome.nix
     ./gtk.nix
     ./lazygit.nix
     ./nvf.nix
     ./ssh.nix
+    ./sway.nix
     ./tmux.nix
     ./vscode.nix
     ./zed.nix

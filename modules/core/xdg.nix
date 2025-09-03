@@ -15,4 +15,11 @@
       "video/x-matroska" = "vlc.desktop";
     };
   };
+
+  environment.sessionVariables = {
+    XDG_CURRENT_DESKTOP = "sway";
+    XDG_SESSION_TYPE = "wayland";
+    MOZ_ENABLE_WAYLAND = "1";
+    NIXOS_OZONE_WL = "1";
+  };
 }

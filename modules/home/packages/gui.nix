@@ -28,7 +28,6 @@
     qalculate-gtk
 
     # Utility
-    dconf-editor
     gnome-disk-utility
     gitkraken
     hoppscotch

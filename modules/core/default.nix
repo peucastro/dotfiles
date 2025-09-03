@@ -3,7 +3,6 @@
     ./audio.nix
     ./bluetooth.nix
     ./bootloader.nix
-    ./desktop.nix
     ./env.nix
     ./home-manager.nix
     ./keyboard.nix
@@ -12,6 +11,8 @@
     ./nix.nix
     ./printing.nix
     ./rebuild.nix
+    ./security.nix
+    ./services.nix
     ./snapper.nix
     ./user.nix
   ];

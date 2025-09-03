@@ -17,7 +17,6 @@
     playerctl
     unzip
     wget
-    wl-clipboard
     tree
     zip
 
