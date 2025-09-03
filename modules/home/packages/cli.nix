@@ -21,6 +21,10 @@
     tree
     zip
 
+    # Backups
+    btrfs-progs
+    snapper
+
     # Tools
     bitwise
     broot

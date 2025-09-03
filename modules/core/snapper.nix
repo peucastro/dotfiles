@@ -1,6 +1,5 @@
 {
   services.snapper = {
-    enable = true;
     configs.home = {
       SUBVOLUME = "/home";
       TIMELINE_LIMIT_DAILY = 7;

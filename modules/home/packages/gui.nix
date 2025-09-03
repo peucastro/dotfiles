@@ -35,6 +35,7 @@
     qbittorrent
     mission-center
     postman
+    snapper-gui
 
     # Editors
     android-studio
