@@ -1,4 +1,9 @@
-{pkgs, ...}: let
+{
+  pkgs,
+  lib,
+  config,
+  ...
+}: let
   colors = (import ./colors.nix).colors;
 in {
   wayland.windowManager.sway = {
@@ -59,6 +64,24 @@ in {
           accel_profile = "flat";
         };
       };
+
+      keybindings = let
+        modifier = config.wayland.windowManager.sway.config.modifier;
+      in
+        lib.mkOptionDefault {
+          # Screenshots
+          "Print" = "exec grim -g \"$(slurp)\" - | wl-copy";
+          "${modifier}+Print" = "exec grim - | wl-copy";
+
+          # SwayOSD controls
+          "XF86AudioRaiseVolume" = "exec swayosd-client --output-volume raise";
+          "XF86AudioLowerVolume" = "exec swayosd-client --output-volume lower";
+          "XF86AudioMute" = "exec swayosd-client --output-volume mute-toggle";
+          "XF86AudioMicMute" = "exec swayosd-client --input-volume mute-toggle";
+          "XF86MonBrightnessUp" = "exec swayosd-client --brightness raise";
+          "XF86MonBrightnessDown" = "exec swayosd-client --brightness lower";
+          "--release Caps_Lock" = "exec swayosd-client --caps-lock";
+        };
     };
   };
 
@@ -66,8 +89,6 @@ in {
     wl-clipboard
     grim
     slurp
-    brightnessctl
-    wlsunset
     libsForQt5.qt5ct
   ];
 }

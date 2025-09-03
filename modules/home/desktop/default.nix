@@ -5,5 +5,7 @@
     ./qt.nix
     ./sway.nix
     ./swaync.nix
+    ./swayosd.nix
+    ./wlsunset.nix
   ];
 }
