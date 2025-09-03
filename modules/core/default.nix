@@ -5,6 +5,7 @@
     ./bootloader.nix
     ./env.nix
     ./greeter.nix
+    ./gtklock.nix
     ./home-manager.nix
     ./keyboard.nix
     ./locale.nix
