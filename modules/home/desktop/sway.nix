@@ -1,11 +1,14 @@
-{pkgs, ...}: {
+{pkgs, ...}: let
+  colors = (import ./colors.nix).colors;
+in {
   wayland.windowManager.sway = {
     enable = true;
     wrapperFeatures.gtk = true;
+
     config = {
+      modifier = "Mod4";
       terminal = "ghostty";
       menu = "fuzzel";
-      modifier = "Mod4";
 
       gaps = {
         inner = 8;
@@ -19,12 +22,41 @@
         hideEdgeBorders = "smart";
       };
 
+      colors = {
+        background = colors.background;
+
+        focused = {
+          border = colors.focused;
+          background = colors.background-dim;
+          text = colors.foreground;
+          indicator = colors.blue;
+          childBorder = colors.focused;
+        };
+
+        unfocused = {
+          border = colors.unfocused;
+          background = colors.background;
+          text = colors.foreground-alt;
+          indicator = colors.gray;
+          childBorder = colors.unfocused;
+        };
+
+        urgent = {
+          border = colors.urgent;
+          background = colors.background;
+          text = colors.foreground;
+          indicator = colors.red;
+          childBorder = colors.urgent;
+        };
+      };
+
       input = {
         "*" = {
           xkb_layout = "pt";
           natural_scroll = "enabled";
           tap = "enabled";
           dwt = "enabled";
+          accel_profile = "flat";
         };
       };
     };
