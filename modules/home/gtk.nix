@@ -1,6 +1,7 @@
 {pkgs, ...}: {
   fonts.fontconfig.enable = true;
   home.packages = with pkgs; [
+    dconf
     inter
     noto-fonts-emoji
     twemoji-color-font
@@ -17,11 +18,20 @@
     font = {
       name = "Inter";
       size = 12;
+      package = pkgs.inter;
     };
     theme = {
       name = "Adwaita-dark";
       package = pkgs.gnome-themes-extra;
     };
     iconTheme = {name = "Adwaita";};
+    gtk3.extraConfig = {
+      gtk-application-prefer-dark-theme = true;
+      gtk-button-images = true;
+      gtk-menu-images = true;
+    };
+    gtk4.extraConfig = {
+      gtk-application-prefer-dark-theme = true;
+    };
   };
 }

@@ -10,6 +10,7 @@
     ./gtk.nix
     ./lazygit.nix
     ./nvf.nix
+    ./qt.nix
     ./ssh.nix
     ./sway.nix
     ./tmux.nix
