@@ -12,6 +12,7 @@
     ./nix.nix
     ./printing.nix
     ./rebuild.nix
+    ./snapper.nix
     ./user.nix
   ];
 }
