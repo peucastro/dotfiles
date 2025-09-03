@@ -4,6 +4,7 @@
     ./bluetooth.nix
     ./bootloader.nix
     ./env.nix
+    ./greeter.nix
     ./home-manager.nix
     ./keyboard.nix
     ./locale.nix
