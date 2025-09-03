@@ -5,6 +5,5 @@
     ./qt.nix
     ./sway.nix
     ./swaync.nix
-    ./waybar.nix
   ];
 }
