@@ -1,6 +1,7 @@
 {pkgs, ...}: {
   services.cliphist = {
     enable = true;
+    allowImages = false;
     extraOptions = [
       "-max-dedupe-search"
       "50"

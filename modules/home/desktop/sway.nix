@@ -77,6 +77,7 @@ in {
           "${modifier}+q" = "kill";
           "${modifier}+m" = "exec ${fileManager}";
           "${modifier}+d" = "exec ${menu}";
+          "Control+Alt+Delete" = "exec wlogout";
 
           # Power
           "${modifier}+Shift+x" = "exec loginctl lock-session";

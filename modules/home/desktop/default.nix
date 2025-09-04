@@ -1,5 +1,6 @@
 {
   imports = [
+    ./cliphist.nix
     ./fuzzel.nix
     ./gtk.nix
     ./qt.nix
@@ -7,6 +8,7 @@
     ./swayidle.nix
     ./swaync.nix
     ./swayosd.nix
+    ./wlogout.nix
     ./wlsunset.nix
     ./wpaperd.nix
   ];
