@@ -4,6 +4,7 @@
     ./fuzzel.nix
     ./gtk.nix
     ./qt.nix
+    ./shikane.nix
     ./sway.nix
     ./swayidle.nix
     ./swaync.nix

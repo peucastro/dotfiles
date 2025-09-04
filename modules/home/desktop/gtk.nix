@@ -58,8 +58,6 @@
   home.sessionVariables = {
     GTK_THEME = "Adwaita-dark";
     GDK_BACKEND = "wayland";
-    GDK_SCALE = "1";
-    GDK_DPI_SCALE = "1.2";
     CLUTTER_BACKEND = "wayland";
   };
 }
