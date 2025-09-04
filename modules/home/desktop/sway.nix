@@ -198,6 +198,15 @@ in {
     size = 24;
   };
 
+  home.sessionVariables = {
+    XDG_CURRENT_DESKTOP = "sway";
+    XDG_SESSION_TYPE = "wayland";
+    XDG_SESSION_DESKTOP = "sway";
+    MOZ_ENABLE_WAYLAND = "1";
+    NIXOS_OZONE_WL = "1";
+    _JAVA_AWT_WM_NONREPARENTING = "1";
+  };
+
   home.packages = with pkgs; [
     evince
     gnome-text-editor
