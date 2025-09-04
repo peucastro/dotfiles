@@ -3,6 +3,7 @@ let
 in {
   programs.waybar = {
     enable = true;
+    systemd.enable = true;
     settings.mainBar = {
       layer = "top";
       position = "top";
@@ -20,7 +21,6 @@ in {
         "power-profiles-daemon"
         "network"
         "wireplumber"
-        "bluetooth"
       ];
 
       "sway/workspaces" = {
@@ -82,7 +82,7 @@ in {
       };
       "cpu" = {
         interval = 2;
-        format = " {usage}%";
+        format = "  {usage}%";
         states = {
           warning = 55;
           critical = 80;
@@ -91,7 +91,7 @@ in {
       };
       "memory" = {
         interval = 5;
-        format = " {used:0.1f}G/{total:0.1f}G";
+        format = "  {used:0.1f}G / {total:0.1f}G";
         states = {
           warning = 65;
           critical = 85;
@@ -125,15 +125,15 @@ in {
       };
       "network" = {
         format = "{ifname}";
-        format-wifi = " {bandwidthDownBytes}";
-        format-ethernet = " {bandwidthDownBytes}";
+        format-wifi = "  {bandwidthDownBytes}";
+        format-ethernet = "  {bandwidthDownBytes}";
         format-disconnected = "";
         format-disabled = "";
       };
       "wireplumber" = {
-        format = "{icon} {volume}%";
+        format = "{icon}  {volume}%";
         format-muted = "";
-        format-source = "󰍬 {volume}%";
+        format-source = "󰍬  {volume}%";
         format-source-muted = "󰍭";
         format-icons = {
           default = ["" "" ""];
@@ -145,80 +145,132 @@ in {
         tooltip = true;
         tooltip-format = "{node_name}";
       };
-      "bluetooth" = {
-        format = " {status}";
-        format-disabled = "";
-        format-off = "";
-        format-on = "";
-        format-connected = " {num_connections}";
-        format-no-controller = "";
-        tooltip = true;
-        tooltip-format = "{controller_alias}\t{controller_address}";
-        tooltip-format-connected = "{controller_alias}\t{controller_address}\n\n{device_enumerate}";
-        tooltip-format-enumerate-connected = "{device_alias}\t{device_address}";
-        on-click = "blueman-manager";
-      };
     };
     style = ''
       * {
         border: none;
-        border-radius: 0;
-        font-family: Inter, "Font Awesome 6 Free";
-        font-size: 12px;
         min-height: 0;
+        font-family: Inter, "Font Awesome 6 Free";
+        font-weight: 500;
+        font-size: 14px;
+        padding: 0;
+        margin: 0;
       }
 
       window#waybar {
-        background: ${colors.background};
-        color: ${colors.foreground};
+        background: ${colors.background-alt};
+        border: 2px solid ${colors.background-dim};
+      }
+
+      tooltip {
+        background-color: ${colors.background-dim};
+        border: 2px solid ${colors.unfocused};
+        color: ${colors.foreground-alt};
+      }
+
+      #window,
+      #clock,
+      #tray,
+      #cpu,
+      #memory,
+      #temperature,
+      #battery,
+      #power-profiles-daemon,
+      #network,
+      #wireplumber,
+      #idle_inhibitor,
+      #language {
+        margin: 6px 6px 6px 0px;
+        padding: 2px 8px;
+      }
+
+      #workspaces,
+      #window {
+        background-color: ${colors.background-dim};
+        margin: 6px 0px 6px 6px;
+        border: 2px solid ${colors.unfocused};
       }
 
       #workspaces button {
-        padding: 0 5px;
+        all: initial;
+        box-shadow: inset 0 -3px transparent;
+        padding: 4px;
+        color: ${colors.focused};
         background: transparent;
-        color: ${colors.foreground-alt};
-        border-bottom: 2px solid transparent;
-      }
-
-      #workspaces button:hover {
-        background: ${colors.background-alt};
-        border-bottom-color: ${colors.focused};
+        border: none;
       }
 
       #workspaces button.focused {
-        background: ${colors.focused};
-        color: ${colors.background};
-        border-bottom-color: ${colors.focused};
+        background-color: ${colors.selection};
+        color: ${colors.background-alt};
+        border: 2px solid ${colors.focused};
       }
 
       #workspaces button.urgent {
-        background: ${colors.urgent};
-        color: ${colors.background};
-        border-bottom-color: ${colors.urgent};
+        background-color: ${colors.orange};
+        color: ${colors.background-alt};
+        border: 2px solid ${colors.urgent};
       }
 
-      #clock, #cpu, #memory, #temperature, #battery, #power-profiles-daemon, #network, #wireplumber, #bluetooth, #tray, #idle_inhibitor, #language {
-        padding: 0 8px;
-        margin: 0 2px;
-        background: transparent;
-        color: ${colors.foreground-alt};
+      window#waybar.empty #window {
+        background-color: transparent;
+        border-style: none;
       }
 
-      #clock:hover, #cpu:hover, #memory:hover, #temperature:hover, #battery:hover, #power-profiles-daemon:hover, #network:hover, #wireplumber:hover, #bluetooth:hover, #tray:hover, #idle_inhibitor:hover, #language:hover {
-        background: ${colors.background-alt};
-        color: ${colors.foreground};
+      #clock {
+        background-color: ${colors.background-dim};
+        border: 2px solid ${colors.unfocused};
       }
 
-      #cpu.warning, #memory.warning, #temperature.warning, #battery.warning {
-        color: ${colors.yellow};
+      #tray {
+        background-color: ${colors.foreground-dim};
+        border: 2px solid ${colors.focused};
+        color: ${colors.background-alt};
       }
 
-      #cpu.critical, #memory.critical, #temperature.critical, #battery.critical {
-        color: ${colors.red};
+      #battery {
+        background-color: ${colors.green};
+        border: 2px solid ${colors.focused};
+        color: ${colors.background-alt};
+      }
+
+      #cpu,
+      #memory,
+      #temperature,
+      #power-profiles-daemon,
+      #network,
+      #wireplumber,
+      #idle_inhibitor,
+      #language {
+        background-color: ${colors.selection};
+        border: 2px solid ${colors.focused};
+        color: ${colors.background-alt};
+      }
+
+      #cpu.warning,
+      #memory.warning,
+      #temperature.warning,
+      #battery.warning {
+        background-color: ${colors.selection};
+        border: 2px solid ${colors.yellow};
+      }
+
+      #cpu.critical,
+      #memory.critical,
+      #temperature.critical,
+      #battery.critical {
+        background-color: ${colors.selection};
+        border: 2px solid ${colors.red};
       }
 
       #battery.charging {
-        color: ${colors.green};
+        background-color: ${colors.green};
+        border: 2px solid ${colors.focused};
+      }
+
+      #wireplumber.muted {
+        background-color: ${colors.gray};
+        border: 2px solid ${colors.unfocused};
       }
     '';
   };
