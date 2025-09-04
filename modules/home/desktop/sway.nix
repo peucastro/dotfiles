@@ -150,6 +150,9 @@ in {
           "${modifier}+Shift+n" = "exec playerctl next";
           "${modifier}+Shift+b" = "exec playerctl previous";
 
+          # Clipboard history
+          "${modifier}+c" = "exec cliphist list | ${menu} --dmenu | cliphist decode | wl-copy";
+
           # Screenshots
           "Print" = "exec grim -g \"$(slurp)\" - | wl-copy";
           "${modifier}+Print" = "exec grim - | wl-copy";
