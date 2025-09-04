@@ -154,6 +154,9 @@ in {
           "Print" = "exec grim -g \"$(slurp)\" - | wl-copy";
           "${modifier}+Print" = "exec grim - | wl-copy";
 
+          # Cycle wallpaper
+          "${modifier}+Shift+w" = "exec wpaperctl next";
+
           # SwayOSD controls
           "XF86AudioRaiseVolume" = "exec swayosd-client --output-volume raise";
           "XF86AudioLowerVolume" = "exec swayosd-client --output-volume lower";

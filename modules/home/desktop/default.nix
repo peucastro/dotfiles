@@ -8,5 +8,6 @@
     ./swaync.nix
     ./swayosd.nix
     ./wlsunset.nix
+    ./wpaperd.nix
   ];
 }
