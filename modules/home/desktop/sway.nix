@@ -18,13 +18,16 @@ in {
       gaps = {
         inner = 8;
         outer = 2;
-        smartGaps = true;
       };
 
       window = {
         border = 2;
         titlebar = false;
-        hideEdgeBorders = "smart";
+      };
+
+      floating = {
+        border = 2;
+        titlebar = true;
       };
 
       colors = {
@@ -53,6 +56,19 @@ in {
           indicator = colors.red;
           childBorder = colors.urgent;
         };
+
+        placeholder = {
+          border = colors.unfocused;
+          background = colors.background;
+          text = colors.foreground;
+          indicator = colors.gray;
+          childBorder = colors.unfocused;
+        };
+      };
+
+      fonts = {
+        names = ["Inter" "Symbols Nerd Font"];
+        size = 12.0;
       };
 
       input = {
