@@ -14,6 +14,7 @@ in {
       modifier = "Mod4";
       terminal = "ghostty";
       menu = "fuzzel";
+      bars = [];
 
       gaps = {
         inner = 8;

@@ -2,6 +2,7 @@
   fonts.fontconfig.enable = true;
   home.packages = with pkgs; [
     dconf
+    font-awesome
     inter
     noto-fonts-emoji
     twemoji-color-font
