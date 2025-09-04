@@ -1,4 +1,4 @@
-{
+{lib, ...}: {
   services.kanshi = {
     enable = true;
     settings = [
@@ -42,5 +42,12 @@
         };
       }
     ];
+  };
+
+  systemd.user.services.kanshi = {
+    Unit = {
+      After = lib.mkForce ["sway-session.target"];
+      Requires = lib.mkForce ["sway-session.target"];
+    };
   };
 }

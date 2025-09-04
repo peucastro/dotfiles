@@ -18,8 +18,8 @@
     config = {
       common = {
         default = [
-          "wlr"
           "gtk"
+          "wlr"
         ];
       };
     };

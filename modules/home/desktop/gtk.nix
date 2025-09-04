@@ -56,8 +56,9 @@
   };
 
   home.sessionVariables = {
-    GTK_THEME = "Adwaita-dark";
+    GTK_THEME = "Adwaita:dark";
     GDK_BACKEND = "wayland";
     CLUTTER_BACKEND = "wayland";
+    ELECTRON_OZONE_PLATFORM_HINT = "wayland";
   };
 }
