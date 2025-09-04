@@ -11,7 +11,7 @@
               enable = true;
               alias = "laptop monitor";
               mode = "2880x1800@120Hz";
-              scale = 0.8;
+              scale = 1.2;
               position = {
                 x = 0;
                 y = 0;
@@ -38,7 +38,7 @@
               enable = true;
               alias = "laptop monitor";
               mode = "2880x1800@120Hz";
-              scale = 0.8;
+              scale = 1.2;
               position = {
                 x = 0;
                 y = 0;
