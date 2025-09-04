@@ -12,4 +12,8 @@
     QT_QPA_PLATFORMTHEME = "gtk2";
     QT_STYLE_OVERRIDE = "kvantum";
   };
+
+  home.packages = with pkgs; [
+    libsForQt5.qt5ct
+  ];
 }

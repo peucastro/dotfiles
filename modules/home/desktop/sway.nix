@@ -67,8 +67,89 @@ in {
 
       keybindings = let
         modifier = config.wayland.windowManager.sway.config.modifier;
+        terminal = config.wayland.windowManager.sway.config.terminal;
+        menu = config.wayland.windowManager.sway.config.menu;
+        fileManager = "nautilus --new-window";
       in
         lib.mkOptionDefault {
+          # Basics
+          "${modifier}+Return" = "exec ${terminal}";
+          "${modifier}+q" = "kill";
+          "${modifier}+m" = "exec ${fileManager}";
+          "${modifier}+d" = "exec ${menu}";
+
+          # Power
+          "${modifier}+Shift+x" = "exec loginctl lock-session";
+          "${modifier}+Shift+s" = "exec loginctl lock-session & systemctl suspend";
+
+          # Move your focus around
+          "${modifier}+Left" = "focus left";
+          "${modifier}+Down" = "focus down";
+          "${modifier}+Up" = "focus up";
+          "${modifier}+Right" = "focus right";
+
+          # Move the focused window
+          "${modifier}+Shift+Left" = "move left";
+          "${modifier}+Shift+Down" = "move down";
+          "${modifier}+Shift+Up" = "move up";
+          "${modifier}+Shift+Right" = "move right";
+
+          # Switch to workspace
+          "${modifier}+1" = "workspace number 1";
+          "${modifier}+2" = "workspace number 2";
+          "${modifier}+3" = "workspace number 3";
+          "${modifier}+4" = "workspace number 4";
+          "${modifier}+5" = "workspace number 5";
+          "${modifier}+6" = "workspace number 6";
+          "${modifier}+7" = "workspace number 7";
+          "${modifier}+8" = "workspace number 8";
+          "${modifier}+9" = "workspace number 9";
+          "${modifier}+0" = "workspace number 10";
+
+          # Move focused container to workspace
+          "${modifier}+Shift+1" = "move container to workspace number 1; workspace number 1";
+          "${modifier}+Shift+2" = "move container to workspace number 2; workspace number 2";
+          "${modifier}+Shift+3" = "move container to workspace number 3; workspace number 3";
+          "${modifier}+Shift+4" = "move container to workspace number 4; workspace number 4";
+          "${modifier}+Shift+5" = "move container to workspace number 5; workspace number 5";
+          "${modifier}+Shift+6" = "move container to workspace number 6; workspace number 6";
+          "${modifier}+Shift+7" = "move container to workspace number 7; workspace number 7";
+          "${modifier}+Shift+8" = "move container to workspace number 8; workspace number 8";
+          "${modifier}+Shift+9" = "move container to workspace number 9; workspace number 9";
+          "${modifier}+Shift+0" = "move container to workspace number 10; workspace number 10";
+
+          # Split
+          "${modifier}+b" = "splith";
+          "${modifier}+v" = "splitv";
+
+          # Switch layout styles
+          "${modifier}+s" = "layout stacking";
+          "${modifier}+w" = "layout tabbed";
+          "${modifier}+e" = "layout toggle split";
+
+          # Make the current focus fullscreen
+          "${modifier}+f" = "fullscreen";
+
+          # Toggle the current focus between tiling and floating mode
+          "${modifier}+Shift+space" = "floating toggle";
+
+          # Swap focus between the tiling area and the floating area
+          "${modifier}+space" = "focus mode_toggle";
+
+          # Move focus to the parent container
+          "${modifier}+a" = "focus parent";
+
+          # Move the currently focused window to the scratchpad
+          "${modifier}+Shift+minus" = "move scratchpad";
+
+          # Show the next scratchpad window or hide the focused scratchpad window.
+          "${modifier}+minus" = "scratchpad show";
+
+          # Media control
+          "${modifier}+Shift+p" = "exec playerctl play-pause";
+          "${modifier}+Shift+n" = "exec playerctl next";
+          "${modifier}+Shift+b" = "exec playerctl previous";
+
           # Screenshots
           "Print" = "exec grim -g \"$(slurp)\" - | wl-copy";
           "${modifier}+Print" = "exec grim - | wl-copy";
@@ -85,10 +166,22 @@ in {
     };
   };
 
+  home.pointerCursor = {
+    enable = true;
+    gtk.enable = true;
+    x11.enable = true;
+    package = pkgs.adwaita-icon-theme;
+    name = "Adwaita";
+    size = 24;
+  };
+
   home.packages = with pkgs; [
-    wl-clipboard
+    evince
+    gnome-text-editor
     grim
+    loupe
+    nautilus
     slurp
-    libsForQt5.qt5ct
+    wl-clipboard
   ];
 }
