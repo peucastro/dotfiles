@@ -3,8 +3,9 @@
     ./audio.nix
     ./bluetooth.nix
     ./bootloader.nix
-    ./desktop.nix
     ./env.nix
+    ./greeter.nix
+    ./gtklock.nix
     ./home-manager.nix
     ./keyboard.nix
     ./locale.nix
@@ -12,6 +13,10 @@
     ./nix.nix
     ./printing.nix
     ./rebuild.nix
+    ./security.nix
+    ./services.nix
+    ./snapper.nix
     ./user.nix
+    ./xdg.nix
   ];
 }

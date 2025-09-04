@@ -17,9 +17,12 @@
     playerctl
     unzip
     wget
-    wl-clipboard
     tree
     zip
+
+    # Backups
+    btrfs-progs
+    snapper
 
     # Tools
     bitwise

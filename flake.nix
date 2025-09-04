@@ -10,6 +10,11 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    disko = {
+      url = "github:nix-community/disko";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     zen-browser = {
       url = "github:0xc000022070/zen-browser-flake";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -25,6 +30,7 @@
     self,
     nixpkgs,
     nixpkgs-unstable,
+    disko,
     home-manager,
     nvf,
     ...
@@ -61,6 +67,7 @@
           }
           // extraSpecialArgs;
         modules = [
+          disko.nixosModules.disko
           ./hosts/${extraSpecialArgs.hostname}/configuration.nix
         ];
       };

@@ -28,13 +28,13 @@
     qalculate-gtk
 
     # Utility
-    dconf-editor
     gnome-disk-utility
     gitkraken
     hoppscotch
     qbittorrent
     mission-center
     postman
+    snapper-gui
 
     # Editors
     android-studio

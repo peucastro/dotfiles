@@ -1,5 +1,6 @@
 {
   imports = [
+    ./desktop
     ./packages
     ./bash.nix
     ./bat.nix
@@ -7,8 +8,6 @@
     ./gh.nix
     ./ghostty.nix
     ./git.nix
-    ./gnome.nix
-    ./gtk.nix
     ./lazygit.nix
     ./nvf.nix
     ./ssh.nix

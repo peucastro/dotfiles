@@ -1,5 +1,5 @@
 {
-  environment.sessionVariables = rec {
+  environment.sessionVariables = {
     TERMINAL = "ghostty";
     EDITOR = "vim";
   };
