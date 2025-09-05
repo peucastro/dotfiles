@@ -1,5 +1,6 @@
 {
   imports = [
+    ./binds.nix
     ./cliphist.nix
     ./fuzzel.nix
     ./gtk.nix
