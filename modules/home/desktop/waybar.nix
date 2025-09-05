@@ -8,12 +8,11 @@ in {
       layer = "top";
       position = "top";
       height = 32;
-      modules-left = ["sway/workspaces" "sway/window"];
+      modules-left = ["hyprland/workspaces" "hyprland/window"];
       modules-center = ["clock"];
       modules-right = [
         "tray"
         "idle_inhibitor"
-        "sway/language"
         "cpu"
         "memory"
         "temperature"
@@ -23,7 +22,7 @@ in {
         "wireplumber"
       ];
 
-      "sway/workspaces" = {
+      "hyprland/workspaces" = {
         persistent-workspaces = {
           "1" = [];
           "2" = [];
@@ -34,12 +33,12 @@ in {
           "7" = [];
           "8" = [];
           "9" = [];
-          "0" = [];
+          "10" = [];
         };
         sort-by-number = true;
         disable-scroll = true;
       };
-      "sway/window" = {
+      "hyprland/window" = {
         max-length = 50;
         rewrite = {
           "(.*) - Mozilla Firefox" = " $1";
@@ -80,10 +79,6 @@ in {
           activated = "";
           deactivated = "";
         };
-      };
-      "sway/language" = {
-        format = "{shortDescription}";
-        tooltip = false;
       };
       "cpu" = {
         interval = 2;

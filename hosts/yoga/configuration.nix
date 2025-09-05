@@ -6,6 +6,7 @@
     ../../modules/core
   ];
 
+  programs.hyprland.enable = true;
   services.power-profiles-daemon.enable = true;
   powerManagement.cpuFreqGovernor = "performance";
 }

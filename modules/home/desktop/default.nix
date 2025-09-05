@@ -3,9 +3,8 @@
     ./cliphist.nix
     ./fuzzel.nix
     ./gtk.nix
-    ./kanshi.nix
     ./qt.nix
-    ./sway.nix
+    ./hyprland.nix
     ./swayidle.nix
     ./swaync.nix
     ./swayosd.nix
