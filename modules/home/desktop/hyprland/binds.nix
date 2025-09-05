@@ -4,7 +4,9 @@
       "$modifier, Return, exec, $terminal"
       "$modifier, E, exec, $fileManager"
       "$modifier, D, exec, $menu"
-      "$modifier, W, exec, $brower"
+      "$modifier, C, exec, cliphist list | $menu --dmenu | cliphist decode | wl-copy"
+      "$modifier, W, exec, $browser"
+      "$modifier SHIFT, N, exec, swaync-client -t -sw"
 
       "$modifier, Q, killactive,"
       "$modifier, V, togglefloating,"

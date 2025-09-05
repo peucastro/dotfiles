@@ -14,13 +14,13 @@ in {
         icon-theme = "Adwaita";
       };
       colors = {
-        background = "${colors.background}fa";
-        text = "${colors.foreground}ff";
-        match = "${colors.blue}ff";
-        selection = "${colors.selection}40";
-        selection-text = "${colors.foreground}ff";
-        selection-match = "${colors.cyan}ff";
-        border = "${colors.border}ff";
+        background = "#${colors.background}fa";
+        text = "#${colors.foreground}ff";
+        match = "#${colors.blue}ff";
+        selection = "#${colors.selection}40";
+        selection-text = "#${colors.foreground}ff";
+        selection-match = "#${colors.cyan}ff";
+        border = "#${colors.border}ff";
       };
       border = {
         width = 2;

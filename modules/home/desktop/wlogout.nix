@@ -50,15 +50,15 @@ in {
       }
 
       window {
-        background-color: ${colors.background};
+        background-color: #${colors.background};
       }
 
       button {
         border-radius: 6px;
-        border-color: ${colors.border};
-        text-decoration-color: ${colors.foreground};
-        color: ${colors.foreground};
-        background-color: ${colors.background-alt};
+        border-color: #${colors.border};
+        text-decoration-color: #${colors.foreground};
+        color: #${colors.foreground};
+        background-color: #${colors.background-alt};
         border-style: solid;
         border-width: 2px;
         background-repeat: no-repeat;
@@ -70,9 +70,9 @@ in {
       }
 
       button:focus, button:active, button:hover {
-        color: ${colors.background};
-        background-color: ${colors.focused};
-        border-color: ${colors.focused};
+        color: #${colors.background};
+        background-color: #${colors.focused};
+        border-color: #${colors.focused};
         outline-style: none;
       }
     '';

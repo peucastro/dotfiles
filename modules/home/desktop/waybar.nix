@@ -55,11 +55,11 @@ in {
           weeks-pos = "right";
           on-scroll = 1;
           format = {
-            months = "<span color='${colors.yellow}'><b>{}</b></span>";
-            days = "<span color='${colors.foreground-alt}'><b>{}</b></span>";
-            weeks = "<span color='${colors.green}'><b>W{}</b></span>";
-            weekdays = "<span color='${colors.blue}'><b>{}</b></span>";
-            today = "<span color='${colors.red}'><b><u>{}</u></b></span>";
+            months = "<span color='#${colors.yellow}'><b>{}</b></span>";
+            days = "<span color='#${colors.foreground-alt}'><b>{}</b></span>";
+            weeks = "<span color='#${colors.green}'><b>W{}</b></span>";
+            weekdays = "<span color='#${colors.blue}'><b>{}</b></span>";
+            today = "<span color='#${colors.red}'><b><u>{}</u></b></span>";
           };
         };
         actions = {
@@ -157,14 +157,14 @@ in {
       }
 
       window#waybar {
-        background: ${colors.background-alt};
-        border: 2px solid ${colors.background-dim};
+        background: #${colors.background-alt};
+        border: 2px solid #${colors.background-dim};
       }
 
       tooltip {
-        background-color: ${colors.background-dim};
-        border: 2px solid ${colors.unfocused};
-        color: ${colors.foreground-alt};
+        background-color: #${colors.background-dim};
+        border: 2px solid #${colors.unfocused};
+        color: #${colors.foreground-alt};
       }
 
       #window,
@@ -185,30 +185,30 @@ in {
 
       #workspaces,
       #window {
-        background-color: ${colors.background-dim};
+        background-color: #${colors.background-dim};
         margin: 6px 0px 6px 6px;
-        border: 2px solid ${colors.unfocused};
+        border: 2px solid #${colors.unfocused};
       }
 
       #workspaces button {
         all: initial;
         box-shadow: inset 0 -3px transparent;
         padding: 4px;
-        color: ${colors.focused};
+        color: #${colors.focused};
         background: transparent;
         border: none;
       }
 
       #workspaces button.active {
-        background-color: ${colors.selection};
-        color: ${colors.background-alt};
-        border: 2px solid ${colors.focused};
+        background-color: #${colors.selection};
+        color: #${colors.background-alt};
+        border: 2px solid #${colors.focused};
       }
 
       #workspaces button.urgent {
-        background-color: ${colors.orange};
-        color: ${colors.background-alt};
-        border: 2px solid ${colors.urgent};
+        background-color: #${colors.orange};
+        color: #${colors.background-alt};
+        border: 2px solid #${colors.urgent};
       }
 
       window#waybar.empty #window {
@@ -217,20 +217,20 @@ in {
       }
 
       #clock {
-        background-color: ${colors.background-dim};
-        border: 2px solid ${colors.unfocused};
+        background-color: #${colors.background-dim};
+        border: 2px solid #${colors.unfocused};
       }
 
       #tray {
-        background-color: ${colors.foreground-dim};
-        border: 2px solid ${colors.focused};
-        color: ${colors.background-alt};
+        background-color: #${colors.foreground-dim};
+        border: 2px solid #${colors.focused};
+        color: #${colors.background-alt};
       }
 
       #battery {
-        background-color: ${colors.green};
-        border: 2px solid ${colors.focused};
-        color: ${colors.background-alt};
+        background-color: #${colors.green};
+        border: 2px solid #${colors.focused};
+        color: #${colors.background-alt};
       }
 
       #cpu,
@@ -241,35 +241,35 @@ in {
       #wireplumber,
       #idle_inhibitor,
       #language {
-        background-color: ${colors.selection};
-        border: 2px solid ${colors.focused};
-        color: ${colors.background-alt};
+        background-color: #${colors.selection};
+        border: 2px solid #${colors.focused};
+        color: #${colors.background-alt};
       }
 
       #cpu.warning,
       #memory.warning,
       #temperature.warning,
       #battery.warning {
-        background-color: ${colors.selection};
-        border: 2px solid ${colors.yellow};
+        background-color: #${colors.selection};
+        border: 2px solid #${colors.yellow};
       }
 
       #cpu.critical,
       #memory.critical,
       #temperature.critical,
       #battery.critical {
-        background-color: ${colors.selection};
-        border: 2px solid ${colors.red};
+        background-color: #${colors.selection};
+        border: 2px solid #${colors.red};
       }
 
       #battery.charging {
-        background-color: ${colors.green};
-        border: 2px solid ${colors.focused};
+        background-color: #${colors.green};
+        border: 2px solid #${colors.focused};
       }
 
       #wireplumber.muted {
-        background-color: ${colors.gray};
-        border: 2px solid ${colors.unfocused};
+        background-color: #${colors.gray};
+        border: 2px solid #${colors.unfocused};
       }
     '';
   };
