@@ -1,4 +1,4 @@
-{
+{pkgs, ...}: {
   services.hypridle = {
     enable = true;
     settings = {
@@ -36,4 +36,6 @@
       ];
     };
   };
+
+  home.packages = [pkgs.brightnessctl];
 }

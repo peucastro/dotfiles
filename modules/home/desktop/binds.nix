@@ -4,16 +4,17 @@
       "$modifier, Return, exec, $terminal"
       "$modifier, E, exec, $fileManager"
       "$modifier, D, exec, $menu"
+      "$modifier, W, exec, $brower"
 
       "$modifier, Q, killactive,"
-      "$modifier SHIFT, C, exit,"
-
       "$modifier, V, togglefloating,"
       "$modifier, P, pseudo,"
-      "$modifier SHIFT, I, togglesplit,"
+      "$modifier, I, togglesplit,"
 
       "$modifier, X, exec, loginctl lock-session"
+      "$modifier SHIFT, X, exit,"
       "$modifier SHIFT, S, exec, systemctl suspend || loginctl suspend"
+      "CONTROLALT, DELETE, exec, wlogout"
 
       "$modifier, left, movefocus, l"
       "$modifier, right, movefocus, r"
@@ -63,6 +64,15 @@
 
       "$modifier CONTROL, right, workspace, e+1"
       "$modifier CONTROL, left, workspace, e-1"
+
+      "$modifier ALT, left, resizeactive,-30 0"
+      "$modifier ALT, right, resizeactive,30 0"
+      "$modifier ALT, up, resizeactive,0 -30"
+      "$modifier ALT, down, resizeactive,0 30"
+      "$modifier ALT, h, resizeactive,-30 0"
+      "$modifier ALT, l, resizeactive,30 0"
+      "$modifier ALT, k, resizeactive,0 -30"
+      "$modifier ALT, j, resizeactive,0 30"
     ];
 
     bindm = [

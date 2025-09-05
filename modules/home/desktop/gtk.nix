@@ -59,6 +59,7 @@
     GTK_THEME = "Adwaita:dark";
     GDK_BACKEND = "wayland";
     CLUTTER_BACKEND = "wayland";
+    NIXOS_OZONE_WL = 1;
     OZONE_PLATFORM = "wayland";
     ELECTRON_OZONE_PLATFORM_HINT = "wayland";
     MOZ_ENABLE_WAYLAND = 1;
