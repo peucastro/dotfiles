@@ -6,7 +6,7 @@
     ./gtk.nix
     ./qt.nix
     ./hyprland.nix
-    ./swayidle.nix
+    ./hypridle.nix
     ./swaync.nix
     ./swayosd.nix
     ./waybar.nix

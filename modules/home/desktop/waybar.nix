@@ -35,8 +35,7 @@ in {
           "9" = [];
           "10" = [];
         };
-        sort-by-number = true;
-        disable-scroll = true;
+        sort-by = "number";
       };
       "hyprland/window" = {
         max-length = 50;
@@ -200,7 +199,7 @@ in {
         border: none;
       }
 
-      #workspaces button.focused {
+      #workspaces button.active {
         background-color: ${colors.selection};
         color: ${colors.background-alt};
         border: 2px solid ${colors.focused};
