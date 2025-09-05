@@ -1,12 +1,11 @@
 {
   imports = [
-    ./binds.nix
+    ./hyprland
     ./cliphist.nix
     ./fuzzel.nix
     ./gtk.nix
     ./qt.nix
     ./hypridle.nix
-    ./hyprland.nix
     ./hyprlock.nix
     ./swaync.nix
     ./swayosd.nix
