@@ -6,7 +6,10 @@
     ../../modules/core
   ];
 
-  programs.hyprland.enable = true;
+  programs.hyprland = {
+    enable = true;
+    withUWSM = true;
+  };
   services.power-profiles-daemon.enable = true;
   powerManagement.cpuFreqGovernor = "performance";
 }

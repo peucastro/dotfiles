@@ -42,10 +42,6 @@
         warp_on_change_workspace = 2;
       };
     };
-    extraConfig = ''
-      monitor=eDP-1,2880x1800@120,0x0,1.5
-      monitor=HDMI-A-1,1920x1080@100,2880x0,1
-    '';
   };
 
   home.packages = with pkgs; [

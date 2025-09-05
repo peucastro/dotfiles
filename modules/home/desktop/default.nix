@@ -7,6 +7,7 @@
     ./qt.nix
     ./hypridle.nix
     ./hyprlock.nix
+    ./kanshi.nix
     ./swaync.nix
     ./swayosd.nix
     ./waybar.nix
