@@ -1,9 +1,9 @@
 {
   wayland.windowManager.hyprland.settings = {
     bind = [
-      "$modifier, Return, exec,ghostty"
-      "$modifier, E, exec, nautilus --new-window"
-      "$modifier, D, exec, fuzzel"
+      "$modifier, Return, exec, $terminal"
+      "$modifier, E, exec, $fileManager"
+      "$modifier, D, exec, $menu"
 
       "$modifier, Q, killactive,"
       "$modifier SHIFT, C, exit,"
