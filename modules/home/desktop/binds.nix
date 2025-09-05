@@ -12,6 +12,9 @@
       "$modifier, P, pseudo,"
       "$modifier SHIFT, I, togglesplit,"
 
+      "$modifier, X, exec, loginctl lock-session"
+      "$modifier SHIFT, S, exec, systemctl suspend || loginctl suspend"
+
       "$modifier, left, movefocus, l"
       "$modifier, right, movefocus, r"
       "$modifier, up, movefocus, u"
@@ -52,8 +55,8 @@
       "$modifier SHIFT, 9, movetoworkspace, 9"
       "$modifier SHIFT, 0, movetoworkspace, 10"
 
-      "$modifier, S, togglespecialworkspace"
-      "$modifier SHIFT, S, movetoworkspace, special"
+      "$modifier, SPACE, togglespecialworkspace"
+      "$modifier SHIFT, SPACE, movetoworkspace, special"
 
       "$modifier, F,fullscreen, 1"
       "$modifier SHIFT, F,fullscreen, 0"

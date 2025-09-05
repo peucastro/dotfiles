@@ -5,8 +5,9 @@
     ./fuzzel.nix
     ./gtk.nix
     ./qt.nix
-    ./hyprland.nix
     ./hypridle.nix
+    ./hyprland.nix
+    ./hyprlock.nix
     ./swaync.nix
     ./swayosd.nix
     ./waybar.nix
