@@ -3,7 +3,12 @@
 
   programs.zen-browser = {
     enable = true;
-    policies = {
+    policies = let
+      mkExtensionSettings = builtins.mapAttrs (_: pluginId: {
+        install_url = "https://addons.mozilla.org/firefox/downloads/latest/${pluginId}/latest.xpi";
+        installation_mode = "force_installed";
+      });
+    in {
       # Autofill / form behavior
       AutofillAddressEnabled = false;
       AutofillCreditCardEnabled = false;
@@ -47,43 +52,15 @@
       };
 
       # Extensions
-      ExtensionSettings = {
-        "*" = {
-          installation_mode = "blocked";
-        };
-
-        "uBlock0@raymondhill.net" = {
-          installation_mode = "force_installed";
-          install_url = "https://addons.mozilla.org/firefox/downloads/latest/ublock-origin/latest.xpi";
-        };
-        "{446900e4-71c2-419f-a6a7-df9c091e268b}" = {
-          installation_mode = "force_installed";
-          install_url = "https://addons.mozilla.org/firefox/downloads/latest/bitwarden-password-manager/latest.xpi";
-        };
-        "languagetool-webextension@languagetool.org" = {
-          installation_mode = "force_installed";
-          install_url = "https://addons.mozilla.org/firefox/downloads/latest/languagetool/latest.xpi";
-        };
-        "{74145f27-f039-47ce-a470-a662b129930a}" = {
-          installation_mode = "force_installed";
-          install_url = "https://addons.mozilla.org/firefox/downloads/latest/clearurls/latest.xpi";
-        };
-        "firefox@tampermonkey.net" = {
-          installation_mode = "force_installed";
-          install_url = "https://addons.mozilla.org/firefox/downloads/latest/tampermonkey/latest.xpi";
-        };
-        "{c2c003ee-bd69-42a2-b0e9-6f34222cb046}" = {
-          installation_mode = "force_installed";
-          install_url = "https://addons.mozilla.org/firefox/downloads/latest/auto-tab-discard/latest.xpi";
-        };
-        "skipredirect@sblask" = {
-          installation_mode = "force_installed";
-          install_url = "https://addons.mozilla.org/firefox/downloads/latest/skip-redirect/latest.xpi";
-        };
-        "chrome-gnome-shell@gnome.org" = {
-          installation_mode = "force_installed";
-          install_url = "https://addons.mozilla.org/firefox/downloads/latest/gnome-shell-integration/latest.xpi";
-        };
+      ExtensionSettings = mkExtensionSettings {
+        "uBlock0@raymondhill.net" = "ublock-origin";
+        "{446900e4-71c2-419f-a6a7-df9c091e268b}" = "bitwarden-password-manager";
+        "languagetool-webextension@languagetool.org" = "languagetool";
+        "{74145f27-f039-47ce-a470-a662b129930a}" = "clearurls";
+        "firefox@tampermonkey.net" = "tampermonkey";
+        "{c2c003ee-bd69-42a2-b0e9-6f34222cb046}" = "auto-tab-discard";
+        "skipredirect@sblask" = "skip-redirect";
+        "chrome-gnome-shell@gnome.org" = "gnome-shell-integration";
       };
 
       # UI / defaults

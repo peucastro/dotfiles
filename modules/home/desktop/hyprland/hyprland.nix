@@ -35,12 +35,6 @@
           disable_while_typing = true;
         };
       };
-
-      cursor = {
-        enable_hyprcursor = false;
-        no_warps = true;
-        warp_on_change_workspace = 2;
-      };
     };
   };
 
