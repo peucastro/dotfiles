@@ -1,20 +1,11 @@
 {
   imports = [
     ./desktop
+    ./editors
+    ./git
     ./packages
-    ./bash.nix
-    ./bat.nix
-    ./btop.nix
-    ./gh.nix
-    ./ghostty.nix
-    ./git.nix
-    ./lazygit.nix
-    ./nvf.nix
-    ./ssh.nix
-    ./tmux.nix
-    ./vscode.nix
-    ./zed.nix
+    ./shell
+    ./terminal
     ./zen-browser.nix
-    ./zsh.nix
   ];
 }
