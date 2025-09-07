@@ -1,4 +1,8 @@
-{inputs, ...}: {
+{
+  config,
+  inputs,
+  ...
+}: {
   imports = [inputs.zen-browser.homeModules.beta];
 
   programs.zen-browser = {
@@ -28,8 +32,6 @@
 
       # Sync / Accounts
       DisableFirefoxAccounts = true;
-      DisableSync = true;
-      DisableSignInToSync = true;
 
       # Content, privacy & tracking protection
       EnableTrackingProtection = {
@@ -39,8 +41,6 @@
         Fingerprinting = true;
         EmailTracking = true;
       };
-      DoNotTrackEnabled = true;
-      SafeBrowsingEnabled = true;
 
       # Cookies / storage
       Cookies = {
@@ -102,7 +102,6 @@
 
       Preferences = mkLockedAttrs {
         # General UI / usability
-        "accessibility.force_disabled" = true;
         "browser.tabs.warnOnClose" = false;
         "browser.urlbar.trimURLs" = false;
         "browser.startup.homepage_override.mstone" = "ignore";
@@ -114,11 +113,6 @@
 
         # Privacy / tracking
         "network.cookie.cookieBehavior" = 1;
-        "privacy.firstparty.isolate" = true;
-        "privacy.trackingprotection.enabled" = true;
-        "privacy.trackingprotection.pbmode.enabled" = true;
-        "privacy.resistFingerprinting" = true;
-        "beacon.enabled" = false;
         "dom.battery.enabled" = false;
         "webgl.disabled" = true;
 
@@ -126,40 +120,62 @@
         "network.http.referer.XOriginPolicy" = 2;
         "network.http.referer.XOriginTrimmingPolicy" = 2;
 
-        # Media / permissions
-        "permissions.default.camera" = 1;
-        "permissions.default.microphone" = 1;
-        "permissions.default.geo" = 1;
-        "media.peerconnection.enabled" = false;
-
         # Security
-        "security.tls.version.min" = 3;
         "dom.security.https_only_mode" = true;
 
         # Telemetry / studies
-        "toolkit.telemetry.enabled" = false;
-        "toolkit.telemetry.unified" = false;
-        "toolkit.telemetry.shutdownPingSender.enabled" = false;
-        "toolkit.telemetry.updatePing.enabled" = false;
         "browser.newtabpage.activity-stream.feeds.telemetry" = false;
         "browser.newtabpage.activity-stream.telemetry" = false;
 
         # Passwords / signon
         "signon.rememberSignons" = false;
 
-        # Shutdown sanitization
-        "privacy.sanitize.sanitizeOnShutdown" = true;
-        "privacy.clearOnShutdown.cookies" = true;
-        "privacy.clearOnShutdown.cache" = true;
-        "privacy.clearOnShutdown.history" = true;
-        "privacy.clearOnShutdown.formdata" = true;
-        "privacy.clearOnShutdown.sessions" = true;
-        "privacy.clearOnShutdown.siteSettings" = false;
-
         # Disable risky features
         "extensions.translations.disabled" = true;
-        "identity.fxaccounts.enabled" = false;
         "media.peerconnection.ice.default_address_only" = true;
+      };
+    };
+
+    profiles."default" = {
+      containersForce = true;
+      containers = {
+        Personal = {
+          color = "purple";
+          icon = "fingerprint";
+          id = 1;
+        };
+        Work = {
+          color = "blue";
+          icon = "briefcase";
+          id = 2;
+        };
+        Shopping = {
+          color = "yellow";
+          icon = "dollar";
+          id = 3;
+        };
+      };
+      spacesForce = true;
+      spaces = let
+        containers = config.programs.zen-browser.profiles."default".containers;
+      in {
+        "Space" = {
+          id = "c6de089c-410d-4206-961d-ab11f988d40a";
+          position = 1000;
+          icon = "circle";
+        };
+        "Work" = {
+          id = "cdd10fab-4fc5-494b-9041-325e5759195b";
+          container = containers."Work".id;
+          position = 2000;
+          icon = "briefcase";
+        };
+        "Shopping" = {
+          id = "78aabdad-8aae-4fe0-8ff0-2a0c6c4ccc24";
+          container = containers."Shopping".id;
+          position = 3000;
+          icon = "dollar";
+        };
       };
     };
   };
