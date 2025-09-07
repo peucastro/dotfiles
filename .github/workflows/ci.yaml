@@ -1,0 +1,49 @@
+name: CI
+
+on: [ push, pull_request ]
+
+jobs:
+  check-formatting:
+    name: Check formatting
+    runs-on: ubuntu-latest
+    steps:
+      - name: Code checkout
+        uses: actions/checkout@v5
+
+      - name: Setup Alejandra CLI
+        uses: 0xc000022070/setup-alejandra@v4.0.0
+
+      - name: Check formatting
+        run: alejandra --check **/*.nix
+
+  check-flake:
+    name: Evaluate flake
+    runs-on: ubuntu-latest
+    steps:
+      - name: Code checkout
+        uses: actions/checkout@v5
+
+      - name: Install Nix
+        uses: DeterminateSystems/nix-installer-action@main
+
+      - name: Check Nixpkgs Inputs
+        uses: DeterminateSystems/flake-checker-action@main
+
+      - name: Add Nix Cache
+        uses: DeterminateSystems/magic-nix-cache-action@main
+
+      - name: Check the flake
+        run: nix flake check
+
+  check-lock:
+    name: Check Lock
+    runs-on: ubuntu-latest
+    steps:
+      - name: Code Checkout
+        uses: actions/checkout@v5
+
+      - name: Install Nix
+        uses: cachix/install-nix-action@v31
+
+      - name: Check flake.lock
+        run: nix run github:tgirlcloud/locker
