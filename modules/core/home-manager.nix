@@ -1,7 +1,6 @@
 {
   inputs,
   user,
-  pkgs-unstable,
   ...
 }: let
   username = user.login;
@@ -12,7 +11,7 @@ in {
   home-manager = {
     useUserPackages = true;
     useGlobalPkgs = true;
-    extraSpecialArgs = {inherit inputs user username pkgs-unstable;};
+    extraSpecialArgs = {inherit inputs user username;};
     backupFileExtension = "backup";
 
     users."${username}" = {
