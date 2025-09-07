@@ -1,5 +1,5 @@
 {
-  config,
+  pkgs,
   inputs,
   ...
 }: let
@@ -141,6 +141,7 @@ in {
     profiles."default" = {
       settings = {
         "zen.mods.auto-update" = false;
+        "zen.widget.linux.transparency" = true;
         "zen.tabs.vertical.right-side" = true;
         "zen.theme.accent-color" = "#${colors.focused}";
         "zen.watermark.enabled" = false;
@@ -151,44 +152,87 @@ in {
         "zen.view.compact.animate-sidebar" = false;
       };
 
-      containersForce = true;
-      containers = {
-        Personal = {
-          color = "purple";
-          icon = "circle";
-          id = 1;
-        };
-        Work = {
-          color = "blue";
-          icon = "briefcase";
-          id = 2;
-        };
-        Shopping = {
-          color = "yellow";
-          icon = "dollar";
-          id = 3;
-        };
-      };
       spacesForce = true;
-      spaces = let
-        containers = config.programs.zen-browser.profiles."default".containers;
-      in {
+      spaces = {
         "Personal" = {
           id = "c6de089c-410d-4206-961d-ab11f988d40a";
           position = 1000;
-          icon = "circle";
+          icon = "👤";
         };
         "Work" = {
           id = "cdd10fab-4fc5-494b-9041-325e5759195b";
-          container = containers."Work".id;
           position = 2000;
-          icon = "briefcase";
+          icon = "💼";
         };
-        "Shopping" = {
-          id = "78aabdad-8aae-4fe0-8ff0-2a0c6c4ccc24";
-          container = containers."Shopping".id;
-          position = 3000;
-          icon = "dollar";
+      };
+
+      search = {
+        force = true;
+        default = "google";
+        engines = let
+          nixSnowflakeIcon = "${pkgs.nixos-icons}/share/icons/hicolor/scalable/apps/nix-snowflake.svg";
+        in {
+          "Nix Packages" = {
+            urls = [
+              {
+                template = "https://search.nixos.org/packages";
+                params = [
+                  {
+                    name = "type";
+                    value = "packages";
+                  }
+                  {
+                    name = "channel";
+                    value = "unstable";
+                  }
+                  {
+                    name = "query";
+                    value = "{searchTerms}";
+                  }
+                ];
+              }
+            ];
+            icon = nixSnowflakeIcon;
+            definedAliases = ["np"];
+          };
+          "Nix Options" = {
+            urls = [
+              {
+                template = "https://search.nixos.org/options";
+                params = [
+                  {
+                    name = "channel";
+                    value = "unstable";
+                  }
+                  {
+                    name = "query";
+                    value = "{searchTerms}";
+                  }
+                ];
+              }
+            ];
+            icon = nixSnowflakeIcon;
+            definedAliases = ["nop"];
+          };
+          "Home Manager Options" = {
+            urls = [
+              {
+                template = "https://home-manager-options.extranix.com/";
+                params = [
+                  {
+                    name = "query";
+                    value = "{searchTerms}";
+                  }
+                  {
+                    name = "release";
+                    value = "master";
+                  }
+                ];
+              }
+            ];
+            icon = nixSnowflakeIcon;
+            definedAliases = ["hmop"];
+          };
         };
       };
     };

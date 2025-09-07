@@ -11,7 +11,7 @@
       aliases = {
         co = "pr checkout";
       };
-      browser = "firefox";
+      browser = "zen";
     };
   };
 }

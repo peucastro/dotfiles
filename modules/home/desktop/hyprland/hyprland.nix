@@ -13,7 +13,7 @@
       "$terminal" = "ghostty";
       "$fileManager" = "nautilus --new-window";
       "$menu" = "fuzzel";
-      "$browser" = "firefox";
+      "$browser" = "zen";
 
       animations.enabled = false;
 

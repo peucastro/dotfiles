@@ -2,9 +2,9 @@
   xdg.mime = {
     enable = true;
     defaultApplications = {
-      "default-web-browser" = "firefox.desktop";
-      "x-scheme-handler/http" = "firefox.desktop";
-      "x-scheme-handler/https" = "firefox.desktop";
+      "default-web-browser" = "zen.desktop";
+      "x-scheme-handler/http" = "zen.desktop";
+      "x-scheme-handler/https" = "zen.desktop";
       "image/png" = "loupe.desktop";
       "image/jpeg" = "loupe.desktop";
       "image/webp" = "loupe.desktop";
