@@ -55,6 +55,14 @@
     };
   };
 
+  dconf.settings = {
+    "org/gnome/desktop/interface" = {
+      "gtk-theme" = "Adwaita-dark";
+      "icon-theme" = "Adwaita";
+      "color-scheme" = "prefer-dark";
+    };
+  };
+
   home.sessionVariables = {
     GTK_THEME = "Adwaita:dark";
     GDK_BACKEND = "wayland";

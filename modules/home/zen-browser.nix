@@ -2,7 +2,9 @@
   config,
   inputs,
   ...
-}: {
+}: let
+  colors = (import ./desktop/colors.nix).colors;
+in {
   imports = [inputs.zen-browser.homeModules.beta];
 
   programs.zen-browser = {
@@ -137,11 +139,23 @@
     };
 
     profiles."default" = {
+      settings = {
+        "zen.mods.auto-update" = false;
+        "zen.tabs.vertical.right-side" = true;
+        "zen.theme.accent-color" = "#${colors.focused}";
+        "zen.watermark.enabled" = false;
+        "zen.welcome-screen.seen" = true;
+        "zen.workspaces.continue-where-left-off" = true;
+        "zen.workspaces.natural-scroll" = true;
+        "zen.view.compact.hide-tabbar" = true;
+        "zen.view.compact.animate-sidebar" = false;
+      };
+
       containersForce = true;
       containers = {
         Personal = {
           color = "purple";
-          icon = "fingerprint";
+          icon = "circle";
           id = 1;
         };
         Work = {
@@ -159,7 +173,7 @@
       spaces = let
         containers = config.programs.zen-browser.profiles."default".containers;
       in {
-        "Space" = {
+        "Personal" = {
           id = "c6de089c-410d-4206-961d-ab11f988d40a";
           position = 1000;
           icon = "circle";
