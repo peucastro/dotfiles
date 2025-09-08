@@ -45,6 +45,7 @@
     loupe
     nautilus
     slurp
+    swappy
   ];
 
   home.sessionVariables = {

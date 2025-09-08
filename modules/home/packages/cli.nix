@@ -51,6 +51,7 @@
     act
     alejandra
     android-tools
+    jq
     lazydocker
     nixd
 
