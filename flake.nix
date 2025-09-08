@@ -41,40 +41,46 @@
       config.allowUnfree = true;
     };
 
-    commonSystemArgs = {
-      initialPassword = "nixos";
-      user = {
-        login = "peu";
-        displayName = "Pedro Castro";
-        email = "falecompedroac@gmail.com";
-        groups = ["networkmanager" "wheel"];
-      };
+    defaultUser = {
+      login = "peu";
+      displayName = "Pedro Castro";
+      email = "falecompedroac@gmail.com";
+      groups = ["networkmanager" "wheel"];
     };
 
-    mkSystem = extraSpecialArgs:
+    defaultSystemArgs = {
+      user = defaultUser;
+      initialPassword = "nixos";
+    };
+
+    mkSystem = {
+      hostname,
+      user ? defaultSystemArgs.user,
+      initialPassword ? defaultSystemArgs.initialPassword,
+      extraModules ? [],
+    }:
       nixpkgs.lib.nixosSystem {
         inherit system;
-        specialArgs =
-          commonSystemArgs
-          // {
-            inherit self inputs;
-            host = extraSpecialArgs.hostname;
-          }
-          // extraSpecialArgs;
-        modules = [
-          {nixpkgs.pkgs = pkgs;}
-          disko.nixosModules.disko
-          ./hosts/${extraSpecialArgs.hostname}/configuration.nix
-        ];
+        specialArgs = {
+          inherit self inputs;
+          host = hostname;
+          initialPassword = initialPassword;
+          user = user;
+        };
+        modules =
+          [
+            {nixpkgs.pkgs = pkgs;}
+            ./hosts/${hostname}/configuration.nix
+          ]
+          ++ extraModules;
       };
   in {
     formatter.${system} = pkgs.alejandra;
     nixosConfigurations = {
       yoga = mkSystem {
         hostname = "yoga";
+        extraModules = [disko.nixosModules.disko];
       };
     };
-
-    meta.hosts = builtins.attrNames self.nixosConfigurations;
   };
 }
