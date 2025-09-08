@@ -16,6 +16,12 @@
       "$browser" = "zen";
 
       animations.enabled = false;
+      decoration = {
+        rounding = 4;
+        rounding_power = 6;
+        blur.enabled = false;
+        shadow.enabled = false;
+      };
 
       dwindle = {
         pseudotile = true;
@@ -41,6 +47,7 @@
   home.packages = with pkgs; [
     evince
     gnome-text-editor
+    hyprpicker
     loupe
     nautilus
   ];

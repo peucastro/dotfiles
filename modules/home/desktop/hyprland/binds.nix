@@ -9,6 +9,7 @@
       "$modifier SHIFT, N, exec, swaync-client -t -sw"
       "$modifier, P, exec, grim -o $(hyprctl monitors -j | jq -r 'map(select(.focused)) | .[] | .name') - | swappy -f -"
       "$modifier SHIFT, P, exec, grim -g \"$(slurp)\" - | swappy -f -"
+      "$modifier SHIFT, C, exec, hyprpicker --autocopy --format=hex"
 
       "$modifier, Q, killactive,"
       "$modifier, V, togglefloating,"

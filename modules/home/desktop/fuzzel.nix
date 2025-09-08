@@ -7,14 +7,15 @@ in {
       main = {
         terminal = "${pkgs.ghostty}/bin/ghostty";
         layer = "overlay";
-        width = 30;
+        width = 50;
         font = "Inter:size=12";
         line-height = 20;
-        fields = "name,generic,comment,categories,filename,keywords";
+        fields = "name,filename,keywords";
         icon-theme = "Adwaita";
+        match-mode = "fuzzy";
       };
       colors = {
-        background = "#${colors.background}fa";
+        background = "#${colors.background-dim}fa";
         text = "#${colors.foreground}ff";
         match = "#${colors.blue}ff";
         selection = "#${colors.selection}40";
