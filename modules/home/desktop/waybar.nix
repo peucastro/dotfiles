@@ -1,5 +1,5 @@
 let
-  colors = (import ./colors.nix).colors;
+  inherit (import ./colors.nix) colors;
 in {
   programs.waybar = {
     enable = true;
@@ -149,7 +149,7 @@ in {
       * {
         border: none;
         min-height: 0;
-        font-family: Inter, "Font Awesome 6 Free";
+        font-family: Inter, "Font Awesome 7 Free";
         font-weight: 500;
         font-size: 14px;
         padding: 0;

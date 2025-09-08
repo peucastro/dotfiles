@@ -1,5 +1,5 @@
 {pkgs, ...}: let
-  colors = (import ./colors.nix).colors;
+  inherit (import ./colors.nix) colors;
 in {
   programs.fuzzel = {
     enable = true;

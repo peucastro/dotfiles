@@ -1,5 +1,5 @@
 let
-  colors = (import ./colors.nix).colors;
+  inherit (import ./colors.nix) colors;
 in {
   services.swaync = {
     enable = true;

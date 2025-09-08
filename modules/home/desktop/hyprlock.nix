@@ -1,5 +1,5 @@
 {user, ...}: let
-  colors = (import ./colors.nix).colors;
+  inherit (import ./colors.nix) colors;
   userName = user.displayName;
 in {
   programs.hyprlock = {
