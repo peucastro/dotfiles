@@ -8,41 +8,70 @@ in {
       positionY = "top";
       layer = "overlay";
       layer-shell = true;
-      control-center-layer = "overlay";
+      control-center-layer = "top";
       control-center-exclusive-zone = true;
-      control-center-margin-top = 10;
-      control-center-margin-bottom = 10;
-      control-center-margin-right = 10;
-      control-center-margin-left = 10;
+      control-center-margin-top = 13;
+      control-center-margin-bottom = 0;
+      control-center-margin-right = 14;
+      control-center-margin-left = 0;
       control-center-width = 400;
-      control-center-height = 600;
-      notification-window-width = 400;
+      control-center-height = 720;
+      notification-window-width = 300;
       notification-window-height = 200;
       notification-2fa-action = true;
+      notification-inline-replies = false;
+      notification-icon-size = 24;
+      notification-body-image-height = 100;
+      notification-body-image-width = 100;
       notification-grouping = true;
-      image-visibility = "always";
-      timeout = 8;
-      timeout-low = 5;
+      image-visibility = "when-available";
+      timeout = 6;
+      timeout-low = 3;
       timeout-critical = 0;
       keyboard-shortcuts = true;
       transition-time = 200;
-      hide-on-clear = true;
+      hide-on-clear = false;
       hide-on-action = true;
-      fit-to-screen = true;
+      fit-to-screen = false;
       relative-timestamps = true;
       text-empty = "No Notifications";
-      widgets = ["title" "dnd" "notifications" "volume" "backlight" "inhibitors"];
+      script-fail-notify = true;
+      cssPriority = "user";
+      widgets = ["dnd" "buttons-grid" "mpris" "volume" "backlight" "title" "notifications"];
       widget-config = {
         title = {
           text = "Notifications";
           clear-all-button = true;
-          button-text = "Clear All";
+          button-text = "Clear";
         };
         dnd = {text = "Do Not Disturb";};
         notifications = {vexpand = true;};
-        volume = {};
-        backlight = {};
-        inhibitors = {};
+        volume = {label = "󰕾";};
+        backlight = {label = "󰃟";};
+        mpris = {
+          image-size = 50;
+          image-radius = 0;
+        };
+        buttons-grid = {
+          actions = [
+            {
+              label = "";
+              command = "hyprlock";
+            }
+            {
+              label = "󰝟";
+              command = "swayosd-client --output-volume mute-toggle";
+            }
+            {
+              label = "󰂯";
+              command = "blueman-manager";
+            }
+            {
+              label = "";
+              command = "wlogout";
+            }
+          ];
+        };
       };
     };
     style = ''

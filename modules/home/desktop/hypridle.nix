@@ -17,15 +17,15 @@
         }
         {
           timeout = 150;
-          on-timeout = "brightnessctl -sd rgb:kbd_backlight set 0";
-          on-resume = "brightnessctl -rd rgb:kbd_backlight";
+          on-timeout = "brightnessctl -sd platform::kbd_backlight set 0";
+          on-resume = "brightnessctl -rd platform::kbd_backlight";
         }
         {
           timeout = 300;
           on-timeout = "loginctl lock-session";
         }
         {
-          timeout = 330;
+          timeout = 350;
           on-timeout = "hyprctl dispatch dpms off";
           on-resume = "hyprctl dispatch dpms on && brightnessctl -r";
         }
