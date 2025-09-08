@@ -11,9 +11,9 @@
     ./swappy.nix
     ./swaync.nix
     ./swayosd.nix
+    ./swww.nix
     ./waybar.nix
     ./wlogout.nix
     ./wlsunset.nix
-    ./wpaperd.nix
   ];
 }
