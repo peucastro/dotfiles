@@ -27,8 +27,10 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v5
 
-      - name: Install Nix
-        uses: DeterminateSystems/nix-installer-action@v19
+      - name: Setup Nix and Cachix
+        uses: ./.github/actions/setup-nix
+        with:
+          token: ${{ secrets.CACHIX_AUTH_TOKEN }}
 
       - name: Install Statix
         run: nix profile install github:nerdypepper/statix

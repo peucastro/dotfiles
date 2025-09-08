@@ -62,10 +62,8 @@
       nixpkgs.lib.nixosSystem {
         inherit system;
         specialArgs = {
-          inherit self inputs;
+          inherit self inputs user initialPassword;
           host = hostname;
-          initialPassword = initialPassword;
-          user = user;
         };
         modules =
           [
