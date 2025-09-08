@@ -15,10 +15,6 @@ in {
     backupFileExtension = "backup";
 
     users."${username}" = {
-      imports = [
-        inputs.nvf.homeManagerModules.default
-        ./../home
-      ];
       home.username = username;
       home.homeDirectory = homeDir;
       programs.home-manager.enable = true;

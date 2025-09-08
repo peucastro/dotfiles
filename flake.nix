@@ -70,7 +70,7 @@
         modules =
           [
             {nixpkgs.pkgs = pkgs;}
-            ./hosts/${hostname}/configuration.nix
+            ./hosts/${hostname}
           ]
           ++ extraModules;
       };

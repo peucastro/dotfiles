@@ -1,4 +1,6 @@
-{
+{user, ...}: let
+  username = user.login;
+in {
   imports = [
     ./hardware-configuration.nix
     ./disk-configuration.nix
@@ -6,10 +8,12 @@
     ../../modules/core
   ];
 
+  home-manager.users."${username}".imports = [
+    ../../modules/home
+  ];
+
   programs.hyprland = {
     enable = true;
     withUWSM = true;
   };
-  services.power-profiles-daemon.enable = true;
-  powerManagement.cpuFreqGovernor = "performance";
 }
