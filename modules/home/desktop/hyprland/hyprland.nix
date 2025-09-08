@@ -41,11 +41,8 @@
   home.packages = with pkgs; [
     evince
     gnome-text-editor
-    grim
     loupe
     nautilus
-    slurp
-    swappy
   ];
 
   home.sessionVariables = {

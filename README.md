@@ -1,6 +1,6 @@
 # 🏠 Dotfiles
 
-[![nixos-stable](https://img.shields.io/badge/NixOS-stable-informational.svg?logo=nixos)](https://github.com/nixos/nixpkgs)
+[![nixos-unstable](https://img.shields.io/badge/NixOS-unstable-informational.svg?logo=nixos)](https://github.com/nixos/nixpkgs/tree/nixos-unstable)
 [![nix-fmt](https://github.com/peucastro/dotfiles/actions/workflows/ci.yaml/badge.svg)](https://github.com/peucastro/dotfiles/actions/workflows/ci.yaml)
 [![license](https://img.shields.io/github/license/peucastro/dotfiles)](https://github.com/peucastro/dotfiles/blob/main/LICENSE)
 

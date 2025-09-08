@@ -4,10 +4,11 @@
     ./cliphist.nix
     ./fuzzel.nix
     ./gtk.nix
-    ./qt.nix
     ./hypridle.nix
     ./hyprlock.nix
     ./kanshi.nix
+    ./qt.nix
+    ./swappy.nix
     ./swaync.nix
     ./swayosd.nix
     ./waybar.nix
