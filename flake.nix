@@ -2,10 +2,10 @@
   description = "My personal NixOS configuration";
 
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-25.05";
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
 
     home-manager = {
-      url = "github:nix-community/home-manager/release-25.05";
+      url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
@@ -56,11 +56,12 @@
         specialArgs =
           commonSystemArgs
           // {
-            inherit self inputs pkgs;
+            inherit self inputs;
             host = extraSpecialArgs.hostname;
           }
           // extraSpecialArgs;
         modules = [
+          {nixpkgs.pkgs = pkgs;}
           disko.nixosModules.disko
           ./hosts/${extraSpecialArgs.hostname}/configuration.nix
         ];

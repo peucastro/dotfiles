@@ -18,7 +18,6 @@
     kdePackages.kdenlive
     spotify
     scrcpy
-    stremio
     zoom
 
     # Office
