@@ -1,4 +1,4 @@
-name: Lint & Formatting Checks
+name: Lint & Formatting
 
 on:
   push:
