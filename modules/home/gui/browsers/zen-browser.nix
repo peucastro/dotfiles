@@ -3,7 +3,7 @@
   inputs,
   ...
 }: let
-  inherit (import ./desktop/colors.nix) colors;
+  inherit (import ../desktop/colors.nix) colors;
 in {
   imports = [inputs.zen-browser.homeModules.beta];
 
