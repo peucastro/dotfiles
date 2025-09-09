@@ -26,7 +26,8 @@ jobs:
         uses: DeterminateSystems/update-flake-lock@v27
         with:
           token: ${{ secrets.GH_TOKEN_FOR_UPDATES }}
-          pr-reviewers: peucastro
-          commit-msg: 'chore: updated flake.lock'
+          pr-assignees: peucastro
+          pr-labels: dependencies
           pr-title: 'chore: updated flake.lock'
+          commit-msg: 'chore: updated flake.lock'
           branch: 'chore/update-flake-lock'
