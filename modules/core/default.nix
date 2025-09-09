@@ -1,20 +1,8 @@
 {
   imports = [
-    ./audio.nix
-    ./bluetooth.nix
-    ./bootloader.nix
-    ./env.nix
-    ./greeter.nix
-    ./keyboard.nix
-    ./locale.nix
-    ./networking.nix
-    ./nix.nix
-    ./printing.nix
-    ./rebuild.nix
-    ./security.nix
-    ./services.nix
-    ./snapper.nix
-    ./user.nix
-    ./xdg.nix
+    ./base
+    ./hardware
+    ./services
+    ./system
   ];
 }
