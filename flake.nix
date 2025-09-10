@@ -84,6 +84,7 @@
         pkgs = import nixpkgs {inherit system;};
       in {
         formatter = pkgs.alejandra;
+        devShells = import ./shell.nix {inherit pkgs;};
       }
     )
     // {
