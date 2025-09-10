@@ -79,6 +79,10 @@
         hostname = "yoga";
         extraModules = [disko.nixosModules.disko];
       };
+      ideapad = mkSystem {
+        hostname = "ideapad";
+        extraModules = [disko.nixosModules.disko];
+      };
     };
   };
 }
