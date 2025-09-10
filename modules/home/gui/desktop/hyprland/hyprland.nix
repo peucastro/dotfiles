@@ -50,11 +50,7 @@
   };
 
   home.packages = with pkgs; [
-    evince
-    gnome-text-editor
     hyprpicker
-    loupe
-    nautilus
   ];
 
   home.sessionVariables = {

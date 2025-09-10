@@ -19,4 +19,8 @@
       auto-update = "off";
     };
   };
+
+  home.sessionVariables = {
+    TERMINAL = "ghostty";
+  };
 }
