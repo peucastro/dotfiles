@@ -10,6 +10,7 @@
       "markdownlint"
       "material-icon-theme"
       "nix"
+      "perplexity"
       "php"
       "sql"
       "svelte"

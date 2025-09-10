@@ -51,6 +51,7 @@
     act
     alejandra
     android-tools
+    gemini-cli
     jq
     lazydocker
     nixd
