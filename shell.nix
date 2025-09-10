@@ -4,6 +4,7 @@
     buildInputs = with pkgs; [
       nix
       home-manager
+      direnv
       git
       curl
       wget
