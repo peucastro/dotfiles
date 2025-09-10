@@ -1,8 +1,14 @@
 {
-  description = "My personal NixOS configuration";
+  description = " My personal NixOS & Home Manager configurations.";
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+
+    systems.url = "github:nix-systems/default";
+    utils = {
+      url = "github:numtide/flake-utils";
+      inputs.systems.follows = "systems";
+    };
 
     home-manager = {
       url = "github:nix-community/home-manager";
@@ -23,24 +29,19 @@
     nvf = {
       url = "github:notashelf/nvf";
       inputs.nixpkgs.follows = "nixpkgs";
+      inputs.systems.follows = "systems";
     };
   };
 
   outputs = {
     self,
     nixpkgs,
+    utils,
     disko,
     home-manager,
     nvf,
     ...
   } @ inputs: let
-    system = "x86_64-linux";
-
-    pkgs = import nixpkgs {
-      inherit system;
-      config.allowUnfree = true;
-    };
-
     defaultUser = {
       login = "peu";
       displayName = "Pedro Castro";
@@ -53,12 +54,17 @@
       initialPassword = "nixos";
     };
 
-    mkSystem = {
+    mkSystem = system: {
       hostname,
       user ? defaultSystemArgs.user,
       initialPassword ? defaultSystemArgs.initialPassword,
       extraModules ? [],
-    }:
+    }: let
+      pkgs = import nixpkgs {
+        inherit system;
+        config.allowUnfree = true;
+      };
+    in
       nixpkgs.lib.nixosSystem {
         inherit system;
         specialArgs = {
@@ -72,17 +78,24 @@
           ]
           ++ extraModules;
       };
-  in {
-    formatter.${system} = pkgs.alejandra;
-    nixosConfigurations = {
-      yoga = mkSystem {
-        hostname = "yoga";
-        extraModules = [disko.nixosModules.disko];
-      };
-      ideapad = mkSystem {
-        hostname = "ideapad";
-        extraModules = [disko.nixosModules.disko];
+  in
+    utils.lib.eachDefaultSystem (
+      system: let
+        pkgs = import nixpkgs {inherit system;};
+      in {
+        formatter = pkgs.alejandra;
+      }
+    )
+    // {
+      nixosConfigurations = {
+        yoga = mkSystem "x86_64-linux" {
+          hostname = "yoga";
+          extraModules = [disko.nixosModules.disko];
+        };
+        ideapad = mkSystem "x86_64-linux" {
+          hostname = "ideapad";
+          extraModules = [disko.nixosModules.disko];
+        };
       };
     };
-  };
 }
