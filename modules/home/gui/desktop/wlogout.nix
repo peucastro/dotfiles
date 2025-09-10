@@ -1,5 +1,6 @@
-let
+{config, ...}: let
   inherit (import ./colors.nix) colors;
+  homeDir = config.home.homeDirectory;
 in {
   programs.wlogout = {
     enable = true;
@@ -50,7 +51,7 @@ in {
       }
 
       window {
-        background-color: #${colors.background};
+        background-color: #${colors.background-alt};
       }
 
       button {
@@ -71,9 +72,63 @@ in {
 
       button:focus, button:active, button:hover {
         color: #${colors.background};
-        background-color: #${colors.focused};
+        background-color: #${colors.background-dim};
         border-color: #${colors.focused};
         outline-style: none;
+      }
+
+      #lock {
+        background-image: image(url("${homeDir}/dotfiles/assets/icons/power/lock.png"));
+      }
+
+      #lock:hover,
+      #lock:focus {
+        background-image: image(url("${homeDir}/dotfiles/assets/icons/power/lock_hover.png"));
+      }
+
+      #logout {
+        background-image: image(url("${homeDir}/dotfiles/assets/icons/power/logout.png"));
+      }
+
+      #logout:hover,
+      #logout:focus {
+        background-image: image(url("${homeDir}/dotfiles/assets/icons/power/logout_hover.png"));
+      }
+
+      #suspend {
+        background-image: image(url("${homeDir}/dotfiles/assets/icons/power/suspend.png"));
+      }
+
+      #suspend:hover,
+      #suspend:focus {
+        background-image: image(url("${homeDir}/dotfiles/assets/icons/power/suspend_hover.png"));
+      }
+
+      #hibernate {
+        background-image: image(url("${homeDir}/dotfiles/assets/icons/power/hibernate.png"));
+      }
+
+      #hibernate:hover,
+      #hibernate:focus {
+        background-image: image(url("${homeDir}/dotfiles/assets/icons/power/hibernate_hover.png"));
+      }
+
+      #shutdown {
+        background-image: image(url("${homeDir}/dotfiles/assets/icons/power/shutdown.png"));
+      }
+
+      #shutdown:hover,
+      #shutdown:focus {
+        background-image: image(url("${homeDir}/dotfiles/assets/icons/power/shutdown_hover.png"));
+      }
+
+      #reboot {
+        background-image: image(url("${homeDir}/dotfiles/assets/icons/power/reboot.png"));
+      }
+
+      #reboot:hover,
+      #reboot:focus {
+        background-image: image(url("${homeDir}/dotfiles/assets/icons/power/reboot_hover.png"));
       }
     '';
   };

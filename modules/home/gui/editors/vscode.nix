@@ -14,6 +14,7 @@
     pkief.material-product-icons
     jnoortheen.nix-ide
     ms-vsliveshare.vsliveshare
+    mkhl.direnv
   ];
 
   defaultUserSettings = {
