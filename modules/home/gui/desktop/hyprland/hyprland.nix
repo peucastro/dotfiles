@@ -35,7 +35,9 @@
       };
 
       input = {
-        kb_layout = "pt";
+        kb_layout = "pt,us";
+        kb_variant = ",qwerty";
+        kb_options = "grp:alt_shift_toggle";
         touchpad = {
           natural_scroll = true;
           disable_while_typing = true;
