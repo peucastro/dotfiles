@@ -150,6 +150,7 @@ in {
         "zen.workspaces.natural-scroll" = true;
         "zen.view.compact.hide-tabbar" = true;
         "zen.view.compact.animate-sidebar" = false;
+        "zen.view.show-newtab-button-top" = false;
       };
 
       spacesForce = true;

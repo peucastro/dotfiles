@@ -39,10 +39,6 @@ in {
       };
       "hyprland/window" = {
         max-length = 50;
-        rewrite = {
-          "(.*) - Mozilla Firefox" = " $1";
-          "(.*) - Chromium" = " $1";
-        };
         icon = true;
       };
 
