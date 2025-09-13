@@ -88,6 +88,7 @@
         inherit system;
         specialArgs = {
           inherit self inputs user initialPassword;
+          inherit (inputs) agenix secrets;
           host = hostname;
         };
         modules =
