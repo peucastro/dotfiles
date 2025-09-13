@@ -15,11 +15,18 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    secrets = {
+      url = "git+ssh://git@github.com/peucastro/secrets.git";
+      flake = false;
+    };
+
     agenix = {
       url = "github:ryantm/agenix";
-      inputs.nixpkgs.follows = "nixpkgs";
-      inputs.systems.follows = "systems";
-      inputs.home-manager.follows = "home-manager";
+      inputs = {
+        nixpkgs.follows = "nixpkgs";
+        systems.follows = "systems";
+        home-manager.follows = "home-manager";
+      };
     };
 
     home-manager = {
@@ -29,14 +36,18 @@
 
     zen-browser = {
       url = "github:0xc000022070/zen-browser-flake";
-      inputs.nixpkgs.follows = "nixpkgs";
-      inputs.home-manager.follows = "home-manager";
+      inputs = {
+        nixpkgs.follows = "nixpkgs";
+        home-manager.follows = "home-manager";
+      };
     };
 
     nvf = {
       url = "github:notashelf/nvf";
-      inputs.nixpkgs.follows = "nixpkgs";
-      inputs.systems.follows = "systems";
+      inputs = {
+        nixpkgs.follows = "nixpkgs";
+        systems.follows = "systems";
+      };
     };
   };
 
@@ -94,7 +105,7 @@
         formatter = pkgs.alejandra;
         devShells = import ./shell.nix {
           inherit pkgs system;
-          agenix = inputs.agenix;
+          inherit (inputs) agenix;
         };
       }
     )

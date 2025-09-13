@@ -190,9 +190,26 @@
         "home-manager": "home-manager",
         "nixpkgs": "nixpkgs",
         "nvf": "nvf",
+        "secrets": "secrets",
         "systems": "systems",
         "utils": "utils",
         "zen-browser": "zen-browser"
+      }
+    },
+    "secrets": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1757675280,
+        "narHash": "sha256-4ns0oXINqaZ7BWc+yQe1VO14Cd/9vCLGyim1D6zAguo=",
+        "ref": "refs/heads/master",
+        "rev": "f33898537c3d014b028747c32165760ea119e529",
+        "revCount": 2,
+        "type": "git",
+        "url": "ssh://git@github.com/peucastro/secrets.git"
+      },
+      "original": {
+        "type": "git",
+        "url": "ssh://git@github.com/peucastro/secrets.git"
       }
     },
     "systems": {
