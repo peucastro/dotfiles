@@ -10,20 +10,27 @@
       inputs.systems.follows = "systems";
     };
 
-    home-manager = {
-      url = "github:nix-community/home-manager";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
     disko = {
       url = "github:nix-community/disko";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    agenix = {
+      url = "github:ryantm/agenix";
+      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.systems.follows = "systems";
+      inputs.home-manager.follows = "home-manager";
+    };
+
+    home-manager = {
+      url = "github:nix-community/home-manager";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     zen-browser = {
       url = "github:0xc000022070/zen-browser-flake";
-      inputs.home-manager.follows = "home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
+      inputs.home-manager.follows = "home-manager";
     };
 
     nvf = {
@@ -38,6 +45,7 @@
     nixpkgs,
     utils,
     disko,
+    agenix,
     home-manager,
     nvf,
     ...
@@ -84,7 +92,10 @@
         pkgs = import nixpkgs {inherit system;};
       in {
         formatter = pkgs.alejandra;
-        devShells = import ./shell.nix {inherit pkgs;};
+        devShells = import ./shell.nix {
+          inherit pkgs system;
+          agenix = inputs.agenix;
+        };
       }
     )
     // {
