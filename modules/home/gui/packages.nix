@@ -35,6 +35,8 @@
     mission-center
     postman
     snapper-gui
+    veracrypt
+    gparted
     nautilus
 
     # Editors
