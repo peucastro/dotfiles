@@ -1,6 +1,7 @@
 {
   imports = [
     ./packages
-    ./utilities
+    ./bat.nix
+    ./direnv.nix
   ];
 }

@@ -52,6 +52,8 @@
 
   home.packages = [pkgs. hyprpicker];
 
+  services.hyprpolkitagent.enable = true;
+
   home.sessionVariables = {
     XDG_CURRENT_DESKTOP = "Hyprland";
     XDG_SESSION_DESKTOP = "Hyprland";

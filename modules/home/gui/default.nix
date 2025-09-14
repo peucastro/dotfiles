@@ -3,8 +3,8 @@
     ./browsers
     ./desktop
     ./editors
-    ./terminal
     ./packages
+    ./terminal
     ./xdg.nix
   ];
 }

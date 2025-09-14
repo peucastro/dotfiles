@@ -4,5 +4,6 @@
     ./monitoring.nix
     ./multimedia.nix
     ./screensaver.nix
+    ./utility.nix
   ];
 }

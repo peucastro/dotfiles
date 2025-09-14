@@ -1,7 +1,0 @@
-{
-  imports = [
-    ./btop.nix
-    ./packages.nix
-    ./tmux.nix
-  ];
-}

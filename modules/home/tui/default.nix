@@ -2,6 +2,7 @@
   imports = [
     ./editors
     ./packages
-    ./utilities
+    ./btop.nix
+    ./tmux.nix
   ];
 }

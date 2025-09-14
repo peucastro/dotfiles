@@ -14,6 +14,9 @@
     pkgs.ffmpeg
     pkgs.openssl
     pkgs.man-pages
+    pkgs.snapper-gui
+    pkgs.veracrypt
+    pkgs.gparted
     pkgs.android-tools
 
     # Monitoring
