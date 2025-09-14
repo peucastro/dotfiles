@@ -1,8 +1,6 @@
 {pkgs, ...}: {
   home.packages = [
-    pkgs.fastfetch
-    pkgs.nitch
-    pkgs.onefetch
     pkgs.glances
+    pkgs.s-tui
   ];
 }

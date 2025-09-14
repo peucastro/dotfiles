@@ -1,7 +1,6 @@
 {pkgs, ...}: {
   home.packages = [
-    pkgs.mpv
-    pkgs.cmus
-    pkgs.viu
+    pkgs.ani-cli
+    pkgs.playerctl
   ];
 }

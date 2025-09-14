@@ -1,7 +1,5 @@
 {pkgs, ...}: {
   home.packages = [
-    pkgs.mpv
-    pkgs.cmus
-    pkgs.viu
+    pkgs.bitwise
   ];
 }
