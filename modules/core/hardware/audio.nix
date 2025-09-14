@@ -7,8 +7,8 @@
     wireplumber.enable = true;
   };
 
-  environment.systemPackages = with pkgs; [
-    pavucontrol
-    alsa-utils
+  environment.systemPackages = [
+    pkgs.pavucontrol
+    pkgs.alsa-utils
   ];
 }

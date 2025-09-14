@@ -1,17 +1,17 @@
 {pkgs, ...}: {
   fonts.fontconfig.enable = true;
-  home.packages = with pkgs; [
-    dconf
-    font-awesome
-    inter
-    noto-fonts-emoji
-    twemoji-color-font
-    nerd-fonts.fira-code
-    nerd-fonts.hack
-    nerd-fonts.meslo-lg
-    nerd-fonts.jetbrains-mono
-    nerd-fonts.caskaydia-cove
-    nerd-fonts.symbols-only
+  home.packages = [
+    pkgs.dconf
+    pkgs.font-awesome
+    pkgs.inter
+    pkgs.noto-fonts-emoji
+    pkgs.twemoji-color-font
+    pkgs.nerd-fonts.fira-code
+    pkgs.nerd-fonts.hack
+    pkgs.nerd-fonts.meslo-lg
+    pkgs.nerd-fonts.jetbrains-mono
+    pkgs.nerd-fonts.caskaydia-cove
+    pkgs.nerd-fonts.symbols-only
   ];
 
   gtk = {

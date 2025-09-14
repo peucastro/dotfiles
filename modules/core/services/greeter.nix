@@ -15,7 +15,5 @@
   };
   users.groups.greeter = {};
 
-  environment.systemPackages = with pkgs; [
-    tuigreet
-  ];
+  environment.systemPackages = [pkgs.tuigreet];
 }

@@ -1,51 +1,51 @@
 {pkgs, ...}: {
-  home.packages = with pkgs; [
+  home.packages = [
     # Communication
-    webcord-vencord
-    slack
-    telegram-desktop
+    pkgs.webcord-vencord
+    pkgs.slack
+    pkgs.telegram-desktop
 
     # Browsers
-    firefox
-    ungoogled-chromium
+    pkgs.firefox
+    pkgs.ungoogled-chromium
 
     # Multimedia
-    audacity
-    gimp
-    loupe
-    obs-studio
-    pavucontrol
-    vlc
-    kdePackages.kdenlive
-    spotify
-    scrcpy
-    zoom
+    pkgs.audacity
+    pkgs.gimp
+    pkgs.loupe
+    pkgs.obs-studio
+    pkgs.pavucontrol
+    pkgs.vlc
+    pkgs.kdePackages.kdenlive
+    pkgs.spotify
+    pkgs.scrcpy
+    pkgs.zoom
 
     # Office
-    calibre
-    evince
-    libreoffice
-    obsidian
-    qalculate-gtk
+    pkgs.calibre
+    pkgs.evince
+    pkgs.libreoffice
+    pkgs.obsidian
+    pkgs.qalculate-gtk
 
     # Utility
-    gitkraken
-    hoppscotch
-    qbittorrent
-    mission-center
-    postman
-    snapper-gui
-    veracrypt
-    gparted
-    nautilus
+    pkgs.gitkraken
+    pkgs.hoppscotch
+    pkgs.qbittorrent
+    pkgs.mission-center
+    pkgs.postman
+    pkgs.snapper-gui
+    pkgs.veracrypt
+    pkgs.gparted
+    pkgs.nautilus
 
     # Editors
-    gnome-text-editor
-    android-studio
-    jetbrains.clion
-    jetbrains.idea-ultimate
-    jetbrains.phpstorm
-    jetbrains.pycharm-professional
+    pkgs.gnome-text-editor
+    pkgs.android-studio
+    pkgs.jetbrains.clion
+    pkgs.jetbrains.idea-ultimate
+    pkgs.jetbrains.phpstorm
+    pkgs.jetbrains.pycharm-professional
   ];
 
   xdg.mimeApps.defaultApplications = {

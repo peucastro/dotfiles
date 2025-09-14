@@ -50,9 +50,7 @@
     };
   };
 
-  home.packages = with pkgs; [
-    hyprpicker
-  ];
+  home.packages = [pkgs. hyprpicker];
 
   home.sessionVariables = {
     XDG_CURRENT_DESKTOP = "Hyprland";

@@ -5,6 +5,11 @@
       pager = "less -FR";
       theme = "gruvbox-dark";
     };
-    extraPackages = with pkgs.bat-extras; [batman batpipe batgrep batdiff];
+    extraPackages = [
+      pkgs.bat-extras.batman
+      pkgs.bat-extras.batpipe
+      pkgs.bat-extras.batgrep
+      pkgs.bat-extras.batdiff
+    ];
   };
 }

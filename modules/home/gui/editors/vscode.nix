@@ -3,18 +3,18 @@
   pkgs,
   ...
 }: let
-  defaultExtensions = with pkgs.vscode-extensions; [
-    adpyke.codesnap
-    usernamehw.errorlens
-    github.copilot
-    github.copilot-chat
-    jdinhlife.gruvbox
-    davidanson.vscode-markdownlint
-    pkief.material-icon-theme
-    pkief.material-product-icons
-    jnoortheen.nix-ide
-    ms-vsliveshare.vsliveshare
-    mkhl.direnv
+  defaultExtensions = [
+    pkgs.vscode-extensions.adpyke.codesnap
+    pkgs.vscode-extensions.usernamehw.errorlens
+    pkgs.vscode-extensions.github.copilot
+    pkgs.vscode-extensions.github.copilot-chat
+    pkgs.vscode-extensions.jdinhlife.gruvbox
+    pkgs.vscode-extensions.davidanson.vscode-markdownlint
+    pkgs.vscode-extensions.pkief.material-icon-theme
+    pkgs.vscode-extensions.pkief.material-product-icons
+    pkgs.vscode-extensions.jnoortheen.nix-ide
+    pkgs.vscode-extensions.ms-vsliveshare.vsliveshare
+    pkgs.vscode-extensions.mkhl.direnv
   ];
 
   defaultUserSettings = {
@@ -82,19 +82,19 @@ in {
       default = mkProfile {};
 
       python = mkProfile {
-        extensions = with pkgs.vscode-extensions; [
-          charliermarsh.ruff
-          formulahendry.code-runner
-          mechatroner.rainbow-csv
-          ms-python.debugpy
-          ms-python.isort
-          ms-python.python
-          ms-python.vscode-pylance
-          ms-toolsai.jupyter
-          ms-toolsai.jupyter-keymap
-          ms-toolsai.jupyter-renderers
-          ms-toolsai.vscode-jupyter-cell-tags
-          ms-toolsai.vscode-jupyter-slideshow
+        extensions = [
+          pkgs.vscode-extensions.charliermarsh.ruff
+          pkgs.vscode-extensions.formulahendry.code-runner
+          pkgs.vscode-extensions.mechatroner.rainbow-csv
+          pkgs.vscode-extensions.ms-python.debugpy
+          pkgs.vscode-extensions.ms-python.isort
+          pkgs.vscode-extensions.ms-python.python
+          pkgs.vscode-extensions.ms-python.vscode-pylance
+          pkgs.vscode-extensions.ms-toolsai.jupyter
+          pkgs.vscode-extensions.ms-toolsai.jupyter-keymap
+          pkgs.vscode-extensions.ms-toolsai.jupyter-renderers
+          pkgs.vscode-extensions.ms-toolsai.vscode-jupyter-cell-tags
+          pkgs.vscode-extensions.ms-toolsai.vscode-jupyter-slideshow
         ];
         userSettings = {
           "[python]" = {"editor.defaultFormatter" = "charliermarsh.ruff";};
@@ -102,9 +102,9 @@ in {
       };
 
       latex = mkProfile {
-        extensions = with pkgs.vscode-extensions; [
-          james-yu.latex-workshop
-          streetsidesoftware.code-spell-checker
+        extensions = [
+          pkgs.vscode-extensions.james-yu.latex-workshop
+          pkgs.vscode-extensions.streetsidesoftware.code-spell-checker
         ];
         userSettings = {
           "latex-workshop.formatting.latex" = "tex-fmt";
@@ -116,14 +116,14 @@ in {
       };
 
       webdev = mkProfile {
-        extensions = with pkgs.vscode-extensions; [
-          astro-build.astro-vscode
-          bmewburn.vscode-intelephense-client
-          bradlc.vscode-tailwindcss
-          christian-kohler.path-intellisense
-          esbenp.prettier-vscode
-          ritwickdey.liveserver
-          svelte.svelte-vscode
+        extensions = [
+          pkgs.vscode-extensions.astro-build.astro-vscode
+          pkgs.vscode-extensions.bmewburn.vscode-intelephense-client
+          pkgs.vscode-extensions.bradlc.vscode-tailwindcss
+          pkgs.vscode-extensions.christian-kohler.path-intellisense
+          pkgs.vscode-extensions.esbenp.prettier-vscode
+          pkgs.vscode-extensions.ritwickdey.liveserver
+          pkgs.vscode-extensions.svelte.svelte-vscode
         ];
         userSettings = {
           "editor.defaultFormatter" = "esbenp.prettier-vscode";
@@ -134,9 +134,7 @@ in {
       };
 
       c-cpp = mkProfile {
-        extensions = with pkgs.vscode-extensions; [
-          xaver.clang-format
-        ];
+        extensions = [pkgs.vscode-extensions.xaver.clang-format];
         userSettings = {
           "[c]" = {"editor.defaultFormatter" = "xaver.clang-format";};
           "[cpp]" = {"editor.defaultFormatter" = "xaver.clang-format";};
@@ -146,10 +144,10 @@ in {
       };
 
       flutter = mkProfile {
-        extensions = with pkgs.vscode-extensions; [
-          dart-code.flutter
-          dart-code.dart-code
-          jebbs.plantuml
+        extensions = [
+          pkgs.vscode-extensions.dart-code.flutter
+          pkgs.vscode-extensions.dart-code.dart-code
+          pkgs.vscode-extensions.jebbs.plantuml
         ];
         userSettings = {
           "dart.flutterCustomEmulators" = [

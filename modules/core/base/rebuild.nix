@@ -19,7 +19,11 @@
       name = "${pname}-${version}";
     };
 
-    runtimeInputs = with pkgs; [git libnotify yq-go];
+    runtimeInputs = [
+      pkgs.git
+      pkgs.libnotify
+      pkgs.yq-go
+    ];
 
     text = ''
       set -e

@@ -21,8 +21,8 @@ in
       };
     };
 
-    home.packages = with pkgs; [
-      grim
-      slurp
+    home.packages = [
+      pkgs.grim
+      pkgs.slurp
     ];
   }

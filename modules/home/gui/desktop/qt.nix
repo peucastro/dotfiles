@@ -17,8 +17,8 @@
     XCURSOR_SIZE = 24;
   };
 
-  home.packages = with pkgs; [
-    libsForQt5.qt5ct
-    kdePackages.qt6ct
+  home.packages = [
+    pkgs.libsForQt5.qt5ct
+    pkgs.kdePackages.qt6ct
   ];
 }

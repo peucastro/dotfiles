@@ -1,62 +1,62 @@
 {pkgs, ...}: {
-  home.packages = with pkgs; [
+  home.packages = [
     # Core utilities
-    duf
-    eza
-    fd
-    man-pages
-    ncdu
-    ripgrep
-    tldr
+    pkgs.duf
+    pkgs.eza
+    pkgs.fd
+    pkgs.man-pages
+    pkgs.ncdu
+    pkgs.ripgrep
+    pkgs.tldr
 
     # Utilities
-    ffmpeg
-    file
-    fzf
-    openssl
-    playerctl
-    unzip
-    wget
-    tree
-    zip
+    pkgs.ffmpeg
+    pkgs.file
+    pkgs.fzf
+    pkgs.openssl
+    pkgs.playerctl
+    pkgs.unzip
+    pkgs.wget
+    pkgs.tree
+    pkgs.zip
 
     # Backups
-    btrfs-progs
-    snapper
+    pkgs.btrfs-progs
+    pkgs.snapper
 
     # Tools
-    bitwise
-    broot
-    bottom
-    gdu
+    pkgs.bitwise
+    pkgs.broot
+    pkgs.bottom
+    pkgs.gdu
 
     # Monitoring
-    htop
-    fastfetch
-    nitch
-    onefetch
-    wavemon
+    pkgs.htop
+    pkgs.fastfetch
+    pkgs.nitch
+    pkgs.onefetch
+    pkgs.wavemon
 
     # Screensaver
-    cbonsai
-    cmatrix
-    pipes
-    tty-clock
+    pkgs.cbonsai
+    pkgs.cmatrix
+    pkgs.pipes
+    pkgs.tty-clock
 
     # Multimedia
-    ani-cli
-    mpv
+    pkgs.ani-cli
+    pkgs.mpv
 
     # Development
-    act
-    alejandra
-    android-tools
-    gemini-cli
-    jq
-    lazydocker
-    nixd
+    pkgs.act
+    pkgs.alejandra
+    pkgs.android-tools
+    pkgs.gemini-cli
+    pkgs.jq
+    pkgs.lazydocker
+    pkgs.nixd
 
     # Security
-    bitwarden
+    pkgs.bitwarden
   ];
 }
