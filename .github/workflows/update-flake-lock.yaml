@@ -19,6 +19,11 @@ jobs:
           fetch-depth: 0
           fetch-tags: true
 
+      - name: Setup SSH agent
+        uses: webfactory/ssh-agent@v0.9.1
+        with:
+          ssh-private-key: ${{ secrets.DEPLOY_KEY }}
+
       - name: Install Determinate Nix
         uses: DeterminateSystems/determinate-nix-action@v3
 
@@ -28,6 +33,6 @@ jobs:
           token: ${{ secrets.GH_TOKEN_FOR_UPDATES }}
           pr-assignees: peucastro
           pr-labels: dependencies
-          pr-title: 'chore: updated flake.lock'
-          commit-msg: 'chore: updated flake.lock'
+          pr-title: 'chore: update flake.lock'
+          commit-msg: 'chore: update flake.lock'
           branch: 'chore/update-flake-lock'
