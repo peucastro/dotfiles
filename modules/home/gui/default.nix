@@ -4,6 +4,7 @@
     ./desktop
     ./editors
     ./terminal
-    ./packages.nix
+    ./packages
+    ./xdg.nix
   ];
 }

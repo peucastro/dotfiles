@@ -1,7 +1,7 @@
 {
   imports = [
     ./editors
+    ./packages
     ./utilities
-    ./packages.nix
   ];
 }
