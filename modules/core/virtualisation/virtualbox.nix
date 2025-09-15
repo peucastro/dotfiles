@@ -4,5 +4,6 @@
     enableKvm = true;
     addNetworkInterface = false;
   };
+
   users.extraGroups.vboxusers.members = [user.login];
 }
