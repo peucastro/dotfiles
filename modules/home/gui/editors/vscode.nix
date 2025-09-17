@@ -160,6 +160,10 @@ in {
           ];
         };
       };
+
+      func = mkProfile {
+        extentions = [pkgs.vscode-extensions.haskell.haskell];
+      };
     };
   };
 }
