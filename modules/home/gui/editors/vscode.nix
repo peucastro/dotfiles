@@ -78,6 +78,11 @@ in {
     enable = true;
     package = pkgs.vscode-fhs;
 
+    haskell = {
+      enable = true;
+      hie.enable = false;
+    };
+
     profiles = {
       default = mkProfile {};
 
@@ -159,10 +164,6 @@ in {
             }
           ];
         };
-      };
-
-      func = mkProfile {
-        extentions = [pkgs.vscode-extensions.haskell.haskell];
       };
     };
   };
