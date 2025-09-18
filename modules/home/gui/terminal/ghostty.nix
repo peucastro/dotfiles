@@ -4,7 +4,7 @@
     settings = {
       font-family = "FiraCode Nerd Font Mono";
       font-size = 13.5;
-      theme = "GruvboxDarkHard";
+      theme = "Gruvbox Dark Hard";
       cursor-style = "block";
       cursor-style-blink = true;
       background-opacity = 0.95;
@@ -15,7 +15,6 @@
       window-width = 125;
       shell-integration = "zsh";
       shell-integration-features = "cursor,sudo,title";
-      gtk-adwaita = true;
       auto-update = "off";
     };
   };
