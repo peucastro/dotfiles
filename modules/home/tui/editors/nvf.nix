@@ -37,6 +37,7 @@
           trouble.enable = true;
           lspSignature.enable = true;
           inlayHints.enable = true;
+          servers.nixd.cmd = ["nixd"];
         };
 
         # Languages
@@ -157,11 +158,18 @@
 
         # Visual enhancements
         visuals = {
+          fidget-nvim = {
+            enable = true;
+            setupOpts = {
+              notification = {
+                override_vim_notify = true;
+              };
+            };
+          };
           nvim-web-devicons.enable = true;
           nvim-scrollbar.enable = true;
           nvim-cursorline.enable = true;
           cinnamon-nvim.enable = true;
-          fidget-nvim.enable = true;
           highlight-undo.enable = true;
           rainbow-delimiters.enable = true;
           indent-blankline = {
@@ -230,6 +238,7 @@
 
         # Utility
         utility = {
+          outline.aerial-nvim.enable = true;
           preview.markdownPreview.enable = true;
           ccc.enable = false;
           vim-wakatime.enable = false;
@@ -245,7 +254,6 @@
         # UI improvements
         ui = {
           borders.enable = true;
-          noice.enable = true;
           colorizer.enable = true;
           illuminate.enable = true;
           breadcrumbs = {
@@ -262,6 +270,14 @@
         projects.project-nvim = {
           enable = true;
           setupOpts.detection_methods = ["lsp" "pattern"];
+        };
+
+        # Terminal
+        terminal.toggleterm = {
+          enable = true;
+          setupOpts = {
+            direction = "float";
+          };
         };
       };
     };
