@@ -8,5 +8,8 @@
         setup = {fzf = {fuzzy = true;};};
       }
     ];
+    setupOpts.defaults = {
+      path_display = ["smart"];
+    };
   };
 }

@@ -3,9 +3,9 @@
     enable = true;
     formatOnSave = true;
     lspkind.enable = true;
+    otter-nvim.enable = true;
     trouble.enable = true;
     lspSignature.enable = true;
     inlayHints.enable = true;
-    servers.nixd.cmd = ["nixd"];
   };
 }
