@@ -4,12 +4,12 @@
       whichKey = {
         enable = true;
         register = {
-          "<leader>b" = "Buffers";
-          "<leader>c" = "Git conflicts";
           "<leader>f" = "Find";
           "<leader>g" = "Git";
+          "<leader>gh" = "Gitsigns";
+          "<leader>h" = null;
+          "<leader>gx" = "Git conflicts";
           "<leader>l" = "LSP";
-          "<leader>w" = "Windows";
         };
       };
       cheatsheet.enable = true;
