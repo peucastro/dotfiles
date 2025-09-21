@@ -165,6 +165,11 @@ in {
           position = 2000;
           icon = "💼";
         };
+        "College" = {
+          id = "cdd10fab-4fc5-494b-9041-325e5759195c";
+          position = 3000;
+          icon = "📚";
+        };
       };
 
       search = {
