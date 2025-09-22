@@ -65,7 +65,7 @@
       login = "peu";
       displayName = "Pedro Castro";
       email = "falecompedroac@gmail.com";
-      groups = ["networkmanager" "wheel"];
+      groups = ["wheel"];
     };
 
     defaultSystemArgs = {
