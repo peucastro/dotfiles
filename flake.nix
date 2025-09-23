@@ -65,7 +65,7 @@
       login = "peu";
       displayName = "Pedro Castro";
       email = "falecompedroac@gmail.com";
-      groups = ["wheel"];
+      groups = ["wheel" "dialout"];
     };
 
     defaultSystemArgs = {
