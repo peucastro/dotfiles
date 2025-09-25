@@ -6,5 +6,6 @@
     pkgs.mission-center
     pkgs.postman
     pkgs.nautilus
+    pkgs.localsend
   ];
 }
