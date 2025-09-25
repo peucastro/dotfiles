@@ -25,7 +25,6 @@
 
   users.extraGroups.networkmanager.members = [user.login];
 
-  services.xl2tpd.enable = true;
   services.strongswan.enable = true;
   environment.etc."strongswan.conf".text = "";
 }
