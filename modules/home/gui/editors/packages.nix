@@ -6,5 +6,6 @@
     pkgs.jetbrains.idea-ultimate
     pkgs.jetbrains.phpstorm
     pkgs.jetbrains.pycharm-professional
+    pkgs.jetbrains.datagrip
   ];
 }
