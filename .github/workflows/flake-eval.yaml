@@ -10,6 +10,7 @@ jobs:
   check-flake:
     name: Evaluate flake
     runs-on: ubuntu-latest
+    if: github.actor != 'dependabot[bot]'
     steps:
       - name: Code checkout
         uses: actions/checkout@v5
