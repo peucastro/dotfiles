@@ -134,7 +134,12 @@ in {
       };
 
       c-cpp = mkProfile {
-        extensions = [pkgs.vscode-extensions.xaver.clang-format];
+        extensions = [
+          pkgs.vscode-extensions.ms-vscode.cpptools
+          pkgs.vscode-extensions.ms-vscode.makefile-tools
+          pkgs.vscode-extensions.ms-vscode.cmake-tools
+          pkgs.vscode-extensions.xaver.clang-format
+        ];
         userSettings = {
           "[c]" = {"editor.defaultFormatter" = "xaver.clang-format";};
           "[cpp]" = {"editor.defaultFormatter" = "xaver.clang-format";};
