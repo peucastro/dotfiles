@@ -138,11 +138,10 @@ in {
           pkgs.vscode-extensions.ms-vscode.cpptools
           pkgs.vscode-extensions.ms-vscode.makefile-tools
           pkgs.vscode-extensions.ms-vscode.cmake-tools
-          pkgs.vscode-extensions.xaver.clang-format
         ];
         userSettings = {
-          "[c]" = {"editor.defaultFormatter" = "xaver.clang-format";};
-          "[cpp]" = {"editor.defaultFormatter" = "xaver.clang-format";};
+          "[c]" = {"editor.defaultFormatter" = "ms-vscode.cpptools";};
+          "[cpp]" = {"editor.defaultFormatter" = "ms-vscode.cpptools";};
           "makefile.configureOnOpen" = false;
           "editor.largeFileOptimizations" = false;
         };
