@@ -2,6 +2,8 @@
   services = {
     gnome.gnome-keyring.enable = true;
     power-profiles-daemon.enable = true;
+    udisks2.enable = true;
+    gvfs.enable = true;
   };
 
   programs.seahorse.enable = true;
