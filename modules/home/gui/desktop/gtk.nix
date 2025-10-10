@@ -34,7 +34,7 @@
       package = pkgs.gnome-themes-extra;
       size = 24;
     };
-    gtk2.extraConfig = "gtk-theme-name = \"Adwaita-dark\"\ngtk-icon-theme-name = \"Adwaita\"\ngtk-font-name = \"Inter 12\"\ngtk-cursor-theme-name = \"Adwaita\"\ngtk-cursor-theme-size = 24\n";
+    gtk2.extraConfig = "gtk-theme-name = \"Adwaita-dark\"\ngtk-icon-theme-name = \"Adwaita\"\ngtk-font-name = \"Inter 12\"\ngtk-cursor-theme-name = \"Adwaita\"\ngtk-cursor-theme-size = 24\ngtk-decoration-layout = appmenu:none\n";
     gtk3.extraConfig = {
       gtk-application-prefer-dark-theme = true;
       gtk-theme-name = "Adwaita-dark";
@@ -44,6 +44,7 @@
       gtk-cursor-theme-size = 24;
       gtk-button-images = true;
       gtk-menu-images = true;
+      gtk-decoration-layout = "appmenu:none";
     };
     gtk4.extraConfig = {
       gtk-application-prefer-dark-theme = true;
@@ -52,6 +53,7 @@
       gtk-font-name = "Inter 12";
       gtk-cursor-theme-name = "Adwaita";
       gtk-cursor-theme-size = 24;
+      gtk-decoration-layout = "appmenu:none";
     };
   };
 
