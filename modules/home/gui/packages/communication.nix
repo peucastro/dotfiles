@@ -1,6 +1,6 @@
 {pkgs, ...}: {
   home.packages = [
-    pkgs.webcord-vencord
+    pkgs.discord
     pkgs.slack
     pkgs.telegram-desktop
   ];
