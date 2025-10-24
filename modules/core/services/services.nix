@@ -8,4 +8,9 @@
 
   programs.seahorse.enable = true;
   environment.systemPackages = [pkgs.libsecret];
+
+  services.logind.settings.Login = {
+    HandlePowerKey = "ignore";
+    HandleLidSwitch = "suspend";
+  };
 }
