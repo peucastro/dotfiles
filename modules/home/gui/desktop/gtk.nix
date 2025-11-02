@@ -4,7 +4,7 @@
     pkgs.dconf
     pkgs.font-awesome
     pkgs.inter
-    pkgs.noto-fonts-emoji
+    pkgs.noto-fonts-color-emoji
     pkgs.twemoji-color-font
     pkgs.nerd-fonts.fira-code
     pkgs.nerd-fonts.hack

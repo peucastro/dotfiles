@@ -1,5 +1,5 @@
 {pkgs, ...}: {
   home.packages = [
-    pkgs.bitwarden
+    pkgs.bitwarden-desktop
   ];
 }
