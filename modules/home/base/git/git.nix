@@ -4,7 +4,7 @@
     settings = {
       user = {
         name = user.displayName;
-        email = user.email;
+        inherit (user) email;
       };
       init.defaultBranch = "main";
       pull.ff = "only";
