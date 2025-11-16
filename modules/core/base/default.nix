@@ -1,6 +1,7 @@
 {
   imports = [
     ./networking.nix
+    ./nh.nix
     ./nix.nix
     ./packages.nix
     ./rebuild.nix

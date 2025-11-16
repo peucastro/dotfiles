@@ -1,6 +1,6 @@
-{config, ...}: {
+{user, ...}: {
   programs.nh = {
     enable = true;
-    flake = "${config.home.homeDirectory}/dotfiles/flake.nix";
+    flake = "/home/${user.login}/dotfiles";
   };
 }
