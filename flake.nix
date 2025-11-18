@@ -49,6 +49,11 @@
         systems.follows = "systems";
       };
     };
+
+    nix-vscode-extensions = {
+      url = "github:nix-community/nix-vscode-extensions";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = {
@@ -82,6 +87,7 @@
       pkgs = import nixpkgs {
         inherit system;
         config.allowUnfree = true;
+        overlays = [inputs.nix-vscode-extensions.overlays.default];
       };
     in
       nixpkgs.lib.nixosSystem {
