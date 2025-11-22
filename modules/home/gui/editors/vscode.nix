@@ -123,6 +123,7 @@ in {
           pkgs.vscode-extensions.esbenp.prettier-vscode
           pkgs.vscode-extensions.christian-kohler.path-intellisense
           pkgs.vscode-extensions.ritwickdey.liveserver
+          pkgs.vscode-extensions.ms-vscode.live-server
           pkgs.vscode-extensions.svelte.svelte-vscode
           pkgs.vscode-marketplace.laravel.vscode-laravel
         ];
