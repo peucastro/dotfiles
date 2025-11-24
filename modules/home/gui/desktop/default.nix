@@ -2,7 +2,6 @@
   imports = [
     ./hyprland
     ./cliphist.nix
-    ./fuzzel.nix
     ./gtk.nix
     ./hypridle.nix
     ./hyprlock.nix
@@ -12,6 +11,7 @@
     ./swaync.nix
     ./swayosd.nix
     ./swww.nix
+    ./vicinae.nix
     ./waybar.nix
     ./wlogout.nix
     ./wlsunset.nix

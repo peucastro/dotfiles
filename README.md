@@ -37,6 +37,6 @@
 
 ### Applications
 
-- **Application Launcher:** [`Fuzzel`](https://codeberg.org/dnkl/fuzzel/)
+- **Application Launcher:** [`Vicinae`](https://docs.vicinae.com/)
 - **Code Editor:** [`VS Code`](https://code.visualstudio.com/), [`Zed`](https://zed.dev/)
 - **Web Browser:** [`Zen`](https://zen-browser.app/)
