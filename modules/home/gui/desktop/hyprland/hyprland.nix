@@ -48,6 +48,13 @@
         "dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP"
       ];
     };
+
+    /*
+       extraConfig = ''
+      monitor=eDP-1,1920x1200@120Hz,0x0,1
+      monitor=HDMI-A-1,1920x1200@60Hz,0x0,1,mirror,eDP-1
+    '';
+    */
   };
 
   home.packages = [pkgs. hyprpicker];

@@ -30,4 +30,6 @@
       };
     };
   };
+
+  xdg.configFile."vicinae/vicinae.json".force = true;
 }
