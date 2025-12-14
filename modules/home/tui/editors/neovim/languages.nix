@@ -1,4 +1,4 @@
-{pkgs, ...}: {
+{
   programs.nvf.settings.vim.languages = {
     enableFormat = true;
     enableTreesitter = true;
@@ -7,13 +7,13 @@
     assembly.enable = true;
     astro = {
       enable = true;
-      format.package = pkgs.prettierd;
+      format.type = ["prettier"];
     };
     bash.enable = true;
     clang.enable = true;
     css = {
       enable = true;
-      format.package = pkgs.prettierd;
+      format.type = ["prettier"];
     };
     dart.enable = true;
     go.enable = true;
@@ -25,7 +25,7 @@
     markdown.enable = true;
     nix = {
       enable = true;
-      lsp.package = pkgs.nixd;
+      lsp.servers = ["nixd"];
     };
     php.enable = true;
     python.enable = true;
@@ -34,12 +34,12 @@
     sql.enable = true;
     svelte = {
       enable = true;
-      format.package = pkgs.prettierd;
+      format.type = ["prettier"];
     };
     tailwind.enable = true;
     ts = {
       enable = true;
-      format.package = pkgs.prettierd;
+      format.type = ["prettier"];
       extensions.ts-error-translator.enable = true;
     };
     yaml.enable = true;
