@@ -12,7 +12,7 @@
       "$modifier" = "SUPER";
       "$terminal" = "ghostty";
       "$fileManager" = "nautilus --new-window";
-      "$menu" = "vicinae open";
+      "$menu" = "rofi";
       "$browser" = "zen";
 
       animations.enabled = false;

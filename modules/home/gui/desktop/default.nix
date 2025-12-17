@@ -7,11 +7,11 @@
     ./hyprlock.nix
     ./kanshi.nix
     ./qt.nix
+    ./rofi.nix
     ./swappy.nix
     ./swaync.nix
     ./swayosd.nix
     ./swww.nix
-    ./vicinae.nix
     ./waybar.nix
     ./wlogout.nix
     ./wlsunset.nix
