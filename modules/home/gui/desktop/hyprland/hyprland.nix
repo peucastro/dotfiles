@@ -12,7 +12,7 @@
       "$modifier" = "SUPER";
       "$terminal" = "ghostty";
       "$fileManager" = "nautilus --new-window";
-      "$menu" = "rofi";
+      "$menu" = "rofi -show drun";
       "$browser" = "zen";
 
       animations.enabled = false;
