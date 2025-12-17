@@ -4,6 +4,7 @@
       "$modifier, Return, exec, $terminal"
       "$modifier, E, exec, $fileManager"
       "$modifier, D, exec, $menu"
+      "$modifier, C, exec, cliphist list | $menu --dmenu | cliphist decode | wl-copy"
       "$modifier, B, exec, $browser"
       "$modifier SHIFT, N, exec, swaync-client -t -sw"
       "$modifier, P, exec, grim -o $(hyprctl monitors -j | jq -r 'map(select(.focused)) | .[] | .name') - | swappy -f -"

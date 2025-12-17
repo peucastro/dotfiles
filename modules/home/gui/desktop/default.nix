@@ -2,12 +2,12 @@
   imports = [
     ./hyprland
     ./cliphist.nix
+    ./fuzzel.nix
     ./gtk.nix
     ./hypridle.nix
     ./hyprlock.nix
     ./kanshi.nix
     ./qt.nix
-    ./rofi.nix
     ./swappy.nix
     ./swaync.nix
     ./swayosd.nix
