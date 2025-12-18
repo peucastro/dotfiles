@@ -1,10 +1,12 @@
 {pkgs, ...}: {
   programs.rofi = {
     enable = true;
-    plugins = [];
+    cycle = true;
+    plugins = [pkgs.rofi-emoji];
+    modes = ["drun" "emoji"];
     terminal = "${pkgs.ghostty}/bin/ghostty";
 
     theme = "gruvbox-dark-hard";
-    font = "Inter";
+    font = "Inter 15";
   };
 }
