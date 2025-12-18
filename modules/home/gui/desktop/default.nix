@@ -10,7 +10,6 @@
     ./qt.nix
     ./rofi.nix
     ./swappy.nix
-    ./swayosd.nix
     ./swww.nix
     ./waybar.nix
     ./wlogout.nix

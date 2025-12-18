@@ -87,20 +87,19 @@
     ];
 
     bindel = [
-      ",XF86AudioRaiseVolume, exec, swayosd-client --output-volume raise"
-      ",XF86AudioLowerVolume, exec, swayosd-client --output-volume lower"
-      ",XF86MonBrightnessUp, exec, swayosd-client --brightness raise"
-      ",XF86MonBrightnessDown, exec, swayosd-client --brightness lower"
+      ",XF86AudioRaiseVolume, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+ && vol=$(wpctl get-volume @DEFAULT_AUDIO_SINK@ | awk '{print int($2*100)}') && dunstify -a volume -h string:x-canonical-private-synchronous:volume -h int:value:$vol \"Volume: $vol%\""
+      ",XF86AudioLowerVolume, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%- && vol=$(wpctl get-volume @DEFAULT_AUDIO_SINK@ | awk '{print int($2*100)}') && dunstify -a volume -h string:x-canonical-private-synchronous:volume -h int:value:$vol \"Volume: $vol%\""
+      ",XF86MonBrightnessUp, exec, brightnessctl set 10%+ && brightness=$(awk \"BEGIN {printf \\\"%d\\\", $(brightnessctl get) * 100 / $(brightnessctl max)}\") && dunstify -a brightness -h string:x-canonical-private-synchronous:brightness -h int:value:$brightness \"Brightness: $brightness%\""
+      ",XF86MonBrightnessDown, exec, brightnessctl set 10%- && brightness=$(awk \"BEGIN {printf \\\"%d\\\", $(brightnessctl get) * 100 / $(brightnessctl max)}\") && dunstify -a brightness -h string:x-canonical-private-synchronous:brightness -h int:value:$brightness \"Brightness: $brightness%\""
     ];
 
     bindl = [
-      ",XF86AudioMute, exec, swayosd-client --output-volume mute-toggle"
-      ",XF86AudioMicMute, exec, swayosd-client --input-volume mute-toggle"
+      ",XF86AudioMute, exec, wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle && status=$(wpctl get-volume @DEFAULT_AUDIO_SINK@) && if echo $status | grep -q MUTED; then dunstify -a volume -h string:x-canonical-private-synchronous:volume \"Volume: Muted\"; else vol=$(echo $status | awk '{print int($2*100)}') && dunstify -a volume -h string:x-canonical-private-synchronous:volume -h int:value:$vol \"Volume: $vol%\"; fi"
+      ",XF86AudioMicMute, exec, wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle && if wpctl get-volume @DEFAULT_AUDIO_SOURCE@ | grep -q MUTED; then dunstify -a volume -h string:x-canonical-private-synchronous:mic \"Microphone: Muted\"; else dunstify -a volume -h string:x-canonical-private-synchronous:mic \"Microphone: Unmuted\"; fi"
       ",XF86AudioNext, exec, playerctl next"
       ",XF86AudioPause, exec, playerctl play-pause"
       ",XF86AudioPlay, exec, playerctl play-pause"
       ",XF86AudioPrev, exec, playerctl previous"
-      "CAPS, Caps_Lock, exec, swayosd-client --caps-lock"
     ];
   };
 }
