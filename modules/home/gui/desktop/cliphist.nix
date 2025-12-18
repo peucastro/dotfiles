@@ -10,5 +10,5 @@
     ];
   };
 
-  home.packages = [pkgs.wl-clipboard];
+  home.packages = [pkgs.wl-clipboard pkgs.wtype];
 }
