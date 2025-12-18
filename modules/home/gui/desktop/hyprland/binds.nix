@@ -7,7 +7,6 @@
       "$modifier, C, exec, cliphist list | $menu -dmenu | cliphist decode | wl-copy && wtype -M ctrl v -m ctrl"
       "$modifier SHIFT, E, exec, rofi -show emoji | wl-copy && wtype -M ctrl v -m ctrl"
       "$modifier, B, exec, $browser"
-      "$modifier SHIFT, N, exec, swaync-client -t -sw"
       "$modifier, P, exec, grim -o $(hyprctl monitors -j | jq -r 'map(select(.focused)) | .[] | .name') - | swappy -f -"
       "$modifier SHIFT, P, exec, grim -g \"$(slurp)\" - | swappy -f -"
       "$modifier SHIFT, C, exec, hyprpicker --autocopy --format=hex"

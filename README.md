@@ -19,7 +19,7 @@
 - **Idle Daemon:** [`hypridle`](https://wiki.hypr.land/Hypr-Ecosystem/hypridle/)
 - **Screen Locker:** [`hyprlock`](https://wiki.hypr.land/Hypr-Ecosystem/hyprlock/)
 - **Logout Menu:** [`wlogout`](https://github.com/ArtsyMacaw/wlogout/)
-- **Notification Daemon:** [`SwayNotificationCenter`](https://github.com/ErikReider/SwayNotificationCenter)
+- **Notification Daemon:** [`dunst`](https://dunst-project.org/)
 - **OSD:** [`SwayOSD`](https://github.com/ErikReider/SwayOSD/)
 - **Display Manager**: [`greetd`](https://sr.ht/~kennylevinsen/greetd/) + [`tuigreet`](https://github.com/apognu/tuigreet/)
 - **Monitors Manager**: [`kanshi`](https://gitlab.freedesktop.org/emersion/kanshi/)

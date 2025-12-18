@@ -2,6 +2,7 @@
   imports = [
     ./hyprland
     ./cliphist.nix
+    ./dunst.nix
     ./gtk.nix
     ./hypridle.nix
     ./hyprlock.nix
@@ -9,7 +10,6 @@
     ./qt.nix
     ./rofi.nix
     ./swappy.nix
-    ./swaync.nix
     ./swayosd.nix
     ./swww.nix
     ./waybar.nix
