@@ -1,7 +1,13 @@
 {pkgs, ...}: {
   wayland.windowManager.hyprland = {
     enable = true;
-    systemd.enable = false;
+    package = null;
+    portalPackage = null;
+    systemd = {
+      enable = true;
+      variables = ["--all"];
+    };
+    xwayland.enable = true;
     settings = {
       "$modifier" = "SUPER";
       "$terminal" = "ghostty";
@@ -36,6 +42,11 @@
           disable_while_typing = true;
         };
       };
+
+      exec-once = [
+        "systemctl --user import-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP"
+        "dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP"
+      ];
     };
 
     /*
