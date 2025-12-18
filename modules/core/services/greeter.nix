@@ -1,19 +1,18 @@
-{pkgs, ...}: {
-  services.greetd = {
+{
+  services.displayManager = {
     enable = true;
-    settings = {
-      default_session = {
-        command = "${pkgs.tuigreet}/bin/tuigreet --time --remember --user-menu --cmd Hyprland";
-        user = "greeter";
+
+    ly = {
+      enable = true;
+      settings = {
+        allow_empty_password = false;
+        animation = "matrix";
+        asterisk = "0x2022";
+        auth_fails = 5;
+        bigclock = "en";
+        clear_password = true;
+        hibernate_cmd = "/run/current-system/systemd/bin/systemctl hibernate";
       };
     };
   };
-
-  users.users.greeter = {
-    isSystemUser = true;
-    group = "greeter";
-  };
-  users.groups.greeter = {};
-
-  environment.systemPackages = [pkgs.tuigreet];
 }
