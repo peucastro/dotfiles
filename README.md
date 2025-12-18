@@ -37,6 +37,6 @@
 
 ### Applications
 
-- **Application Launcher:** [`fuzzel`](https://codeberg.org/dnkl/fuzzel/)
+- **Application Launcher:** [`Rodi`](https://davatorium.github.io/rofi/)
 - **Code Editor:** [`VS Code`](https://code.visualstudio.com/), [`Zed`](https://zed.dev/)
 - **Web Browser:** [`Zen`](https://zen-browser.app/)
