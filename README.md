@@ -15,7 +15,7 @@
 
 - **Window Manager:** [`Hyprland`](https://hypr.land/)
 - **Status Bar:** [`Waybar`](https://github.com/Alexays/Waybar/)
-- **Wallpaper Manager:** [`wpaperd`](https://github.com/danyspin97/wpaperd/)
+- **Wallpaper Manager:** [`awww`](https://codeberg.org/LGFae/awww/) + [`waypaper`](https://anufrievroman.gitbook.io/waypaper/)
 - **Idle Daemon:** [`hypridle`](https://wiki.hypr.land/Hypr-Ecosystem/hypridle/)
 - **Screen Locker:** [`hyprlock`](https://wiki.hypr.land/Hypr-Ecosystem/hyprlock/)
 - **Logout Menu:** [`wlogout`](https://github.com/ArtsyMacaw/wlogout/)
@@ -36,6 +36,6 @@
 
 ### Applications
 
-- **Application Launcher:** [`Rodi`](https://davatorium.github.io/rofi/)
+- **Application Launcher:** [`Rofi`](https://davatorium.github.io/rofi/)
 - **Code Editor:** [`VS Code`](https://code.visualstudio.com/), [`Zed`](https://zed.dev/)
-- **Web Browser:** [`Zen`](https://zen-browser.app/)
+- **Web Browser:** [`Zen`](https://zen-browser.app/), [`Chromium`](https://www.chromium.org/chromium-projects/)
