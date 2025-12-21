@@ -26,7 +26,7 @@
 
 ### Terminal & Shell
 
-- **Terminal Emulator:** [`Ghostty`](https://ghostty.org/)
+- **Terminal Emulator:** [`Alacritty`](https://alacritty.org/index.html/)
 - **Shell:** [`Zsh`](https://www.zsh.org/)
   - **Plugin Manager:** [`oh-my-zsh`](https://ohmyz.sh/)
   - **Plugins:** [`zsh-autosuggestions`](https://github.com/zsh-users/zsh-autosuggestions/), [`zsh-syntax-highlighting`](https://github.com/zsh-users/zsh-syntax-highlighting/)
