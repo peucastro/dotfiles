@@ -10,7 +10,7 @@
     xwayland.enable = true;
     settings = {
       "$modifier" = "SUPER";
-      "$terminal" = "ghostty";
+      "$terminal" = "alacritty";
       "$fileManager" = "nautilus --new-window";
       "$menu" = "rofi -show drun";
       "$browser" = "zen";

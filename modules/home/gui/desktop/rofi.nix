@@ -13,7 +13,7 @@ in
       cycle = true;
       plugins = [pkgs.rofi-emoji];
       modes = ["drun" "emoji"];
-      terminal = "${pkgs.ghostty}/bin/ghostty";
+      terminal = "${pkgs.alacritty}/bin/alacritty";
 
       extraConfig = {
         show-icons = true;
