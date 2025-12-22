@@ -100,11 +100,6 @@ in {
         };
         transparent_background_colors = true;
       };
-      bell = {
-        animation = "EaseOutExpo";
-        duration = 80;
-        color = "#${colors.orange}";
-      };
       cursor = {
         style = {
           shape = "Beam";
