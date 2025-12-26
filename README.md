@@ -1,7 +1,7 @@
 # 🏠 Dotfiles
 
 [![built-with-nix](https://builtwithnix.org/badge.svg)](https://builtwithnix.org)
-[![nixos-unstable](https://img.shields.io/badge/NixOS-unstable-informational.svg?logo=nixos)](https://github.com/nixos/nixpkgs/tree/nixos-unstable)
+[![nixos-nixos-25.11](https://img.shields.io/badge/NixOS-25.11-informational.svg?logo=nixos)](https://github.com/NixOS/nixpkgs/tree/nixos-25.11)
 [![lint](https://github.com/peucastro/dotfiles/actions/workflows/lint.yaml/badge.svg)](https://github.com/peucastro/dotfiles/actions/workflows/lint.yaml)
 [![flake-eval](https://github.com/peucastro/dotfiles/actions/workflows/flake-eval.yaml/badge.svg)](https://github.com/peucastro/dotfiles/actions/workflows/flake-eval.yaml)
 [![license](https://img.shields.io/github/license/peucastro/dotfiles)](https://github.com/peucastro/dotfiles/blob/main/LICENSE)
