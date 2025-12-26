@@ -85,7 +85,6 @@
         message=$(nixos-rebuild list-generations --json | yq -p=json ".[] | select(.current == true) | \"rebuild($HOST): generation \\(.generation), NixOS \\(.nixosVersion) with Linux Kernel \\(.kernelVersion)\"")
         git commit -m "$message" || true
         git push
-        git push --force
       }
 
       notify_success() {

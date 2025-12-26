@@ -189,7 +189,7 @@ in {
                   }
                   {
                     name = "channel";
-                    value = "nixos-25.11";
+                    value = "25.11";
                   }
                   {
                     name = "query";
@@ -208,7 +208,7 @@ in {
                 params = [
                   {
                     name = "channel";
-                    value = "nixos-25.11";
+                    value = "25.11";
                   }
                   {
                     name = "query";
