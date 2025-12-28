@@ -27,4 +27,6 @@
 
   services.strongswan.enable = true;
   environment.etc."strongswan.conf".text = "";
+
+  services.tailscale.enable = true;
 }
