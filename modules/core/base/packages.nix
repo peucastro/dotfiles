@@ -18,6 +18,7 @@
     pkgs.veracrypt
     pkgs.gparted
     pkgs.android-tools
+    pkgs.comma
 
     # Monitoring
     pkgs.htop
