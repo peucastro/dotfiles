@@ -105,6 +105,7 @@ in {
         extensions = [
           pkgs.vscode-extensions.james-yu.latex-workshop
           pkgs.vscode-extensions.streetsidesoftware.code-spell-checker
+          pkgs.vscode-extensions.myriad-dreamin.tinymist
         ];
         userSettings = {
           "latex-workshop.formatting.latex" = "tex-fmt";
