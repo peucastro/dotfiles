@@ -1,5 +1,9 @@
 # 🏠 Dotfiles
 
+> [!IMPORTANT]
+> This repository is no longer maintained, as I have transitioned to NixOS for my system configuration.
+> For my up-to-date NixOS setup, please visit my new [nixos-config repository](https://github.com/peucastro/nixos-config).
+
 ![Setup screenshot](screenshots/screenshot1.png)
 ![Lock screen screenshot](screenshots/screenshot2.png)
 
