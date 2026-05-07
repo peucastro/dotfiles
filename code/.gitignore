@@ -1,0 +1,27 @@
+.config/Code - OSS/Cache/
+.config/Code - OSS/CachedData/
+.config/Code - OSS/CachedProfilesData/
+.config/Code - OSS/Code Cache/
+.config/Code - OSS/Crashpad/
+.config/Code - OSS/DIPS
+.config/Code - OSS/DIPS-wal
+.config/Code - OSS/DawnGraphiteCache/
+.config/Code - OSS/DawnWebGPUCache/
+.config/Code - OSS/Dictionaries/
+.config/Code - OSS/GPUCache/
+.config/Code - OSS/Local Storage/
+.config/Code - OSS/Network Persistent State
+.config/Code - OSS/Preferences
+.config/Code - OSS/Shared Dictionary/
+.config/Code - OSS/SharedStorage
+.config/Code - OSS/SharedStorage-wal
+.config/Code - OSS/Trust Tokens
+.config/Code - OSS/Trust Tokens-journal
+.config/Code - OSS/User/History/
+.config/Code - OSS/User/chatLanguageModels.json
+.config/Code - OSS/User/globalStorage/
+.config/Code - OSS/User/workspaceStorage/
+.config/Code - OSS/code.lock
+.config/Code - OSS/languagepacks.json
+.config/Code - OSS/logs/
+.config/Code - OSS/machineid
