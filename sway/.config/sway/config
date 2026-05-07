@@ -16,6 +16,12 @@ set $filemanager thunar
 ## Web browser
 set $browser firefox
 
+# Start services
+
+exec systemctl --user import-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=sway
+exec dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=sway
+exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
+
 # Idle configuration
 
 exec swayidle -w \
