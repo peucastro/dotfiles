@@ -16,7 +16,7 @@ firefox
 file-roller
 fzf
 gemini-cli
-gh
+github-cli
 gimp
 git
 gpu-screen-recorder
@@ -29,7 +29,6 @@ openssh
 polkit-gnome
 qbittorrent
 ripgrep
-sioyek
 slurp
 stow
 sway
@@ -37,6 +36,10 @@ swayidle
 swaylock
 thunar
 thunar-archive-plugin
+ttf-fira-code
+ttf-firacode-nerd
+ttf-jetbrains-mono
+ttf-jetbrains-mono-nerd
 tmux
 unzip
 vlc
@@ -45,6 +48,7 @@ wmenu
 xdg-desktop-portal
 xdg-desktop-portal-wlr
 xdg-user-dirs
+zathura
 zed
 zip
 zsh
