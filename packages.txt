@@ -20,6 +20,7 @@ github-cli
 gimp
 git
 gpu-screen-recorder
+gpu-screen-recorder-ui
 grim
 imv
 man-db
