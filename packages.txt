@@ -1,6 +1,7 @@
 7zip
 alacritty
 android-tools
+autotiling
 bitwarden
 brightnessctl
 btop
