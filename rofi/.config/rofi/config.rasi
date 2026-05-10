@@ -1,0 +1,10 @@
+configuration {
+    modes: "drun";
+    font: "Inter 12";
+    show-icons: true;
+    terminal: "alacritty";
+    icon-theme: "Adwaita";
+    sort: true;
+}
+
+@theme "Arc-Dark"

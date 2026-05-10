@@ -32,6 +32,7 @@ otf-font-awesome
 polkit-gnome
 qbittorrent
 ripgrep
+rofi
 slurp
 stow
 sway
@@ -47,7 +48,6 @@ tmux
 unzip
 vlc
 wl-clipboard
-wmenu
 xdg-desktop-portal
 xdg-desktop-portal-wlr
 xdg-user-dirs

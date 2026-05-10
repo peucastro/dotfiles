@@ -10,7 +10,7 @@ set $right l
 ## Terminal emulator
 set $term alacritty
 ## Application launcher
-set $menu wmenu-run
+set $menu rofi -show drun
 ## File manager
 set $filemanager thunar
 ## Web browser
