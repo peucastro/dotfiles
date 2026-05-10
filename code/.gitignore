@@ -12,9 +12,11 @@
 .config/Code - OSS/Local Storage/
 .config/Code - OSS/Network Persistent State
 .config/Code - OSS/Preferences
+.config/Code - OSS/Session Storage/
 .config/Code - OSS/Shared Dictionary/
 .config/Code - OSS/SharedStorage
 .config/Code - OSS/SharedStorage-wal
+.config/Code - OSS/Transport Security/
 .config/Code - OSS/Trust Tokens
 .config/Code - OSS/Trust Tokens-journal
 .config/Code - OSS/User/History/

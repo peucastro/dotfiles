@@ -1,4 +1,6 @@
 color=000000
 show-failed-attempts
 indicator-caps-lock
-text-color=ffffff
+indicator-radius=100
+indicator-thicknes=6
+indicator-idle-visible
