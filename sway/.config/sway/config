@@ -21,6 +21,7 @@ set $browser firefox
 exec systemctl --user import-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=sway
 exec dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=sway
 exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
+exec wl-paste --watch cliphist store
 
 # Idle configuration
 
@@ -53,6 +54,8 @@ bindsym $mod+Return exec $term
 bindsym $mod+Shift+q kill
 ### Start your launcher
 bindsym $mod+d exec $menu
+### Clipboard history
+bindsym $mod+c exec selected=$(cliphist list | $menu -dmenu) && echo "$selected" | cliphist decode | wl-copy && wtype -M ctrl -k v -m ctrl
 ### Start File Manager
 bindsym $mod+e exec $filemanager
 ### Start Web Browser

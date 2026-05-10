@@ -6,6 +6,7 @@ brightnessctl
 btop
 calibre
 chromium
+cliphist
 code
 discord
 fastfetch
@@ -48,6 +49,7 @@ tmux
 unzip
 vlc
 wl-clipboard
+wtype
 xdg-desktop-portal
 xdg-desktop-portal-wlr
 xdg-user-dirs
