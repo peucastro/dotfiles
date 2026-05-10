@@ -1,0 +1,27 @@
+[Default Applications]
+text/html=firefox.desktop
+application/xhtml+xml=firefox.desktop
+x-scheme-handler/http=firefox.desktop
+x-scheme-handler/https=firefox.desktop
+x-scheme-handler/mailto=firefox.desktop
+x-scheme-handler/about=firefox.desktop
+x-scheme-handler/unknown=firefox.desktop
+inode/directory=thunar.desktop
+x-scheme-handler/magnet=qbittorrent.desktop
+application/pdf=zathura.desktop
+text/plain=nvim.desktop
+text/x-shellscript=nvim.desktop
+image/png=imv.desktop
+image/jpeg=imv.desktop
+image/webp=imv.desktop
+image/gif=imv.desktop
+image/svg+xml=imv.desktop
+video/mp4=vlc.desktop
+video/x-matroska=vlc.desktop
+audio/mpeg=vlc.desktop
+audio/ogg=vlc.desktop
+application/zip=file-roller.desktop
+application/x-tar=file-roller.desktop
+application/gzip=file-roller.desktop
+application/x-7z-compressed=file-roller.desktop
+application/x-rar=file-roller.desktop
