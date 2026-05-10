@@ -1,0 +1,25 @@
+[icons]
+icons = "awesome6"
+
+[[block]]
+block = "backlight"
+
+[[block]]
+block = "cpu"
+
+[[block]]
+block = "memory"
+format = " $icon $mem_used_percents.eng(w:2) "
+
+[[block]]
+block = "net"
+format = " $icon $speed_down.eng(prefix:K) "
+
+[[block]]
+block = "battery"
+format = " $icon $percentage "
+full_format = " $icon $percentage "
+not_charging_format = " $icon $percentage "
+
+[[block]]
+block = "time"

@@ -28,6 +28,7 @@ man-db
 neovim
 opencode
 openssh
+otf-font-awesome
 polkit-gnome
 qbittorrent
 ripgrep
