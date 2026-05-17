@@ -15,11 +15,11 @@
 	format = ssh
 [help]
 	autocorrect = 1
-[include]
-	path = ~/.gitconfig.local
 [init]
 	defaultBranch = main
 [pull]
 	rebase = false
 [user]
-	signingkey = /home/peu/.ssh/id_ed25519
+	name = Pedro Castro
+	email = falecompedroac@gmail.com
+	signingKey = ~/.ssh/id_ed25519.pub

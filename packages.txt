@@ -2,6 +2,7 @@
 alacritty
 android-tools
 bitwarden
+blueman
 brightnessctl
 btop
 calibre
@@ -20,6 +21,7 @@ fzf
 gemini-cli
 gimp
 git
+git-lfs
 github-cli
 gpu-screen-recorder
 gpu-screen-recorder-ui
@@ -32,12 +34,14 @@ jq
 ly
 mako
 man-db
+man-pages
 neovim
 noto-fonts
 noto-fonts-emoji
 opencode
 openssh
 otf-font-awesome
+pavucontrol
 playerctl
 polkit-gnome
 qbittorrent
@@ -64,8 +68,10 @@ vlc
 wl-clipboard
 wtype
 xdg-desktop-portal
+xdg-desktop-portal-gtk
 xdg-desktop-portal-wlr
 xdg-user-dirs
+xorg-xwayland
 zathura
 zed
 zip
