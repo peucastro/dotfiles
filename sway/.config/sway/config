@@ -182,7 +182,7 @@ bindsym --locked XF86AudioStop exec playerctl stop
 ### Special keys to adjust brightness via brightnessctl
 bindsym --locked XF86MonBrightnessDown exec brightnessctl set 5%-
 bindsym --locked XF86MonBrightnessUp exec brightnessctl set 5%+
-### Focoused monitor screenshot
+### Focused monitor screenshot
 bindsym $mod+p exec grim -o "$(swaymsg -t get_outputs | jq -r '.[] | select(.focused) | .name')" - | swappy -f -
 ### Area selection screenshot
 bindsym $mod+Shift+p exec grim -g "$(slurp)" - | swappy -f -

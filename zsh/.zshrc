@@ -36,6 +36,11 @@ if command -v zoxide &>/dev/null; then
 	eval "$(zoxide init zsh)"
 fi
 
+# direnv
+if command -v direnv &>/dev/null; then
+	eval "$(direnv hook zsh)"
+fi
+
 # Prepend sudo
 sudo-command-line() {
 	[[ -z $BUFFER ]] && zle up-history

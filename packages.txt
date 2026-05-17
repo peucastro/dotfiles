@@ -8,7 +8,9 @@ calibre
 chromium
 cliphist
 code
+direnv
 discord
+docker
 fastfetch
 fd
 ffmpeg
@@ -22,6 +24,8 @@ github-cli
 gpu-screen-recorder
 gpu-screen-recorder-ui
 grim
+gvfs
+htop
 i3status-rust
 imv
 jq
@@ -29,6 +33,8 @@ ly
 mako
 man-db
 neovim
+noto-fonts
+noto-fonts-emoji
 opencode
 openssh
 otf-font-awesome
@@ -46,6 +52,7 @@ swayidle
 swaylock
 thunar
 thunar-archive-plugin
+thunar-volman
 tmux
 ttf-fira-code
 ttf-firacode-nerd
