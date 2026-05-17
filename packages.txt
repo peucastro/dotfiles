@@ -58,6 +58,7 @@ xdg-user-dirs
 zathura
 zed
 zip
+zoxide
 zsh
 zsh-autosuggestions
 zsh-syntax-highlighting

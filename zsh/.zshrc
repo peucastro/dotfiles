@@ -2,34 +2,56 @@
 # ~/.zshrc
 #
 
-export PATH=$HOME/bin:$HOME/.local/bin:$PATH
+# PATH
+export PATH="$HOME/.local/bin:$PATH"
 
-# Path to ohmyzsh installation
-export ZSH="$HOME/.oh-my-zsh"
-
-# Set name of the theme to load
-ZSH_THEME="robbyrussell"
-
-# ohmyzsh auto-update behavior
-zstyle ':omz:update' mode reminder
-
-# Disable auto-setting terminal title
-DISABLE_AUTO_TITLE="true"
-
-# ohmyzsh plugins
-plugins=(fzf gh git man sudo tldr z zsh-syntax-highlighting zsh-autosuggestions)
-
-source $ZSH/oh-my-zsh.sh
-
-# User configuration
-
-# Preferred editor for local and remote sessions
+# Editor
 if [[ -n $SSH_CONNECTION ]]; then
-  export EDITOR='vim'
+	export EDITOR='vim'
 else
-  export EDITOR='nvim'
+	export EDITOR='nvim'
 fi
 
-# Personal aliases
-alias zshconfig="nvim ~/.zshrc"
-alias ohmyzsh="nvim ~/.oh-my-zsh"
+# History
+HISTFILE=~/.zsh_history
+HISTSIZE=50000
+SAVEHIST=50000
+setopt append_history share_history hist_ignore_dups hist_ignore_space hist_reduce_blanks extended_history
+
+# Completion
+autoload -Uz compinit
+compinit
+zstyle ':completion:*' menu select
+
+# Plugins
+source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.plugin.zsh
+
+# fzf
+source /usr/share/fzf/key-bindings.zsh
+source /usr/share/fzf/completion.zsh
+
+# zoxide
+if command -v zoxide &>/dev/null; then
+	eval "$(zoxide init zsh)"
+fi
+
+# Prepend sudo
+sudo-command-line() {
+	[[ -z $BUFFER ]] && zle up-history
+	[[ $BUFFER != sudo\ * ]] && BUFFER="sudo $BUFFER"
+	zle end-of-line
+}
+zle -N sudo-command-line
+bindkey '^[^[' sudo-command-line
+
+# Aliases
+alias ls='ls --color=auto'
+alias ll='ls -la'
+alias la='ls -A'
+alias grep='grep --color=auto'
+alias ..='cd ..'
+alias ...='cd ../..'
+
+# Prompt
+PROMPT='%F{green}%n@%m%f %F{blue}%~%f %# '
