@@ -14,7 +14,7 @@ set $menu rofi -show drun
 ## File manager
 set $filemanager thunar
 ## Web browser
-set $browser firefox
+set $browser zen
 
 # Output
 
