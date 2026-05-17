@@ -18,13 +18,19 @@ done
 
 log "Installing packages"
 if [ -f packages.txt ]; then
-	sudo pacman -S --needed --noconfirm - <packages.txt
+	sudo pacman -S --needed - <packages.txt
 else
 	echo "Warning: packages.txt not found. Skipping."
 fi
 
 log "Stowing dotfiles"
 stow -t "$HOME" */
+
+log "Configuring GTK"
+if command -v gsettings &>/dev/null; then
+	gsettings set org.gnome.desktop.interface color-scheme prefer-dark 2>/dev/null || true
+	gsettings set org.gnome.desktop.interface font-name 'Adwaita Sans 12' 2>/dev/null || true
+fi
 
 log "Setting up shell"
 if [ "${SHELL}" != "/usr/bin/zsh" ]; then
