@@ -26,6 +26,7 @@ i3status-rust
 imv
 jq
 ly
+mako
 man-db
 neovim
 opencode
@@ -40,6 +41,7 @@ slurp
 stow
 swappy
 sway
+swaybg
 swayidle
 swaylock
 thunar
@@ -50,6 +52,7 @@ ttf-firacode-nerd
 ttf-jetbrains-mono
 ttf-jetbrains-mono-nerd
 unzip
+vim
 vlc
 wl-clipboard
 wtype

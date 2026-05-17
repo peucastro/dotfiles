@@ -16,6 +16,10 @@ set $filemanager thunar
 ## Web browser
 set $browser firefox
 
+# Wallpaper
+
+output * bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
+
 # Start services
 
 exec systemctl --user import-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=sway
@@ -196,7 +200,7 @@ bar {
 default_border pixel 2
 default_floating_border pixel 2
 
-gaps inner 8
-gaps outer 4
+gaps inner 4
+gaps outer 2
 
 include @sysconfdir@/sway/config.d/*
