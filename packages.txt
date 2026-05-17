@@ -24,6 +24,7 @@ gpu-screen-recorder-ui
 grim
 i3status-rust
 imv
+jq
 ly
 man-db
 neovim

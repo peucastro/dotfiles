@@ -191,4 +191,12 @@ bar {
     font pango: mono 11
 }
 
+# Borders & Gaps
+
+default_border pixel 2
+default_floating_border pixel 2
+
+gaps inner 8
+gaps outer 4
+
 include @sysconfdir@/sway/config.d/*
