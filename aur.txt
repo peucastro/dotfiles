@@ -1,0 +1,5 @@
+intellij-idea-ultimate-edition
+pycharm
+slack-desktop
+zen-browser
+

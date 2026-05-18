@@ -17,10 +17,28 @@ for cmd in stow git curl; do
 done
 
 log "Installing packages"
-if [ -f packages.txt ]; then
-	sudo pacman -S --needed - <packages.txt
+if [ -f pacman.txt ]; then
+	sudo pacman -S --needed - <pacman.txt
 else
-	echo "Warning: packages.txt not found. Skipping."
+	echo "Warning: pacman.txt not found. Skipping."
+fi
+
+log "Setting up yay"
+if ! command -v yay &>/dev/null; then
+	git clone https://aur.archlinux.org/yay.git /tmp/yay
+	cd /tmp/yay
+	makepkg -si
+	cd "$SCRIPT_DIR"
+	rm -rf /tmp/yay
+else
+	echo "yay is already installed."
+fi
+
+log "Installing AUR packages"
+if [ -f aur.txt ]; then
+	yay -S --needed - <yay.txt
+else
+	echo "Warning: aur.txt not found. Skipping."
 fi
 
 log "Stowing dotfiles"
@@ -75,13 +93,6 @@ systemctl --user enable --now mako
 log "Creating user directories"
 if command -v xdg-user-dirs-update &>/dev/null; then
 	xdg-user-dirs-update
-fi
-
-log "Setting up Zen Browser"
-if ! command -v zen &>/dev/null; then
-	curl -fsSL https://github.com/zen-browser/updates-server/raw/refs/heads/main/install.sh | $SHELL
-else
-	echo "Zen is already installed."
 fi
 
 log "Refreshing font cache"
