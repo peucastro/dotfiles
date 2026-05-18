@@ -1,6 +1,7 @@
 7zip
 alacritty
 android-tools
+base-devel
 bitwarden
 blueman
 brightnessctl
@@ -12,6 +13,7 @@ code
 direnv
 discord
 docker
+docker-compose
 fastfetch
 fd
 ffmpeg
@@ -50,11 +52,13 @@ ripgrep
 rofi
 slurp
 stow
+supertuxkart
 swappy
 sway
 swaybg
 swayidle
 swaylock
+tailscale
 thunar
 thunar-archive-plugin
 thunar-volman
@@ -74,6 +78,7 @@ xdg-desktop-portal-wlr
 xdg-user-dirs
 xorg-xwayland
 zathura
+zathura-pdf-mupdf
 zed
 zip
 zoxide

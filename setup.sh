@@ -89,6 +89,7 @@ fi
 
 log "Enabling user services"
 systemctl --user enable --now mako
+sudo systemctl enable --now tailscaled.service
 
 log "Creating user directories"
 if command -v xdg-user-dirs-update &>/dev/null; then
