@@ -33,10 +33,13 @@ htop
 i3status-rust
 imv
 jq
+lib32-mesa
+lib32-vulkan-radeon
 ly
 mako
 man-db
 man-pages
+mesa
 nano
 neovim
 noto-fonts
@@ -70,6 +73,7 @@ ttf-jetbrains-mono-nerd
 unzip
 vim
 vlc
+vulkan-radeon
 wl-clipboard
 wtype
 xdg-desktop-portal
