@@ -3,7 +3,7 @@
 #
 
 # PATH
-export PATH="$HOME/.local/bin:$PATH"
+export PATH="$HOME/.local/bin:$HOME/go/bin:$PATH"
 
 # Editor
 if [[ -n $SSH_CONNECTION ]]; then
