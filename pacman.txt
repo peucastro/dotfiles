@@ -42,6 +42,7 @@ man-pages
 mesa
 nano
 neovim
+networkmanager-l2tp
 noto-fonts
 noto-fonts-emoji
 opencode
@@ -55,6 +56,7 @@ ripgrep
 rofi
 slurp
 stow
+strongswan
 supertuxkart
 swappy
 sway

@@ -91,6 +91,11 @@ log "Enabling user services"
 systemctl --user enable --now mako
 sudo systemctl enable --now tailscaled.service
 
+log "Configuring strongSwan and L2TP VPN"
+# Disable strongSwan unity plugin (fixes traffic selector issues)
+sudo sed -i 's/load = yes/load = no/' /etc/strongswan.d/charon/unity.conf 2>/dev/null || true
+sudo sed -i 's/^#\s*cisco_unity = no/cisco_unity = no/' /etc/strongswan.d/charon.conf 2>/dev/null || true
+
 log "Creating user directories"
 if command -v xdg-user-dirs-update &>/dev/null; then
 	xdg-user-dirs-update
