@@ -1,7 +1,6 @@
 [Unit]
 Description=Sway idle management daemon
 Documentation=man:swayidle(1)
-PartOf=graphical-session.target
 Before=sleep.target hybrid-sleep.target suspend.target
 
 [Service]
@@ -16,4 +15,4 @@ ExecStart=/usr/bin/swayidle -w \
 Restart=on-failure
 
 [Install]
-WantedBy=graphical-session.target
+WantedBy=default.target
