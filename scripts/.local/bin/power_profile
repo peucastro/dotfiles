@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+CURRENT=$(powerprofilesctl get)
+
+case "$CURRENT" in
+	performance)
+		powerprofilesctl set balanced
+		PROFILE="Balanced" ;;
+	balanced)
+		powerprofilesctl set power-saver
+		PROFILE="Power saver" ;;
+	power-saver)
+		powerprofilesctl set performance
+		PROFILE="Performance" ;;
+esac
+
+notify-send -t 2000 "Power profile" "$PROFILE"
