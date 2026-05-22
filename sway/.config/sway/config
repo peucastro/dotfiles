@@ -162,6 +162,8 @@ bindsym $mod+r mode "resize"
 ### Lock and suspend
 bindsym $mod+x exec loginctl lock-session
 bindsym $mod+Shift+x exec systemctl suspend || loginctl suspend
+### Toggle idle inhibitor
+bindsym $mod+Ctrl+x exec ~/.local/bin/idle_inhibitor
 ### Special keys to adjust volume via PulseAudio
 bindsym --locked XF86AudioMute exec pactl set-sink-mute \@DEFAULT_SINK@ toggle
 bindsym --locked XF86AudioLowerVolume exec pactl set-sink-volume \@DEFAULT_SINK@ -5%
