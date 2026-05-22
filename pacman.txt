@@ -43,6 +43,7 @@ mesa
 nano
 neovim
 networkmanager-l2tp
+nm-connection-editor
 noto-fonts
 noto-fonts-emoji
 opencode
@@ -55,6 +56,7 @@ qbittorrent
 ripgrep
 rofi
 slurp
+steam
 stow
 strongswan
 supertuxkart

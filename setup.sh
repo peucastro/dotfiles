@@ -16,6 +16,13 @@ for cmd in stow git curl; do
 	fi
 done
 
+log "Enabling multilib repository"
+if grep -q '^#\[multilib\]' /etc/pacman.conf; then
+	sudo sed -i '/^#\[multilib\]/{s/^#//;n;s/^#//}' /etc/pacman.conf
+else
+	echo "multilib is already enabled. Skipping."
+fi
+
 log "Installing packages"
 if [ -f pacman.txt ]; then
 	sudo pacman -S --needed - <pacman.txt
@@ -39,6 +46,11 @@ if [ -f aur.txt ]; then
 	yay -S --needed - <aur.txt
 else
 	echo "Warning: aur.txt not found. Skipping."
+fi
+
+log "Installing Proton GE"
+if command -v protonup &>/dev/null; then
+	protonup -y 2>/dev/null || true
 fi
 
 log "Stowing dotfiles"

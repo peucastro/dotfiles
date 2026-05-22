@@ -1,4 +1,5 @@
 intellij-idea-ultimate-edition
+protonup-qt
 pycharm
 slack-desktop
 visual-studio-code-bin
