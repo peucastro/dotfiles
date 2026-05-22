@@ -36,12 +36,13 @@ fi
 
 log "Installing AUR packages"
 if [ -f aur.txt ]; then
-	yay -S --needed - <yay.txt
+	yay -S --needed - <aur.txt
 else
 	echo "Warning: aur.txt not found. Skipping."
 fi
 
 log "Stowing dotfiles"
+rm -f "$HOME/.bashrc"
 stow -t "$HOME" */
 
 log "Configuring GTK"
