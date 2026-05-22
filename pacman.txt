@@ -9,11 +9,11 @@ btop
 calibre
 chromium
 cliphist
-code
 direnv
 discord
 docker
 docker-compose
+evince
 fastfetch
 fd
 ffmpeg
@@ -83,8 +83,6 @@ xdg-desktop-portal-gtk
 xdg-desktop-portal-wlr
 xdg-user-dirs
 xorg-xwayland
-zathura
-zathura-pdf-mupdf
 zed
 zip
 zoxide
