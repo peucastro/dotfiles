@@ -24,7 +24,7 @@ output eDP-1 scale 1.5 position 0 0
 
 # Start services
 
-exec systemctl --user import-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=sway
+exec systemctl --user import-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=sway SWAYSOCK
 exec dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=sway
 exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 exec wl-paste --watch cliphist store

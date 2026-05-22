@@ -2,6 +2,7 @@
 Description=Sway idle management daemon
 Documentation=man:swayidle(1)
 PartOf=graphical-session.target
+Before=sleep.target hybrid-sleep.target suspend.target
 
 [Service]
 Environment=WAYLAND_DISPLAY=wayland-1
