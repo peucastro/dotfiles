@@ -27,3 +27,4 @@ application/x-7z-compressed=file-roller.desktop
 application/x-rar=file-roller.desktop
 x-scheme-handler/slack=slack.desktop
 x-scheme-handler/jetbrains=jetbrainsd.desktop
+x-scheme-handler/discord=vesktop.desktop
