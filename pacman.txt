@@ -10,7 +10,6 @@ calibre
 chromium
 cliphist
 direnv
-discord
 docker
 docker-compose
 evince
@@ -30,7 +29,6 @@ gpu-screen-recorder-ui
 grim
 gvfs
 htop
-i3status-rust
 imv
 jq
 lib32-mesa
@@ -79,6 +77,7 @@ unzip
 vim
 vlc
 vulkan-radeon
+waybar
 wl-clipboard
 wlsunset
 wtype

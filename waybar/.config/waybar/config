@@ -1,0 +1,49 @@
+{
+  "layer": "top",
+  "spacing": 10,
+  "modules-left": ["sway/workspaces"],
+  "modules-right": ["network", "cpu", "memory", "wireplumber", "backlight", "battery", "clock"],
+
+  "network": {
+    "format": " {bandwidthDownBits}",
+    "tooltip": false
+  },
+
+  "cpu": {
+    "format": "󰻠 {usage}%",
+    "tooltip": false
+  },
+
+  "memory": {
+    "format": "󰟜 {percentage}%",
+    "tooltip": false
+  },
+
+  "wireplumber": {
+    "format": "{icon} {volume}%",
+    "format-muted": "󰖁 0%",
+    "format-icons": ["󰕿", "󰖀", "󰕾"],
+    "scroll-step": 5,
+    "tooltip": false
+  },
+
+  "backlight": {
+    "format": " {icon} {percent}%",
+    "format-icons": ["", ""],
+    "scroll-step": 5,
+    "tooltip": false
+  },
+
+  "battery": {
+    "format": "{icon} {capacity}%",
+    "format-charging": "󰂄 {capacity}%",
+    "format-plugged": "󰂄 {capacity}%",
+    "format-icons": ["󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂"],
+    "tooltip": false
+  },
+
+  "clock": {
+    "format": "{:%a %d %b %H:%M}",
+    "tooltip": false
+  }
+}

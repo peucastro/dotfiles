@@ -187,11 +187,7 @@ bindsym $mod+Shift+p exec grim -g "$(slurp)" - | swappy -f -
 
 # Status Bar
 
-bar {
-    position top
-    status_command i3status-rs
-    font pango: mono 11
-}
+bar swaybar_command waybar
 
 # Borders & Gaps
 
