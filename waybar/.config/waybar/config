@@ -49,7 +49,8 @@
   "temperature": {
     "format": "{icon} {temperatureC}°C",
     "format-icons": ["", "", "", "", ""],
-    "critical-threshold": 80,
+    "warning-threshold": 70,
+    "critical-threshold": 90,
     "tooltip": false
   },
 
