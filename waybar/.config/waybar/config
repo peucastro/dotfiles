@@ -1,6 +1,6 @@
 {
   "layer": "top",
-  "spacing": 10,
+  "spacing": 16,
   "modules-left": ["sway/workspaces"],
   "modules-right": ["tray", "idle_inhibitor", "power-profiles-daemon", "network", "cpu", "memory", "temperature", "wireplumber", "backlight", "battery", "clock"],
 
