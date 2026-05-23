@@ -33,6 +33,7 @@
     "format-wifi": "󰖩 {signalStrength}%",
     "format-ethernet": "󰈀 Connected",
     "format-disconnected": "󱚼 Offline",
+    "on-click": "nm-connection-editor",
     "tooltip": false
   },
 
@@ -59,6 +60,7 @@
     "format-muted": " Muted",
     "format-icons": ["", "", ""],
     "scroll-step": 5,
+    "on-click": "pavucontrol",
     "tooltip": false
   },
 
