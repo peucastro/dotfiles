@@ -2,7 +2,7 @@
   "layer": "top",
   "spacing": 16,
   "modules-left": ["sway/workspaces"],
-  "modules-right": ["tray", "idle_inhibitor", "power-profiles-daemon", "network", "bluetooth", "cpu", "memory", "temperature", "wireplumber", "backlight", "battery", "clock"],
+  "modules-right": ["tray", "idle_inhibitor", "power-profiles-daemon", "sway/language", "network", "bluetooth", "cpu", "memory", "temperature", "wireplumber", "backlight", "battery", "clock"],
 
   "sway/workspaces": {
     "disable-scroll": true,
@@ -30,6 +30,11 @@
       "balanced": "",
       "power-saver": ""
     },
+    "tooltip": false
+  },
+
+  "sway/language": {
+    "on-click": "swaymsg input type:keyboard xkb_switch_layout next",
     "tooltip": false
   },
 
