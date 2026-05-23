@@ -1,6 +1,6 @@
 intellij-idea-ultimate-edition
-protonup-qt
+protonup-qt-bin
 pycharm
 slack-desktop
 visual-studio-code-bin
-zen-browser
+zen-browser-bin

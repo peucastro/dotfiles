@@ -17,12 +17,12 @@ for cmd in stow git curl; do
 done
 
 log "Enabling multilib repository"
-if grep -q '^#\[multilib\]' /etc/pacman.conf; then
+if grep -q '^#\[multilib\]$' /etc/pacman.conf; then
 	sudo sed -i '/^#\[multilib\]/{s/^#//;n;s/^#//}' /etc/pacman.conf
 else
 	echo "multilib is already enabled. Skipping."
 fi
-sudo pacman -Sy
+sudo pacman -Syu --needed
 
 log "Installing packages"
 if [ -f pacman.txt ]; then
@@ -40,6 +40,13 @@ if ! command -v yay &>/dev/null; then
 	rm -rf /tmp/yay
 else
 	echo "yay is already installed."
+fi
+
+log "Installing AUR packages"
+if [ -f aur.txt ]; then
+	yay -S --needed - <aur.txt
+else
+	echo "Warning: aur.txt not found. Skipping."
 fi
 
 log "Stowing dotfiles"
@@ -98,7 +105,6 @@ sudo systemctl enable --now tailscaled.service
 
 log "Configuring strongSwan and L2TP VPN"
 sudo sed -i 's/load = yes/load = no/' /etc/strongswan.d/charon/unity.conf 2>/dev/null || true
-sudo sed -i 's/^#\s*cisco_unity = no/cisco_unity = no/' /etc/strongswan.d/charon.conf 2>/dev/null || true
 
 log "Creating user directories"
 if command -v xdg-user-dirs-update &>/dev/null; then
@@ -107,5 +113,17 @@ fi
 
 log "Refreshing font cache"
 fc-cache -f
+
+log "Removing orphaned packages"
+orphans=$(pacman -Qdtq || true)
+if [ -n "$orphans" ]; then
+	sudo pacman -Rns --noconfirm $orphans
+else
+	echo "No orphaned packages found."
+fi
+
+log "Package cache cleanup"
+sudo pacman -Sc --noconfirm
+yay -Sc --noconfirm
 
 echo -e "\n\033[1;32mDone! Reboot is highly recommended to apply all changes.\033[0m"
