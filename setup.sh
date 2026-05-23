@@ -22,6 +22,7 @@ if grep -q '^#\[multilib\]' /etc/pacman.conf; then
 else
 	echo "multilib is already enabled. Skipping."
 fi
+sudo pacman -Sy
 
 log "Installing packages"
 if [ -f pacman.txt ]; then
@@ -39,18 +40,6 @@ if ! command -v yay &>/dev/null; then
 	rm -rf /tmp/yay
 else
 	echo "yay is already installed."
-fi
-
-log "Installing AUR packages"
-if [ -f aur.txt ]; then
-	yay -S --needed - <aur.txt
-else
-	echo "Warning: aur.txt not found. Skipping."
-fi
-
-log "Installing Proton GE"
-if command -v protonup &>/dev/null; then
-	protonup -y 2>/dev/null || true
 fi
 
 log "Stowing dotfiles"
@@ -108,7 +97,6 @@ systemctl --user enable --now wlsunset
 sudo systemctl enable --now tailscaled.service
 
 log "Configuring strongSwan and L2TP VPN"
-# Disable strongSwan unity plugin (fixes traffic selector issues)
 sudo sed -i 's/load = yes/load = no/' /etc/strongswan.d/charon/unity.conf 2>/dev/null || true
 sudo sed -i 's/^#\s*cisco_unity = no/cisco_unity = no/' /etc/strongswan.d/charon.conf 2>/dev/null || true
 
