@@ -22,7 +22,7 @@ if grep -q '^#\[multilib\]$' /etc/pacman.conf; then
 else
 	echo "multilib is already enabled. Skipping."
 fi
-sudo pacman -Syu --needed
+sudo pacman -Syu
 
 log "Installing packages"
 if [ -f pacman.txt ]; then
@@ -50,7 +50,7 @@ else
 fi
 
 log "Stowing dotfiles"
-rm -f "$HOME/.bashrc"
+[ -f "$HOME/.bashrc" ] && mv "$HOME/.bashrc" "$HOME/.bashrc.bak"
 stow -t "$HOME" */
 
 log "Configuring GTK"
@@ -123,6 +123,8 @@ else
 fi
 
 log "Package cache cleanup"
+sudo paccache -rk 2
+sudo paccache -ruk 0
 sudo pacman -Sc --noconfirm
 yay -Sc --noconfirm
 

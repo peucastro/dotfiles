@@ -49,6 +49,7 @@ noto-fonts-emoji
 opencode
 openssh
 otf-font-awesome
+pacman-contrib
 pavucontrol
 playerctl
 polkit-gnome
