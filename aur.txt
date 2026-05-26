@@ -1,3 +1,5 @@
+antigravity-cli
+heroic-games-launcher-bin
 intellij-idea-ultimate-edition
 protonup-qt-bin
 pycharm

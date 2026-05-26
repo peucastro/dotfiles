@@ -19,7 +19,6 @@ ffmpeg
 file-roller
 firefox
 fzf
-gemini-cli
 gimp
 git
 git-lfs
