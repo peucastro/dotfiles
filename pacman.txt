@@ -10,8 +10,10 @@ calibre
 chromium
 cliphist
 direnv
+dnsmasq
 docker
 docker-compose
+edk2-ovmf
 evince
 fastfetch
 fd
@@ -32,6 +34,7 @@ imv
 jq
 lib32-mesa
 lib32-vulkan-radeon
+libvirt
 ly
 mako
 man-db
@@ -51,6 +54,7 @@ pavucontrol
 playerctl
 polkit-gnome
 qbittorrent
+qemu-desktop
 ripgrep
 rofi
 slurp
@@ -74,6 +78,7 @@ ttf-jetbrains-mono
 ttf-jetbrains-mono-nerd
 unzip
 vim
+virt-manager
 vlc
 vulkan-radeon
 waybar

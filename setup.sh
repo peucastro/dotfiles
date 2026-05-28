@@ -81,6 +81,14 @@ if ! id -nG "$USER" | grep -q docker; then
 	echo "Added $USER to the docker group. (Will require relog/reboot)"
 fi
 
+log "Setting up libvirt"
+sudo systemctl enable --now libvirtd.socket
+sudo systemctl enable --now virtlogd.socket
+if ! id -nG "$USER" | grep -q libvirt; then
+	sudo usermod -aG libvirt "$USER"
+	echo "Added $USER to the libvirt group. (Will require relog/reboot)"
+fi
+
 log "Setting up Nix"
 if ! command -v nix &>/dev/null; then
 	curl --proto '=https' --tlsv1.2 -sSf -L https://install.determinate.systems/nix | sh -s -- install
