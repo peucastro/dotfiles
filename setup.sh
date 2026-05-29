@@ -60,10 +60,14 @@ if command -v gsettings &>/dev/null; then
 fi
 
 log "Setting up shell"
-if [ "${SHELL}" != "/usr/bin/zsh" ]; then
-	sudo chsh -s "$(command -v zsh)" "$USER"
+FISH_PATH="/usr/bin/fish"
+if ! grep -q "$FISH_PATH" /etc/shells 2>/dev/null; then
+	echo "$FISH_PATH" | sudo tee -a /etc/shells >/dev/null
+fi
+if [ "${SHELL}" != "$FISH_PATH" ]; then
+	sudo chsh -s "$FISH_PATH" "$USER"
 else
-	echo "Zsh is already your default shell."
+	echo "Fish is already your default shell."
 fi
 
 log "Setting up tmux TPM"
