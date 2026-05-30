@@ -21,6 +21,7 @@ ffmpeg
 file-roller
 firefox
 fish
+flatpak
 fzf
 gimp
 git

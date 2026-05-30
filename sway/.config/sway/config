@@ -20,6 +20,8 @@ set $browser zen-browser
 
 output * bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
 
+for_window [title="^Picture[- ]in[- ][Pp]icture$"] floating enable, sticky enable, border none, inhibit_idle open
+
 output eDP-1 scale 1.5 position 0 0
 
 # Start services
