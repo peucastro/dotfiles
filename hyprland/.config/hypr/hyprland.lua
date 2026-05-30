@@ -35,7 +35,6 @@ local browser     = "zen-browser"
 hl.on("hyprland.start", function()
     hl.exec_cmd("systemctl --user import-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP")
     hl.exec_cmd("dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP")
-    hl.exec_cmd("systemctl --user start xdg-desktop-portal-hyprland")
     hl.exec_cmd("wl-paste --watch cliphist store")
     hl.exec_cmd("waybar")
 end)
@@ -73,6 +72,19 @@ hl.permission("/usr/(bin|local/bin)/grim", "screencopy", "allow")
 hl.permission("/usr/(lib|libexec|lib64)/xdg-desktop-portal-hyprland", "screencopy", "allow")
 
 
+---------------------
+----- ECOSYSTEM -----
+---------------------
+
+-- See https://wiki.hypr.land/Configuring/Basics/Variables/#ecosystem
+hl.config({
+    ecosystem = {
+        no_update_news = true,
+        no_donation_nag = true,
+    },
+})
+
+
 -----------------------
 ---- LOOK AND FEEL ----
 -----------------------
@@ -80,8 +92,9 @@ hl.permission("/usr/(lib|libexec|lib64)/xdg-desktop-portal-hyprland", "screencop
 -- Refer to https://wiki.hypr.land/Configuring/Basics/Variables/
 hl.config({
     general = {
-        gaps_in  = 3,
-        gaps_out = 8,
+        gaps_in          = 3,
+        gaps_out         = 8,
+        resize_on_border = true,
     },
 
     decoration = {
@@ -159,11 +172,10 @@ hl.bind(mainMod .. " + E", hl.dsp.exec_cmd(fileManager))
 hl.bind(mainMod .. " + D", hl.dsp.exec_cmd(menu))
 hl.bind(mainMod .. " + C", hl.dsp.exec_cmd("cliphist list | rofi -dmenu | cliphist decode | wl-copy"))
 
-local closeWindowBind = hl.bind(mainMod .. " + SHIFT + Q", hl.dsp.window.close())
--- closeWindowBind:set_enabled(false)
+hl.bind(mainMod .. " + SHIFT + Q", hl.dsp.window.close())
 hl.bind(mainMod .. " + V", hl.dsp.window.float({ action = "toggle" }))
 hl.bind(mainMod .. " + F", hl.dsp.window.fullscreen())
-hl.bind(mainMod .. " + J", hl.dsp.layout("togglesplit")) -- dwindle only
+hl.bind(mainMod .. " + B", hl.dsp.layout("togglesplit")) -- dwindle only
 hl.bind(mainMod .. " + SHIFT + E",
     hl.dsp.exec_cmd("command -v hyprshutdown >/dev/null 2>&1 && hyprshutdown || hyprctl dispatch 'hl.dsp.exit()'"))
 
@@ -177,11 +189,23 @@ hl.bind(mainMod .. " + right", hl.dsp.focus({ direction = "right" }))
 hl.bind(mainMod .. " + up", hl.dsp.focus({ direction = "up" }))
 hl.bind(mainMod .. " + down", hl.dsp.focus({ direction = "down" }))
 
+-- Move focus with mainMod + vim binds
+hl.bind(mainMod .. " + H", hl.dsp.focus({ direction = "left" }))
+hl.bind(mainMod .. " + L", hl.dsp.focus({ direction = "right" }))
+hl.bind(mainMod .. " + K", hl.dsp.focus({ direction = "up" }))
+hl.bind(mainMod .. " + J", hl.dsp.focus({ direction = "down" }))
+
 -- Move active window with mainMod + SHIFT + arrow keys
 hl.bind(mainMod .. " + SHIFT + left", hl.dsp.window.move({ direction = "left" }))
 hl.bind(mainMod .. " + SHIFT + right", hl.dsp.window.move({ direction = "right" }))
 hl.bind(mainMod .. " + SHIFT + up", hl.dsp.window.move({ direction = "up" }))
 hl.bind(mainMod .. " + SHIFT + down", hl.dsp.window.move({ direction = "down" }))
+
+-- Move active window with mainMod + SHIFT + vim binds
+hl.bind(mainMod .. " + SHIFT + H", hl.dsp.window.move({ direction = "left" }))
+hl.bind(mainMod .. " + SHIFT + L", hl.dsp.window.move({ direction = "right" }))
+hl.bind(mainMod .. " + SHIFT + K", hl.dsp.window.move({ direction = "up" }))
+hl.bind(mainMod .. " + SHIFT + J", hl.dsp.window.move({ direction = "down" }))
 
 -- Switch workspaces with mainMod + [0-9]
 -- Move active window to a workspace with mainMod + SHIFT + [0-9]
@@ -194,10 +218,6 @@ end
 -- Example special workspace (scratchpad)
 hl.bind(mainMod .. " + S", hl.dsp.workspace.toggle_special("magic"))
 hl.bind(mainMod .. " + SHIFT + S", hl.dsp.window.move({ workspace = "special:magic" }))
-
--- Scroll through existing workspaces with mainMod + scroll
-hl.bind(mainMod .. " + mouse_down", hl.dsp.focus({ workspace = "e+1" }))
-hl.bind(mainMod .. " + mouse_up", hl.dsp.focus({ workspace = "e-1" }))
 
 -- Move/resize windows with mainMod + LMB/RMB and dragging
 hl.bind(mainMod .. " + mouse:272", hl.dsp.window.drag(), { mouse = true })
@@ -223,6 +243,7 @@ hl.bind("XF86MonBrightnessDown", hl.dsp.exec_cmd("brightnessctl -e4 -n2 set 5%-"
 -- Requires playerctl
 hl.bind("XF86AudioNext", hl.dsp.exec_cmd("playerctl next"), { locked = true })
 hl.bind("XF86AudioPause", hl.dsp.exec_cmd("playerctl play-pause"), { locked = true })
+hl.bind("XF86AudioStop", hl.dsp.exec_cmd("playerctl stop"), { locked = true })
 hl.bind("XF86AudioPlay", hl.dsp.exec_cmd("playerctl play-pause"), { locked = true })
 hl.bind("XF86AudioPrev", hl.dsp.exec_cmd("playerctl previous"), { locked = true })
 
@@ -234,19 +255,16 @@ hl.bind("XF86AudioPrev", hl.dsp.exec_cmd("playerctl previous"), { locked = true 
 -- See https://wiki.hypr.land/Configuring/Basics/Window-Rules/
 -- and https://wiki.hypr.land/Configuring/Basics/Workspace-Rules/
 
--- Example window rules that are useful
-
-local suppressMaximizeRule = hl.window_rule({
-    -- Ignore maximize requests from all apps. You'll probably like this.
+-- Ignore maximize requests from all apps
+hl.window_rule({
     name           = "suppress-maximize-events",
     match          = { class = ".*" },
 
     suppress_event = "maximize",
 })
--- suppressMaximizeRule:set_enabled(false)
 
+-- Fix some dragging issues with XWayland
 hl.window_rule({
-    -- Fix some dragging issues with XWayland
     name     = "fix-xwayland-drags",
     match    = {
         class      = "^$",
@@ -259,14 +277,6 @@ hl.window_rule({
 
     no_focus = true,
 })
-
--- Layer rules also return a handle.
--- local overlayLayerRule = hl.layer_rule({
---     name  = "no-anim-overlay",
---     match = { namespace = "^my-overlay$" },
---     no_anim = true,
--- })
--- overlayLayerRule:set_enabled(false)
 
 -- Hyprland-run windowrule
 hl.window_rule({
@@ -283,4 +293,11 @@ hl.window_rule({
     match       = { title = "^Picture[- ]in[- ][Pp]icture$" },
     float       = true,
     border_size = 0,
+    pin         = true,
+})
+
+-- Keep pinentrydialogs focused
+hl.window_rule({
+    match        = { class = "(pinentry-)(.*)" },
+    stay_focused = true,
 })
