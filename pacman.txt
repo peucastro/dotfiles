@@ -32,9 +32,10 @@ gpu-screen-recorder-ui
 grim
 gvfs
 htop
-hyprland
 hypridle
+hyprland
 hyprlock
+hyprpolkitagent
 imv
 jq
 lib32-mesa
@@ -57,7 +58,6 @@ otf-font-awesome
 pacman-contrib
 pavucontrol
 playerctl
-polkit-gnome
 qbittorrent
 qemu-desktop
 ripgrep
@@ -89,7 +89,6 @@ wtype
 xdg-desktop-portal
 xdg-desktop-portal-gtk
 xdg-desktop-portal-hyprland
-xdg-desktop-portal-wlr
 xdg-user-dirs
 xorg-xwayland
 zed
