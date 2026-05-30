@@ -33,6 +33,8 @@ grim
 gvfs
 htop
 hyprland
+hypridle
+hyprlock
 imv
 jq
 lib32-mesa
@@ -90,6 +92,7 @@ wlsunset
 wtype
 xdg-desktop-portal
 xdg-desktop-portal-gtk
+xdg-desktop-portal-hyprland
 xdg-desktop-portal-wlr
 xdg-user-dirs
 xorg-xwayland

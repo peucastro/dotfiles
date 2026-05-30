@@ -112,7 +112,7 @@ log "Enabling user services"
 systemctl --user daemon-reload
 systemctl --user enable --now hyprpolkitagent
 systemctl --user enable --now mako
-systemctl --user enable --now swayidle
+systemctl --user enable --now hypridle
 systemctl --user enable --now wlsunset
 sudo systemctl enable --now tailscaled.service
 
