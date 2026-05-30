@@ -32,6 +32,7 @@ gpu-screen-recorder-ui
 grim
 gvfs
 htop
+hyprland
 imv
 jq
 lib32-mesa
