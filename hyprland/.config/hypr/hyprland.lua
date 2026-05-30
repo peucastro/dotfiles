@@ -33,14 +33,12 @@ local browser     = "zen-browser"
 
 -- See https://wiki.hypr.land/Configuring/Basics/Autostart/
 
--- Autostart necessary processes (like notifications daemons, status bars, etc.)
--- Or execute your favorite apps at launch like this:
---
--- hl.on("hyprland.start", function ()
---   hl.exec_cmd(terminal)
---   hl.exec_cmd("nm-applet")
---   hl.exec_cmd("waybar & hyprpaper & firefox")
--- end)
+hl.on("hyprland.start", function()
+    hl.exec_cmd("dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP")
+    hl.exec_cmd("systemctl --user start xdg-desktop-portal-hyprland")
+    hl.exec_cmd("wl-paste --watch cliphist store")
+    hl.exec_cmd("waybar")
+end)
 
 
 -------------------------------
@@ -48,7 +46,14 @@ local browser     = "zen-browser"
 -------------------------------
 
 -- See https://wiki.hypr.land/Configuring/Advanced-and-Cool/Environment-variables/
-
+hl.env("GDK_BACKEND", "wayland,x11,*")
+hl.env("QT_QPA_PLATFORM", "wayland;xcb")
+hl.env("SDL_VIDEODRIVER", "wayland")
+hl.env("CLUTTER_BACKEND", "wayland")
+hl.env("QT_WAYLAND_DISABLE_WINDOWDECORATION", "1")
+hl.env("QT_AUTO_SCREEN_SCALE_FACTOR", "1")
+hl.env("ELECTRON_OZONE_PLATFORM_HINT", "wayland")
+hl.env("MOZ_ENABLE_WAYLAND", "1")
 hl.env("XCURSOR_SIZE", "24")
 hl.env("HYPRCURSOR_SIZE", "24")
 
@@ -153,7 +158,7 @@ hl.config({
         sensitivity  = 0, -- -1.0 - 1.0, 0 means no modification.
 
         touchpad     = {
-            natural_scroll = false,
+            natural_scroll = true,
         },
     },
 })
