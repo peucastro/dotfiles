@@ -1,9 +1,6 @@
 antigravity-cli
-heroic-games-launcher-bin
-intellij-idea-ultimate-edition
-protonup-qt-bin
-pycharm
-slack-desktop
+slack-desktop-wayland
+spotify-wl
 vesktop-bin
 visual-studio-code-bin
 zen-browser-bin

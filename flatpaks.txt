@@ -1,0 +1,6 @@
+com.github.tchx84.Flatseal
+com.heroicgameslauncher.hgl
+com.usebottles.bottles
+com.valvesoftware.Steam
+com.vysp3r.ProtonPlus
+net.supertuxkart.SuperTuxKart
