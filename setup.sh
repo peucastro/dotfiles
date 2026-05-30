@@ -49,6 +49,18 @@ else
 	echo "Warning: aur.txt not found. Skipping."
 fi
 
+log "Installing Flatpaks"
+if ! command -v flatpak &>/dev/null; then
+	echo "Warning: flatpak is not installed. Skipping."
+elif [ ! -f flatpaks.txt ]; then
+	echo "Warning: flatpaks.txt not found. Skipping."
+else
+	if ! flatpak remote-list --system 2>/dev/null | grep -q flathub; then
+		flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+	fi
+	sudo flatpak install --noninteractive $(cat flatpaks.txt)
+fi
+
 log "Stowing dotfiles"
 [ -f "$HOME/.bashrc" ] && mv "$HOME/.bashrc" "$HOME/.bashrc.bak"
 stow -t "$HOME" */
