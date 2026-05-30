@@ -68,10 +68,6 @@ stow
 strongswan
 supertuxkart
 swappy
-sway
-swaybg
-swayidle
-swaylock
 tailscale
 thunar
 thunar-archive-plugin
