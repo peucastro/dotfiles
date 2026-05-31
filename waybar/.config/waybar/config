@@ -1,18 +1,31 @@
 {
   "layer": "top",
   "spacing": 16,
-  "modules-left": ["hyprland/workspaces"],
-  "modules-right": ["tray", "idle_inhibitor", "power-profiles-daemon", "hyprland/language", "network", "bluetooth", "cpu", "memory", "temperature", "wireplumber", "backlight", "battery", "clock"],
-
+  "modules-left": [
+    "hyprland/workspaces"
+  ],
+  "modules-right": [
+    "tray",
+    "idle_inhibitor",
+    "power-profiles-daemon",
+    "hyprland/language",
+    "network",
+    "bluetooth",
+    "cpu",
+    "memory",
+    "temperature",
+    "wireplumber",
+    "backlight",
+    "battery",
+    "clock"
+  ],
   "hyprland/workspaces": {
     "disable-scroll": true,
     "all-outputs": true
   },
-
   "tray": {
     "spacing": 8
   },
-
   "idle_inhibitor": {
     "format": "{icon}",
     "format-icons": {
@@ -21,7 +34,6 @@
     },
     "tooltip": false
   },
-
   "power-profiles-daemon": {
     "format": "{icon}",
     "format-icons": {
@@ -32,15 +44,13 @@
     },
     "tooltip": false
   },
-
   "hyprland/language": {
     "format": "{}",
     "format-en": "us",
     "format-pt": "pt",
-    "on-click": "hyprctl switchxkblayout $(hyprctl devices -j | jq -r '.keyboards[] | select(.main) | .name') next",
+    "on-click": "hyprctl switchxkblayout all next",
     "tooltip": false
   },
-
   "network": {
     "format-wifi": "󰖩 {signalStrength}%",
     "format-ethernet": "󰈀 Connected",
@@ -48,62 +58,87 @@
     "on-click": "nm-connection-editor",
     "tooltip": false
   },
-
   "bluetooth": {
     "format": "󰂯 {status}",
     "format-off": "󰂲",
-    "format-on": "󰂯 On",
+    "format-on": "󰂯",
     "format-connected": "󰂯 {num_connections}",
+    "format-disabled": "󰂲",
     "on-click": "blueman-manager",
     "tooltip": false
   },
-
   "cpu": {
     "format": " {usage}%",
     "tooltip": false
   },
-
   "memory": {
     "format": " {percentage}%",
     "tooltip": false
   },
-
   "temperature": {
     "format": "{icon} {temperatureC}°C",
-    "format-icons": ["", "", "", "", ""],
+    "format-icons": [
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
     "warning-threshold": 70,
     "critical-threshold": 90,
     "tooltip": false
   },
-
   "wireplumber": {
     "format": "{icon} {volume}%",
-    "format-muted": " Muted",
-    "format-icons": ["", "", ""],
+    "format-muted": "",
+    "format-icons": [
+      "",
+      "",
+      ""
+    ],
     "scroll-step": 5,
     "on-click": "pavucontrol",
     "tooltip": false
   },
-
   "backlight": {
     "format": "{icon} {percent}%",
-    "format-icons": ["󱩎", "󱩏", "󱩐", "󱩑", "󱩒", "󱩓", "󱩔", "󱩕", "󱩖", "󰛨"],
+    "format-icons": [
+      "󱩎",
+      "󱩏",
+      "󱩐",
+      "󱩑",
+      "󱩒",
+      "󱩓",
+      "󱩔",
+      "󱩕",
+      "󱩖",
+      "󰛨"
+    ],
     "scroll-step": 5,
     "tooltip": false
   },
-
   "battery": {
     "format": "{icon} {capacity}%",
     "format-charging": "󰂄 {capacity}%",
     "format-plugged": "󰂄 {capacity}%",
-    "format-icons": ["󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
+    "format-icons": [
+      "󰁺",
+      "󰁻",
+      "󰁼",
+      "󰁽",
+      "󰁾",
+      "󰁿",
+      "󰂀",
+      "󰂁",
+      "󰂂",
+      "󰁹"
+    ],
     "states": {
       "warning": 30,
       "critical": 15
     },
     "tooltip": false
   },
-
   "clock": {
     "format": "󰥔 {:%a %d %b %H:%M}",
     "tooltip": false

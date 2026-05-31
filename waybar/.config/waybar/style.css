@@ -7,28 +7,49 @@
 }
 
 window#waybar {
-  background: #000000;
+  background: #1e1e1e;
   color: #ffffff;
+  border-bottom: 2px solid #444444;
 }
 
 #workspaces button {
   padding: 0 4px;
   background: transparent;
-  color: #888888;
+  color: #444444;
+  border-bottom: 2px solid transparent;
+  transition: all 0.2s ease;
 }
 
 #workspaces button:hover {
-  background: #5f676a;
+  background: #333333;
   color: #ffffff;
 }
 
 #workspaces button.active {
-  background: #285577;
   color: #ffffff;
+  border-bottom: 2px solid #ffffff;
 }
 
 #workspaces button.urgent {
   background: #900000;
+  color: #ffffff;
+}
+
+#network.disconnected {
+  color: #888888;
+}
+
+#battery.charging,
+#battery.plugged {
+  color: #ffffff;
+}
+
+#wireplumber.muted {
+  color: #888888;
+}
+
+#bluetooth.on,
+#bluetooth.connected {
   color: #ffffff;
 }
 

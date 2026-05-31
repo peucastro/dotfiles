@@ -6,8 +6,8 @@ font=monospace 12
 
 # GEOMETRY & SPACE
 width=360
-padding=20
-margin=20
+padding=10
+margin=10
 border-radius=5
 
 # DESIGN & COLORS
