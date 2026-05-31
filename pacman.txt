@@ -80,7 +80,6 @@ vlc-plugins-all
 vulkan-radeon
 waybar
 wl-clipboard
-wlsunset
 wtype
 xdg-desktop-portal
 xdg-desktop-portal-gtk
