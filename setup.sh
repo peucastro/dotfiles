@@ -124,7 +124,6 @@ log "Enabling user services"
 systemctl --user daemon-reload
 systemctl --user enable --now hyprpolkitagent
 systemctl --user enable --now mako
-systemctl --user enable --now hypridle
 sudo systemctl enable --now tailscaled.service
 
 log "Configuring strongSwan and L2TP VPN"
