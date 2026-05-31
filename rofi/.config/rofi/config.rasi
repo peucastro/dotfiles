@@ -1,26 +1,78 @@
 configuration {
     modes: "drun";
-    font: "Inter 12";
+    font: "JetBrains Mono Nerd Font 11";
     show-icons: true;
-    terminal: "alacritty";
     icon-theme: "Adwaita";
     sort: true;
+    drun {
+        display-name: " ";
+    }
+}
+* {
+    background:                  #1e1e1e;
+    background-color:            transparent;
+    foreground:                  #c8c8c8;
+    normal-foreground:           @foreground;
+    normal-background:           @background;
+    selected-normal-foreground:  #ffffff;
+    selected-normal-background:  #333333;
+    alternate-normal-foreground: @foreground;
+    alternate-normal-background: #252525;
+    border-color:                #444444;
+    separatorcolor:              @border-color;
+    spacing:                     4;
 }
 
-@theme "Arc-Dark"
-
-listview {
-    lines: 10;
-}
-
-element {
-    padding: 6px 10px;
+window {
+    background-color: @background;
+    border:           2px;
+    border-color:     @border-color;
+    padding:          4px;
 }
 
 inputbar {
-    children: [entry];
+    spacing:  8px;
+    padding:  8px;
+    children: [ prompt, entry ];
 }
 
 prompt {
-    enabled: false;
+    enabled:    true;
+    text-color: #888888;
+}
+
+entry {
+    text-color:       #ffffff;
+    cursor-color:     #888888;
+    placeholder:      "Search";
+    placeholder-color: @border-color;
+}
+
+listview {
+    lines:        10;
+    border:       1px 0px 0px;
+    border-color: @separatorcolor;
+    padding:      4px 0px 0px;
+    scrollbar:    false;
+}
+
+element {
+    padding: 4px 8px;
+}
+
+element.selected.normal {
+    background-color: @selected-normal-background;
+    text-color:       @selected-normal-foreground;
+}
+
+element.alternate.normal {
+    background-color: @alternate-normal-background;
+    text-color:       @alternate-normal-foreground;
+}
+
+message {
+    border:       1px 0px 0px;
+    border-color: @separatorcolor;
+    padding:      4px 8px;
+    text-color:   @border-color;
 }
