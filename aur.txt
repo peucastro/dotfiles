@@ -1,6 +1,6 @@
 antigravity-cli
 slack-desktop-wayland
-spotify-wl
+spotify
 vesktop-bin
 visual-studio-code-bin
 zen-browser-bin

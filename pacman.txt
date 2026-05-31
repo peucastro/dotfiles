@@ -6,6 +6,7 @@ blueman
 brightnessctl
 btop
 calibre
+celluloid
 chromium
 cliphist
 direnv
@@ -43,7 +44,7 @@ ly
 mako
 man-db
 man-pages
-mesa
+mpv
 nano
 neovim
 networkmanager-l2tp
@@ -75,8 +76,6 @@ ttf-jetbrains-mono-nerd
 unzip
 vim
 virt-manager
-vlc
-vlc-plugins-all
 vulkan-radeon
 waybar
 wl-clipboard
