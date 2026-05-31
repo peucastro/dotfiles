@@ -9,10 +9,27 @@ shutdown=" Shutdown"
 
 chosen=$(
 	printf "%s\n" "$lock" "$suspend" "$hibernate" "$logout" "$reboot" "$shutdown" |
-		rofi -dmenu -p "" -theme ~/.config/rofi/powermenu.rasi
+		rofi -dmenu -p "" \
+			-theme ~/.config/rofi/powermenu.rasi \
+			-kb-custom-1 "s" \
+			-kb-custom-2 "r" \
+			-kb-custom-3 "l" \
+			-kb-custom-4 "u" \
+			-kb-custom-5 "h" \
+			-kb-custom-6 "o"
 )
+exit_code=$?
 
 [ -z "$chosen" ] && exit 0
+
+case "$exit_code" in
+10) systemctl poweroff ;;
+11) systemctl reboot ;;
+12) loginctl lock-session ;;
+13) systemctl suspend ;;
+14) systemctl hibernate ;;
+15) hyprctl dispatch exit ;;
+esac
 
 case "$chosen" in
 "$shutdown") systemctl poweroff ;;
