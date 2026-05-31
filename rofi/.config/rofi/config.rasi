@@ -8,6 +8,7 @@ configuration {
         display-name: " ";
     }
 }
+
 * {
     background:                  #1e1e1e;
     background-color:            transparent;

@@ -1,0 +1,24 @@
+#!/usr/bin/env bash
+
+lock=" Lock"
+suspend=" Suspend"
+hibernate=" Hibernate"
+logout=" Logout"
+reboot=" Reboot"
+shutdown=" Shutdown"
+
+chosen=$(
+	printf "%s\n" "$lock" "$suspend" "$hibernate" "$logout" "$reboot" "$shutdown" |
+		rofi -dmenu -p "" -theme ~/.config/rofi/powermenu.rasi
+)
+
+[ -z "$chosen" ] && exit 0
+
+case "$chosen" in
+"$shutdown") systemctl poweroff ;;
+"$reboot") systemctl reboot ;;
+"$lock") loginctl lock-session ;;
+"$suspend") systemctl suspend ;;
+"$hibernate") systemctl hibernate ;;
+"$logout") hyprctl dispatch exit ;;
+esac
