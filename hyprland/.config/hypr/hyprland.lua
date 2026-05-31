@@ -37,7 +37,7 @@ local browser     = "zen-browser"
 hl.on("hyprland.start", function()
     hl.exec_cmd("systemctl --user import-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP")
     hl.exec_cmd("dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP")
-    hl.exec_cmd("systemctl --user start hyprpolkitagent hypridle")
+    hl.exec_cmd("systemctl --user start hyprpolkitagent hypridle hyprsunset")
     hl.exec_cmd("waybar")
     hl.exec_cmd("wl-paste --watch cliphist store")
 end)
@@ -230,6 +230,8 @@ hl.bind(mainMod .. " + mouse:273", hl.dsp.window.resize(), { mouse = true })
 hl.bind(mainMod .. " + P",
     hl.dsp.exec_cmd("grim -o \"$(hyprctl monitors -j | jq -r '.[] | select(.focused) | .name')\" - | swappy -f -"))
 hl.bind(mainMod .. " + SHIFT + P", hl.dsp.exec_cmd("grim -g \"$(slurp)\" - | swappy -f -"))
+-- Screen recording
+hl.bind(mainMod .. " + SHIFT + R", hl.dsp.exec_cmd("gsr-ui"))
 
 -- Laptop multimedia keys for volume and LCD brightness
 hl.bind("XF86AudioRaiseVolume", hl.dsp.exec_cmd("wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ 5%+"),

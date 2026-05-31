@@ -36,6 +36,7 @@ hypridle
 hyprland
 hyprlock
 hyprpolkitagent
+hyprsunset
 imv
 intellij-idea-community-edition
 jq
