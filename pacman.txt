@@ -30,6 +30,8 @@ gpu-screen-recorder
 gpu-screen-recorder-ui
 grim
 gvfs
+gvfs-mtp
+gvfs-smb
 hypridle
 hyprland
 hyprlock
@@ -46,6 +48,7 @@ man-db
 man-pages
 mpv
 nano
+nautilus
 neovim
 networkmanager-l2tp
 nm-connection-editor
@@ -67,10 +70,8 @@ stow
 strongswan
 swappy
 tailscale
-thunar
-thunar-archive-plugin
-thunar-volman
 tmux
+tree
 ttf-firacode-nerd
 ttf-jetbrains-mono-nerd
 unzip
