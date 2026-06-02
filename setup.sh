@@ -25,10 +25,10 @@ fi
 sudo pacman -Syu
 
 log "Installing packages"
-if [ -f pacman.txt ]; then
-	sudo pacman -S --needed - <pacman.txt
+if [ -f .packages/.pacman.txt ]; then
+	sudo pacman -S --needed - <.packages/pacman.txt
 else
-	echo "Warning: pacman.txt not found. Skipping."
+	echo "Warning: .packages/pacman.txt not found. Skipping."
 fi
 
 log "Setting up yay"
@@ -43,27 +43,27 @@ else
 fi
 
 log "Installing AUR packages"
-if [ -f aur.txt ]; then
-	yay -S --needed - <aur.txt
+if [ -f .packages/aur.txt ]; then
+	yay -S --needed - <.packages/aur.txt
 else
-	echo "Warning: aur.txt not found. Skipping."
+	echo "Warning: .packages/aur.txt not found. Skipping."
 fi
 
 log "Installing Flatpaks"
 if ! command -v flatpak &>/dev/null; then
 	echo "Warning: flatpak is not installed. Skipping."
-elif [ ! -f flatpaks.txt ]; then
-	echo "Warning: flatpaks.txt not found. Skipping."
+elif [ ! -f .packages/flatpaks.txt ]; then
+	echo "Warning: .packages/flatpaks.txt not found. Skipping."
 else
 	if ! flatpak remote-list --system 2>/dev/null | grep -q flathub; then
 		flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 	fi
-	sudo flatpak install --noninteractive $(cat flatpaks.txt)
+	sudo flatpak install --noninteractive $(cat .packages/flatpaks.txt)
 fi
 
 log "Stowing dotfiles"
 [ -f "$HOME/.bashrc" ] && mv "$HOME/.bashrc" "$HOME/.bashrc.bak"
-stow -t "$HOME" */
+stow */
 
 log "Configuring GTK"
 if command -v gsettings &>/dev/null; then
