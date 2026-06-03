@@ -24,7 +24,7 @@ hl.monitor({
 ---------------------
 
 local terminal    = "alacritty"
-local fileManager = "nautilus"
+local fileManager = "thunar"
 local menu        = "rofi -show drun"
 local browser     = "zen-browser"
 

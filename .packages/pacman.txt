@@ -6,6 +6,7 @@ blueman
 brightnessctl
 btop
 calibre
+catfish
 celluloid
 chromium
 cliphist
@@ -18,6 +19,8 @@ evince
 fastfetch
 fd
 ffmpeg
+ffmpegthumbnailer
+file-roller
 firefox
 fish
 flatpak
@@ -49,7 +52,6 @@ man-db
 man-pages
 mpv
 nano
-nautilus
 neovim
 networkmanager-l2tp
 nm-connection-editor
@@ -71,10 +73,15 @@ stow
 strongswan
 swappy
 tailscale
+thunar
+thunar-archive-plugin
+thunar-media-tags-plugin
+thunar-volman
 tmux
 tree
 ttf-firacode-nerd
 ttf-jetbrains-mono-nerd
+tumbler
 unzip
 vim
 virt-manager
