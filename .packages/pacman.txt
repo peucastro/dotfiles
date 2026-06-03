@@ -43,6 +43,7 @@ hyprsunset
 imv
 intellij-idea-community-edition
 jq
+libreoffice-fresh
 lib32-mesa
 lib32-vulkan-radeon
 libvirt
@@ -64,6 +65,7 @@ pacman-contrib
 pavucontrol
 playerctl
 pycharm-community-edition
+qalculate-gtk
 qbittorrent
 qemu-desktop
 ripgrep

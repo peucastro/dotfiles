@@ -1,4 +1,5 @@
 antigravity-cli
+jellyfin-desktop-bin
 slack-desktop-wayland
 spotify
 vesktop-bin
