@@ -1,0 +1,25 @@
+window {
+    background: rgba(30, 30, 30, 0.95);
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+levelbar block {
+    background: #89b4fa;
+    border-radius: 8px;
+    min-height: 12px;
+}
+
+levelbar block.empty {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+label {
+    color: #cdd6f4;
+    font-family: "JetBrains Mono Nerd Font";
+    font-size: 14px;
+}
+
+image {
+    color: #89b4fa;
+}

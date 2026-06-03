@@ -1,0 +1,23 @@
+[general]
+fullscreen = true
+early-exit = true
+copy-command = "wl-copy"
+output-filename = "~/Pictures/screenshots/Screenshot-%Y-%m-%d_%H:%M:%S.png"
+no-window-decoration = true
+
+[keybinds]
+pointer = "p"
+crop = "c"
+brush = "b"
+line = "i"
+arrow = "z"
+rectangle = "r"
+ellipse = "e"
+text = "t"
+marker = "m"
+blur = "u"
+highlight = "g"
+
+[font]
+family = "JetBrains Mono"
+style = "Regular"
