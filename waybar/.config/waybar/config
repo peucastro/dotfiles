@@ -2,7 +2,11 @@
   "layer": "top",
   "spacing": 16,
   "modules-left": [
-    "hyprland/workspaces"
+    "hyprland/workspaces",
+    "hyprland/window"
+  ],
+  "modules-center": [
+    "clock"
   ],
   "modules-right": [
     "tray",
@@ -16,12 +20,20 @@
     "temperature",
     "wireplumber",
     "backlight",
-    "battery",
-    "clock"
+    "battery"
   ],
   "hyprland/workspaces": {
     "disable-scroll": true,
     "all-outputs": true
+  },
+  "hyprland/window": {
+    "max-length": 60,
+    "separate-outputs": true,
+    "icon": true
+  },
+  "clock": {
+    "format": "{:%H:%M - %a, %d %b %Y}",
+    "tooltip": false
   },
   "tray": {
     "spacing": 8
@@ -139,10 +151,6 @@
       "warning": 30,
       "critical": 15
     },
-    "tooltip": false
-  },
-  "clock": {
-    "format": "󰥔 {:%a %d %b %H:%M}",
     "tooltip": false
   }
 }

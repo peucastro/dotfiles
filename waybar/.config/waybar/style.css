@@ -31,11 +31,16 @@ window#waybar {
   border-bottom: 2px solid #ffffff;
 }
 
+#workspaces button.empty {
+  color: #333333;
+}
+
 #workspaces button.urgent {
   background: #900000;
   color: #ffffff;
 }
 
+#network.disabled,
 #network.disconnected,
 #network.linked,
 #wireplumber.muted,
