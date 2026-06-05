@@ -38,10 +38,12 @@ hypridle
 hyprland
 hyprlock
 hyprpolkitagent
+hyprshutdown
 hyprsunset
 imv
 intellij-idea-community-edition
 jq
+lact
 libreoffice-fresh
 lib32-mesa
 lib32-vulkan-radeon

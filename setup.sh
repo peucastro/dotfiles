@@ -25,7 +25,7 @@ fi
 sudo pacman -Syu
 
 log "Installing packages"
-if [ -f .packages/.pacman.txt ]; then
+if [ -f .packages/pacman.txt ]; then
 	sudo pacman -S --needed - <.packages/pacman.txt
 else
 	echo "Warning: .packages/pacman.txt not found. Skipping."
@@ -64,6 +64,7 @@ fi
 log "Stowing dotfiles"
 [ -f "$HOME/.bashrc" ] && mv "$HOME/.bashrc" "$HOME/.bashrc.bak"
 stow */
+mkdir -p ~/Pictures/screenshots
 
 log "Configuring GTK"
 if command -v gsettings &>/dev/null; then
@@ -125,6 +126,7 @@ systemctl --user daemon-reload
 systemctl --user enable --now hyprpolkitagent
 systemctl --user enable --now mako
 sudo systemctl enable --now tailscaled.service
+sudo systemctl enable --now lactd.service
 
 log "Configuring strongSwan and L2TP VPN"
 sudo sed -i 's/load = yes/load = no/' /etc/strongswan.d/charon/unity.conf 2>/dev/null || true
