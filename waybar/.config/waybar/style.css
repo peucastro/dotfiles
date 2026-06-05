@@ -2,14 +2,15 @@
   border: none;
   border-radius: 0;
   font-family: "JetBrains Mono Nerd Font", monospace;
+  font-size: 15px;
   margin: 0;
   padding: 0;
 }
 
 window#waybar {
-  background: #1e1e1e;
+  background: #141414;
   color: #ffffff;
-  border-bottom: 2px solid #444444;
+  border-bottom: 1px solid #262626;
 }
 
 #workspaces button {
@@ -17,11 +18,11 @@ window#waybar {
   background: transparent;
   color: #444444;
   border-bottom: 2px solid transparent;
-  transition: all 0.2s ease;
+  transition: all 0.1s ease;
 }
 
 #workspaces button:hover {
-  background: #333333;
+  background: #1c1c1c;
   color: #ffffff;
 }
 
@@ -35,30 +36,28 @@ window#waybar {
   color: #ffffff;
 }
 
-#network.disconnected {
-  color: #888888;
+#network.disconnected,
+#wireplumber.muted,
+#bluetooth.disabled,
+#bluetooth.off {
+  color: #444444;
 }
 
+#network.wifi,
+#network.ethernet,
+#bluetooth.on,
+#bluetooth.connected,
 #battery.charging,
 #battery.plugged {
   color: #ffffff;
 }
 
-#wireplumber.muted {
-  color: #888888;
-}
-
-#bluetooth.on,
-#bluetooth.connected {
-  color: #ffffff;
-}
-
 #temperature.warning,
 #battery.warning {
-  color: #ff6600;
+  color: #d08770;
 }
 
 #temperature.critical,
 #battery.critical {
-  color: #ff0000;
+  color: #bf616a;
 }
