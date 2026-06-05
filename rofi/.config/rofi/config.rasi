@@ -21,7 +21,7 @@ configuration {
     alternate-normal-background: #252525;
     border-color:                #444444;
     separatorcolor:              @border-color;
-    spacing:                     4;
+    spacing:                     4px;
 }
 
 window {
@@ -43,9 +43,9 @@ prompt {
 }
 
 entry {
-    text-color:       #ffffff;
-    cursor-color:     #888888;
-    placeholder:      "Search";
+    text-color:        #ffffff;
+    cursor-color:      #888888;
+    placeholder:       "Search...";
     placeholder-color: @border-color;
 }
 

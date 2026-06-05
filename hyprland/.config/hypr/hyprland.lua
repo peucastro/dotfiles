@@ -314,6 +314,7 @@ local apps_to_float = {
     "blueman-manager",
     "nm-connection-editor",
     "qalculate-gtk",
+    "org.gnome.FileRoller"
 }
 
 for _, app_class in ipairs(apps_to_float) do
