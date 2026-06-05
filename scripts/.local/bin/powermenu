@@ -23,7 +23,7 @@ exit_code=$?
 [ -z "$chosen" ] && exit 0
 
 case "$exit_code" in
-10) systemctl poweroff ;;
+10) hyprshutdown ;;
 11) systemctl reboot ;;
 12) loginctl lock-session ;;
 13) systemctl suspend ;;
@@ -32,7 +32,7 @@ case "$exit_code" in
 esac
 
 case "$chosen" in
-"$shutdown") systemctl poweroff ;;
+"$shutdown") hyprshutdown ;;
 "$reboot") systemctl reboot ;;
 "$lock") loginctl lock-session ;;
 "$suspend") systemctl suspend ;;
