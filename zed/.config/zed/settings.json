@@ -1,4 +1,15 @@
 {
+  "prettier": {
+    "allowed": true
+  },
+  "proxy": "",
+  "vim": {
+    "toggle_relative_line_numbers": true
+  },
+  "vim_mode": true,
+  "cli_default_open_behavior": "existing_window",
+  "auto_update": false,
+  "restore_on_startup": "launchpad",
   "theme": "Gruvbox Dark",
   "autosave": {
     "after_delay": {
