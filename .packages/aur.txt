@@ -1,5 +1,6 @@
-antigravity-cli
+figma-linux-next-bin
 helium-browser-bin
+heroic-games-launcher-bin
 jellyfin-desktop-bin
 slack-desktop-wayland
 spotify

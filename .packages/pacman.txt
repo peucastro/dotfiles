@@ -23,7 +23,9 @@ file-roller
 firefox
 fish
 flatpak
+font-manager
 fzf
+gamemode
 gimp
 git
 git-lfs
@@ -40,14 +42,14 @@ hyprlock
 hyprpolkitagent
 hyprshutdown
 hyprsunset
-imv
 intellij-idea-community-edition
 jq
 lact
-libreoffice-fresh
+libreoffice-still
 lib32-mesa
 lib32-vulkan-radeon
 libvirt
+loupe
 ly
 mako
 man-db
@@ -72,6 +74,7 @@ qemu-desktop
 ripgrep
 rofi
 slurp
+speedtest-cli
 stow
 strongswan
 swappy
