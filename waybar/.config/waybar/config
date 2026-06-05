@@ -53,8 +53,9 @@
   },
   "network": {
     "format-wifi": "󰖩 {signalStrength}%",
-    "format-ethernet": "󰈀 Connected",
-    "format-disconnected": "󱚼 Offline",
+    "format-ethernet": "󰈀 {bandwidthDownBytes}  {bandwidthUpBytes} ",
+    "format-disconnected": "󱚼",
+    "format-linked": "󱚼",
     "on-click": "nm-connection-editor",
     "tooltip": false
   },
@@ -98,6 +99,7 @@
     ],
     "scroll-step": 5,
     "on-click": "pavucontrol",
+    "on-click-right": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
     "tooltip": false
   },
   "backlight": {

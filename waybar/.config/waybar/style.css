@@ -37,6 +37,7 @@ window#waybar {
 }
 
 #network.disconnected,
+#network.linked,
 #wireplumber.muted,
 #bluetooth.disabled,
 #bluetooth.off {
