@@ -44,6 +44,7 @@ hyprshutdown
 hyprsunset
 intellij-idea-community-edition
 jq
+jre25-openjdk-headless
 lact
 libreoffice-still
 lib32-mesa
@@ -75,6 +76,7 @@ ripgrep
 rofi
 slurp
 speedtest-cli
+steam
 stow
 strongswan
 swappy
