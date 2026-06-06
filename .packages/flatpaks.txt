@@ -3,10 +3,9 @@ com.heroicgameslauncher.hgl
 com.usebottles.bottles
 com.vysp3r.ProtonPlus
 it.mijorus.gearlever
-net.kuribo64.melonDS
 net.pcsx2.PCSX2
 net.supertuxkart.SuperTuxKart
-org.azahar_emu.Azahar
+org.freedesktop.Platform.VulkanLayer.gamescope
 org.freedesktop.Platform.VulkanLayer.MangoHud
 org.libretro.RetroArch
 org.ppsspp.PPSSPP
