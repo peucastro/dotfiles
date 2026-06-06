@@ -2,7 +2,6 @@ com.github.tchx84.Flatseal
 com.heroicgameslauncher.hgl
 com.usebottles.bottles
 com.vysp3r.ProtonPlus
-io.github.ryubing.Ryujinx
 it.mijorus.gearlever
 net.kuribo64.melonDS
 net.pcsx2.PCSX2
