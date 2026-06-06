@@ -125,6 +125,7 @@ log "Enabling user services"
 systemctl --user daemon-reload
 systemctl --user enable --now hyprpolkitagent
 systemctl --user enable --now mako
+systemctl --user enable --now hyprpaper
 sudo systemctl enable --now tailscaled.service
 sudo systemctl enable --now lactd.service
 
