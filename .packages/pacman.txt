@@ -21,10 +21,10 @@ ffmpegthumbnailer
 file-roller
 firefox
 fish
-flatpak
 font-manager
 fzf
 gamemode
+gamescope
 gimp
 git
 git-lfs
@@ -54,6 +54,7 @@ ly
 mako
 man-db
 man-pages
+mangohud
 mpv
 nano
 neovim
@@ -78,6 +79,7 @@ speedtest-cli
 steam
 stow
 strongswan
+supertuxkart
 swappy
 tailscale
 thunar

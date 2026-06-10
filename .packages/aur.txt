@@ -1,5 +1,7 @@
 figma-linux-next-bin
 helium-browser-bin
+heroic-games-launcher-bin
+protonplus
 ryujinx-bin
 slack-desktop-wayland
 spotify
