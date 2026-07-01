@@ -1,4 +1,4 @@
-figma-linux-next-bin
+figma-linux-next
 helium-browser-bin
 heroic-games-launcher-bin
 protonplus
