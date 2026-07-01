@@ -22,11 +22,11 @@ if grep -q '^#\[multilib\]$' /etc/pacman.conf; then
 else
 	echo "multilib is already enabled. Skipping."
 fi
-sudo pacman -Syu
 
 log "Installing packages"
+sudo pacman -Syu --noconfirm
 if [ -f .packages/pacman.txt ]; then
-	sudo pacman -S --needed - <.packages/pacman.txt
+	sudo pacman -S --needed --noconfirm - <.packages/pacman.txt
 else
 	echo "Warning: .packages/pacman.txt not found. Skipping."
 fi
@@ -44,15 +44,16 @@ fi
 
 log "Installing AUR packages"
 if [ -f .packages/aur.txt ]; then
-	yay -S --needed - <.packages/aur.txt
+	yay -S --needed --noconfirm - <.packages/aur.txt
 else
 	echo "Warning: .packages/aur.txt not found. Skipping."
 fi
 
 log "Stowing dotfiles"
 [ -f "$HOME/.bashrc" ] && mv "$HOME/.bashrc" "$HOME/.bashrc.bak"
+[ -f "$HOME/.zshrc" ] && rm "$HOME/.zshrc"
+[ -d "$HOME/.config" ] && mv "$HOME/.config" "$HOME/.config.bak.$(date +%s)"
 stow */
-mkdir -p ~/Pictures/screenshots
 
 log "Configuring GTK"
 if command -v gsettings &>/dev/null; then
@@ -87,8 +88,12 @@ if ! id -nG "$USER" | grep -q docker; then
 fi
 
 log "Setting up libvirt"
+echo 'firewall_backend = "iptables"' | sudo tee -a /etc/libvirt/network.conf
 sudo systemctl enable --now libvirtd.socket
 sudo systemctl enable --now virtlogd.socket
+sudo virsh net-autostart default 2>/dev/null || true
+sudo virsh net-start default 2>/dev/null || true
+sudo ufw route allow from 192.168.122.0/24 2>/dev/null || true
 if ! id -nG "$USER" | grep -q libvirt; then
 	sudo usermod -aG libvirt "$USER"
 	echo "Added $USER to the libvirt group. (Will require relog/reboot)"
@@ -111,11 +116,10 @@ fi
 
 log "Enabling user services"
 systemctl --user daemon-reload
-systemctl --user enable --now hyprpolkitagent
-systemctl --user enable --now mako
-systemctl --user enable --now hyprpaper
+for svc in hyprpolkitagent mako hyprpaper; do
+	systemctl --user enable --now "$svc" 2>/dev/null || echo "Warning: failed to enable $svc"
+done
 sudo systemctl enable --now tailscaled.service
-sudo systemctl enable --now lactd.service
 
 log "Configuring strongSwan and L2TP VPN"
 sudo sed -i 's/load = yes/load = no/' /etc/strongswan.d/charon/unity.conf 2>/dev/null || true
@@ -124,14 +128,15 @@ log "Creating user directories"
 if command -v xdg-user-dirs-update &>/dev/null; then
 	xdg-user-dirs-update
 fi
+mkdir -p ~/Pictures/Screenshots
 
 log "Refreshing font cache"
 fc-cache -f
 
 log "Removing orphaned packages"
-orphans=$(pacman -Qdtq || true)
+orphans=$(pacman -Qdtq 2>/dev/null || true)
 if [ -n "$orphans" ]; then
-	sudo pacman -Rns --noconfirm $orphans
+	echo "$orphans" | sudo pacman -Rns --noconfirm -
 else
 	echo "No orphaned packages found."
 fi
@@ -139,7 +144,6 @@ fi
 log "Package cache cleanup"
 sudo paccache -rk 2
 sudo paccache -ruk 0
-sudo pacman -Sc --noconfirm
-yay -Sc --noconfirm
 
-echo -e "\n\033[1;32mDone! Reboot is highly recommended to apply all changes.\033[0m"
+read -rp $'\nReboot now? [y/N] ' reboot_now
+[[ "$reboot_now" =~ ^[Yy]$ ]] && sudo reboot
