@@ -88,7 +88,7 @@ if ! id -nG "$USER" | grep -q docker; then
 fi
 
 log "Setting up libvirt"
-echo 'firewall_backend = "iptables"' | sudo tee -a /etc/libvirt/network.conf
+sudo sed -i 's/^#\?firewall_backend.*/firewall_backend = "iptables"/' /etc/libvirt/network.conf
 sudo systemctl enable --now libvirtd.socket
 sudo systemctl enable --now virtlogd.socket
 sudo virsh net-autostart default 2>/dev/null || true

@@ -38,8 +38,8 @@ gvfs-smb
 hypridle
 hyprland
 hyprlock
+hyprpaper
 hyprpolkitagent
-
 hyprsunset
 intellij-idea-community-edition
 jq
@@ -79,7 +79,6 @@ speedtest-cli
 steam
 stow
 strongswan
-supertuxkart
 swappy
 tailscale
 thunar
