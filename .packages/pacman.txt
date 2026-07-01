@@ -44,7 +44,6 @@ hyprsunset
 intellij-idea-community-edition
 jq
 jre25-openjdk-headless
-lact
 libreoffice-still
 lib32-mesa
 lib32-vulkan-radeon

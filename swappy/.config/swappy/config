@@ -1,4 +1,4 @@
 [Default]
-save_dir=$HOME/Pictures/screenshots/
+save_dir=$HOME/Pictures/Screenshots/
 save_filename_format=Screenshot-%Y-%m-%d_%H:%M:%S.png
 early_exit=true
