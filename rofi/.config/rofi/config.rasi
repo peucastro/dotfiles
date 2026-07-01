@@ -13,14 +13,14 @@ configuration {
     background:                  #1e1e1e;
     background-color:            transparent;
     foreground:                  #c8c8c8;
-    normal-foreground:           @foreground;
-    normal-background:           @background;
+    normal-foreground:           #c8c8c8;
+    normal-background:           #1e1e1e;
     selected-normal-foreground:  #ffffff;
     selected-normal-background:  #333333;
-    alternate-normal-foreground: @foreground;
+    alternate-normal-foreground: #c8c8c8;
     alternate-normal-background: #252525;
     border-color:                #444444;
-    separatorcolor:              @border-color;
+    separatorcolor:              #444444;
     spacing:                     4px;
 }
 

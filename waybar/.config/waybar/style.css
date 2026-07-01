@@ -10,7 +10,7 @@
 window#waybar {
   background: #141414;
   color: #ffffff;
-  border-bottom: 1px solid #262626;
+  border-bottom: 1px solid #252525;
 }
 
 #workspaces button {
@@ -22,7 +22,7 @@ window#waybar {
 }
 
 #workspaces button:hover {
-  background: #1c1c1c;
+  background: #333333;
   color: #ffffff;
 }
 
