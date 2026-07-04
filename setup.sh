@@ -129,6 +129,7 @@ if command -v xdg-user-dirs-update &>/dev/null; then
 	xdg-user-dirs-update
 fi
 mkdir -p ~/Pictures/Screenshots
+mkdir -p ~/Pictures/Wallpapers
 
 log "Refreshing font cache"
 fc-cache -f
