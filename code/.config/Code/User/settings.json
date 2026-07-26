@@ -94,5 +94,10 @@
     "telemetry.telemetryLevel",
     "update.mode",
     "window.zoomLevel"
-  ]
+  ],
+  "explorer.fileNesting.enabled": true,
+  "explorer.fileNesting.patterns": {
+    "*.ts": "${capture}.js, ${capture}.spec.ts"
+  },
+  "explorer.fileNesting.expand": false
 }
