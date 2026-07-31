@@ -44,9 +44,9 @@ hyprsunset
 intellij-idea-community-edition
 jq
 jre25-openjdk-headless
-libreoffice-still
 lib32-mesa
 lib32-vulkan-radeon
+libreoffice-still
 libvirt
 loupe
 ly
