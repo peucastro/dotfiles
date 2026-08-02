@@ -313,20 +313,3 @@ hl.window_rule({
     match        = { class = "(pinentry-)(.*)" },
     stay_focused = true,
 })
-
--- Float dialog-style apps
-local apps_to_float = {
-    "org.pulseaudio.pavucontrol",
-    "blueman-manager",
-    "nm-connection-editor",
-    "qalculate-gtk",
-    "org.gnome.FileRoller"
-}
-
-for _, app_class in ipairs(apps_to_float) do
-    hl.window_rule({
-        match = { class = app_class },
-        float = true,
-        center = true,
-    })
-end
