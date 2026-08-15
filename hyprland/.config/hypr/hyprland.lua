@@ -191,7 +191,6 @@ hl.bind(mainMod .. " + SHIFT + E",
 hl.bind(mainMod .. " + SHIFT + C", hl.dsp.exec_cmd("hyprctl reload"))
 hl.bind(mainMod .. " + X", hl.dsp.exec_cmd("loginctl lock-session"))
 hl.bind(mainMod .. " + SHIFT + X", hl.dsp.exec_cmd("systemctl suspend"))
-hl.bind("CTRL + ALT + DELETE", hl.dsp.exec_cmd("powermenu"))
 
 -- Move focus with mainMod + arrow keys
 hl.bind(mainMod .. " + left", hl.dsp.focus({ direction = "left" }))
