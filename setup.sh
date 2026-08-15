@@ -46,8 +46,9 @@ else
 	echo "RPM Fusion is already enabled."
 fi
 
-log "Enabling Hyprland COPR"
+log "Enabling COPR repos"
 sudo dnf copr enable -y lionheartp/Hyprland
+sudo dnf copr enable -y jerrycasiano/FontManager
 
 log "Enabling VS Code repository"
 if ! rpm -q code &>/dev/null; then
