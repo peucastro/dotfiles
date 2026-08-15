@@ -74,7 +74,7 @@ else
 fi
 
 log "Installing Development Tools"
-sudo dnf group install -y "Development Tools" || echo "Warning: failed to install Development Tools group"
+sudo dnf group install -y development-tools || echo "Warning: failed to install Development Tools group"
 
 log "Setting up Flatpak"
 if command -v flatpak &>/dev/null; then
