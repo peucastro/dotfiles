@@ -16,38 +16,128 @@ for cmd in stow git curl; do
 	fi
 done
 
-log "Enabling multilib repository"
-if grep -q '^#\[multilib\]$' /etc/pacman.conf; then
-	sudo sed -i '/^#\[multilib\]/{s/^#//;n;s/^#//}' /etc/pacman.conf
+install_nerd_font() {
+	local font="$1"
+	local dest="$HOME/.local/share/fonts"
+	local tmp
+	tmp="$(mktemp -d)"
+	curl -fsSL -o "$tmp/$font.zip" \
+		"https://github.com/ryanoasis/nerd-fonts/releases/latest/download/$font.zip" || {
+		echo "Warning: failed to download $font nerd font."
+		rm -rf "$tmp"
+		return 1
+	}
+	unzip -qo "$tmp/$font.zip" -d "$tmp"
+	mkdir -p "$dest"
+	cp "$tmp"/*.ttf "$dest" 2>/dev/null || true
+	rm -rf "$tmp"
+}
+
+log "Installing dnf plugins"
+sudo dnf install -y dnf-plugins-core
+
+log "Enabling RPM Fusion repositories"
+if ! rpm -q rpmfusion-free-release &>/dev/null; then
+	FEDORA_VERSION="$(rpm -E %fedora)"
+	sudo dnf install -y --nogpgcheck \
+		"https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$FEDORA_VERSION.noarch.rpm" \
+		"https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$FEDORA_VERSION.noarch.rpm"
 else
-	echo "multilib is already enabled. Skipping."
+	echo "RPM Fusion is already enabled."
 fi
+
+log "Enabling Hyprland COPR"
+sudo dnf copr enable -y lionheartp/Hyprland
+
+log "Enabling VS Code repository"
+if ! rpm -q code &>/dev/null; then
+	sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc
+	sudo sh -c 'echo -e "[code]\nname=Visual Studio Code\nbaseurl=https://packages.microsoft.com/yumrepos/vscode\nenabled=1\ngpgcheck=1\ngpgkey=https://packages.microsoft.com/keys/microsoft.asc" > /etc/yum.repos.d/vscode.repo'
+else
+	echo "VS Code is already installed."
+fi
+
+log "Upgrading system"
+sudo dnf upgrade --refresh -y
 
 log "Installing packages"
-sudo pacman -Syu --noconfirm
-if [ -f .packages/pacman.txt ]; then
-	sudo pacman -S --needed --noconfirm - <.packages/pacman.txt
+if [ -f .packages/dnf.txt ]; then
+	packages=()
+	while read -r pkg; do
+		case "$pkg" in ""|\#*) continue ;; esac
+		packages+=("$pkg")
+	done < .packages/dnf.txt
+	sudo dnf install -y "${packages[@]}"
 else
-	echo "Warning: .packages/pacman.txt not found. Skipping."
+	echo "Warning: .packages/dnf.txt not found. Skipping."
 fi
 
-log "Setting up yay"
-if ! command -v yay &>/dev/null; then
-	git clone https://aur.archlinux.org/yay.git /tmp/yay
-	cd /tmp/yay
-	makepkg -si
-	cd "$SCRIPT_DIR"
-	rm -rf /tmp/yay
+log "Installing Development Tools"
+sudo dnf group install -y "Development Tools" || echo "Warning: failed to install Development Tools group"
+
+log "Setting up Flatpak"
+if command -v flatpak &>/dev/null; then
+	sudo flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
+	if [ -f .packages/flatpak.txt ]; then
+		apps=()
+		while read -r app; do
+			case "$app" in ""|\#*) continue ;; esac
+			apps+=("$app")
+		done < .packages/flatpak.txt
+		sudo flatpak install -y --noninteractive flathub "${apps[@]}"
+	else
+		echo "Warning: .packages/flatpak.txt not found. Skipping."
+	fi
 else
-	echo "yay is already installed."
+	echo "flatpak is not installed. Skipping flatpak apps."
 fi
 
-log "Installing AUR packages"
-if [ -f .packages/aur.txt ]; then
-	yay -S --needed --noconfirm - <.packages/aur.txt
+install_github_rpm() {
+	local repo="$1"
+	local binary="$2"
+	local pattern="$3"
+
+	if command -v "$binary" &>/dev/null; then
+		echo "$binary is already installed."
+		return 0
+	fi
+
+	local url
+	url="$(curl -fsSL "https://api.github.com/repos/$repo/releases/latest" \
+		| grep -oE "\"browser_download_url\": \"[^\"]*${pattern}" \
+		| sed -E 's/.*"browser_download_url": "//' \
+		| head -1)" || {
+		echo "Warning: could not resolve the latest rpm for $repo."
+		return 1
+	}
+
+	if [ -z "$url" ]; then
+		echo "Warning: no matching rpm found for $repo."
+		return 1
+	fi
+
+	sudo dnf install -y "$url"
+}
+
+log "Installing Vesktop"
+if command -v vesktop &>/dev/null; then
+	echo "Vesktop is already installed."
 else
-	echo "Warning: .packages/aur.txt not found. Skipping."
+	sudo dnf install -y https://vencord.dev/download/vesktop/amd64/rpm
 fi
+
+log "Installing Heroic Games Launcher"
+install_github_rpm "Heroic-Games-Launcher/HeroicGamesLauncher" "heroic" 'x86_64\.rpm' || true
+
+log "Installing zed"
+command -v zed &>/dev/null || curl -fsSL https://zed.dev/install.sh | sh
+
+log "Installing opencode"
+command -v opencode &>/dev/null || curl -fsSL https://opencode.ai/install | bash
+
+log "Installing Nerd Fonts"
+install_nerd_font "FiraCode" || true
+install_nerd_font "JetBrainsMono" || true
 
 log "Stowing dotfiles"
 [ -f "$HOME/.bashrc" ] && mv "$HOME/.bashrc" "$HOME/.bashrc.bak"
@@ -81,22 +171,12 @@ else
 fi
 
 log "Setting up Docker"
-sudo systemctl enable --now docker.socket
+if ! sudo systemctl enable --now docker.socket &>/dev/null; then
+	sudo systemctl enable --now docker.service
+fi
 if ! id -nG "$USER" | grep -q docker; then
 	sudo usermod -aG docker "$USER"
 	echo "Added $USER to the docker group. (Will require relog/reboot)"
-fi
-
-log "Setting up libvirt"
-sudo sed -i 's/^#\?firewall_backend.*/firewall_backend = "iptables"/' /etc/libvirt/network.conf
-sudo systemctl enable --now libvirtd.socket
-sudo systemctl enable --now virtlogd.socket
-sudo virsh net-autostart default 2>/dev/null || true
-sudo virsh net-start default 2>/dev/null || true
-sudo ufw route allow from 192.168.122.0/24 2>/dev/null || true
-if ! id -nG "$USER" | grep -q libvirt; then
-	sudo usermod -aG libvirt "$USER"
-	echo "Added $USER to the libvirt group. (Will require relog/reboot)"
 fi
 
 log "Setting up Nix"
@@ -109,7 +189,13 @@ fi
 log "Setting up Display Manager"
 if ! sudo systemctl is-enabled --quiet ly@tty2 2>/dev/null; then
 	sudo systemctl disable getty@tty2 2>/dev/null || true
-	sudo systemctl enable ly@tty2
+	if systemctl cat ly@tty2 &>/dev/null; then
+		sudo systemctl enable ly@tty2
+	elif systemctl cat ly.service &>/dev/null; then
+		sudo systemctl enable ly.service
+	else
+		echo "Warning: could not find ly systemd unit. Enable it manually."
+	fi
 else
 	echo "Ly display manager is already enabled."
 fi
@@ -121,9 +207,6 @@ for svc in hyprpolkitagent mako hyprpaper; do
 done
 sudo systemctl enable --now tailscaled.service
 
-log "Configuring strongSwan and L2TP VPN"
-sudo sed -i 's/load = yes/load = no/' /etc/strongswan.d/charon/unity.conf 2>/dev/null || true
-
 log "Creating user directories"
 if command -v xdg-user-dirs-update &>/dev/null; then
 	xdg-user-dirs-update
@@ -134,17 +217,11 @@ mkdir -p ~/Pictures/Wallpapers
 log "Refreshing font cache"
 fc-cache -f
 
-log "Removing orphaned packages"
-orphans=$(pacman -Qdtq 2>/dev/null || true)
-if [ -n "$orphans" ]; then
-	echo "$orphans" | sudo pacman -Rns --noconfirm -
-else
-	echo "No orphaned packages found."
-fi
+log "Removing unused dependencies"
+sudo dnf autoremove -y
 
-log "Package cache cleanup"
-sudo paccache -rk 2
-sudo paccache -ruk 0
+log "Cleaning package cache"
+sudo dnf clean all
 
 read -rp $'\nReboot now? [y/N] ' reboot_now
 [[ "$reboot_now" =~ ^[Yy]$ ]] && sudo reboot

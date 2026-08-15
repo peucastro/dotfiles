@@ -1,7 +1,7 @@
 # dotfiles
 
 ![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge)
-![Arch Linux](https://img.shields.io/badge/Arch_Linux-1793D1?style=for-the-badge&logo=arch-linux&logoColor=fff)
+![Fedora](https://img.shields.io/badge/Fedora-51A2DA?style=for-the-badge&logo=fedora&logoColor=fff)
 ![Hyprland](https://img.shields.io/badge/Hyprland-58E3FF?style=for-the-badge&logo=hyprland&logoColor=fff)
 
 Hyprland dotfiles managed with [GNU Stow](https://www.gnu.org/software/stow/).
@@ -41,7 +41,7 @@ Hyprland dotfiles managed with [GNU Stow](https://www.gnu.org/software/stow/).
 
 ## Setup
 
-Run on a fresh Arch install:
+Run on a fresh Fedora Everything install:
 
 ```sh
 ./setup.sh

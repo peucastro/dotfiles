@@ -1,0 +1,5 @@
+com.spotify.Client
+io.github.v1993.ProtonPlus
+com.slack.Slack
+org.md.obsidian.Obsidian
+io.github.zen_browser.zen
