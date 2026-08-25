@@ -22,6 +22,7 @@ file-roller
 firefox
 fish
 font-manager
+fuse2
 fzf
 gamemode
 gamescope
@@ -38,7 +39,6 @@ gvfs-smb
 hypridle
 hyprland
 hyprlock
-hyprpaper
 hyprpolkitagent
 hyprsunset
 intellij-idea-community-edition

@@ -116,7 +116,7 @@ fi
 
 log "Enabling user services"
 systemctl --user daemon-reload
-for svc in hyprpolkitagent mako hyprpaper; do
+for svc in hyprpolkitagent mako; do
 	systemctl --user enable --now "$svc" 2>/dev/null || echo "Warning: failed to enable $svc"
 done
 sudo systemctl enable --now tailscaled.service
@@ -129,7 +129,6 @@ if command -v xdg-user-dirs-update &>/dev/null; then
 	xdg-user-dirs-update
 fi
 mkdir -p ~/Pictures/Screenshots
-mkdir -p ~/Pictures/Wallpapers
 
 log "Refreshing font cache"
 fc-cache -f
