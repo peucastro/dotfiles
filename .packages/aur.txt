@@ -2,10 +2,8 @@ figma-linux-next
 helium-browser-bin
 heroic-games-launcher-bin
 protonplus
-ryujinx-bin
 slack-desktop-wayland
 spotify
-t3code-bin
 vesktop-bin
 visual-studio-code-bin
 zen-browser-bin
