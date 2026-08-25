@@ -14,7 +14,7 @@ Hyprland dotfiles managed with [GNU Stow](https://www.gnu.org/software/stow/).
 - **Notification daemon**: [Mako](https://github.com/emersion/mako)
 - **Lock screen**: [hyprlock](https://github.com/hyprwm/hyprlock)
 - **Display manager**: [Ly](https://github.com/fairyglade/ly)
-- **Terminal**: [Alacritty](https://alacritty.org/)
+- **Terminal**: [Ghostty](https://ghostty.org/)
 - **Shell**: [Fish](https://fishshell.com/)
 - **Terminal multiplexer**: [Tmux](https://github.com/tmux/tmux)
 - **Editor**: [Neovim](https://neovim.io/), [VS Code](https://code.visualstudio.com/), [Zed](https://zed.dev/)
