@@ -1,4 +1,7 @@
 {
+  "edit_predictions": {
+    "provider": "copilot"
+  },
   "vim": {
     "toggle_relative_line_numbers": true,
   },
