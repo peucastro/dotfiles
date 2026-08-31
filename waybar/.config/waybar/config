@@ -22,7 +22,8 @@
     "battery"
   ],
   "hyprland/workspaces": {
-    "disable-scroll": true
+    "disable-scroll": true,
+    "all-outputs": true
   },
   "clock": {
     "format": "{:%H:%M}",
