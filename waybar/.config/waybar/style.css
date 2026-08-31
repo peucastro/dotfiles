@@ -21,11 +21,6 @@ window#waybar {
   transition: all 0.1s ease;
 }
 
-#workspaces button:hover {
-  background: #333333;
-  color: #ffffff;
-}
-
 #workspaces button.active {
   color: #ffffff;
   border-bottom: 2px solid #ffffff;
@@ -66,4 +61,12 @@ window#waybar {
 #temperature.critical,
 #battery.critical {
   color: #bf616a;
+}
+
+#tooltip {
+  background: #141414;
+  color: #ffffff;
+  border: 1px solid #252525;
+  border-radius: 4px;
+  padding: 6px 8px;
 }
