@@ -32,7 +32,7 @@ hl.monitor({
 local terminal    = "ghostty"
 local fileManager = "thunar"
 local menu        = "rofi -show drun"
-local browser     = "zen-browser"
+local browser     = "helium-browser"
 
 
 -------------------

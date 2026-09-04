@@ -6,4 +6,3 @@ slack-desktop-wayland
 spotify
 vesktop-bin
 visual-studio-code-bin
-zen-browser-bin
