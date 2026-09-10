@@ -1,0 +1,21 @@
+# CLI tools
+brew "stow"
+brew "git-lfs"
+brew "gh"
+brew "fish"
+brew "tmux"
+brew "neovim"
+brew "fzf"
+brew "zoxide"
+brew "fd"
+brew "fastfetch"
+
+# GUI applications
+cask "ghostty"
+cask "visual-studio-code"
+cask "zed"
+
+# Fonts
+cask "font-fira-code-nerd-font"
+cask "font-jetbrains-mono-nerd-font"
+cask "font-symbols-only-nerd-font"

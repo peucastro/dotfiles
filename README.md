@@ -41,11 +41,20 @@ Hyprland dotfiles managed with [GNU Stow](https://www.gnu.org/software/stow/).
 
 ## Setup
 
-Run on a fresh Arch install:
+- **Arch Linux** (fresh install):
 
-```sh
-./setup.sh
-```
+  ```sh
+  ./setup_linux
+  ```
+
+- **macOS** (Apple Silicon):
+
+  ```sh
+  ./setup_mac
+  ```
+
+Each script stows only the modules listed in `.modules-linux` / `.modules-mac`,
+installs packages (pacman/AUR or Homebrew) and applies the OS-specific config.
 
 ## License
 
