@@ -16,14 +16,6 @@ require_cmds() {
 	done
 }
 
-backup_path() {
-	for path in "$@"; do
-		if [ -e "$path" ] && [ ! -L "$path" ]; then
-			mv "$path" "$path.bak.$(date +%s)"
-		fi
-	done
-}
-
 backup_conflict() {
 	local path="$1"
 	if [ -e "$path" ] || [ -L "$path" ]; then
