@@ -1,5 +1,8 @@
 # PATH
 fish_add_path ~/.local/bin ~/go/bin
+if test (uname) = Darwin
+    fish_add_path /opt/homebrew/bin /opt/homebrew/sbin
+end
 
 if not status is-interactive
     return
@@ -13,11 +16,16 @@ type -q zoxide; and zoxide init fish | source
 type -q direnv; and direnv hook fish | source
 
 # Aliases
-alias ls='ls --color=auto'
+switch (uname)
+    case Darwin
+        alias ls='ls -G'
+    case Linux
+        alias ls='ls --color=auto'
+        alias dir='dir --color=auto'
+        alias vdir='vdir --color=auto'
+end
 alias ll='ls -la'
 alias la='ls -A'
-alias dir='dir --color=auto'
-alias vdir='vdir --color=auto'
 alias grep='grep --color=auto'
 alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
