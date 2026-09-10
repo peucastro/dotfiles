@@ -2,6 +2,11 @@
 
 set -euo pipefail
 
+if [ "$(uname -s)" != "Linux" ]; then
+	echo "Error: setup_linux only supports Linux (detected $(uname -s))." >&2
+	exit 1
+fi
+
 source "$(dirname "${BASH_SOURCE[0]}")/setup_common.sh"
 
 log "Enabling multilib repository"

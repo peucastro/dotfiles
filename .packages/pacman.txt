@@ -25,6 +25,7 @@ fuse2
 fzf
 gamemode
 gamescope
+ghostty
 gimp
 git
 git-lfs

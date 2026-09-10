@@ -9,6 +9,7 @@ brew "fzf"
 brew "zoxide"
 brew "fd"
 brew "fastfetch"
+brew "ripgrep"
 
 # GUI applications
 cask "ghostty"
