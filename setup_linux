@@ -2,19 +2,9 @@
 
 set -euo pipefail
 
-SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-cd "$SCRIPT_DIR"
+source "$(dirname "${BASH_SOURCE[0]}")/setup_common.sh"
 
-log() {
-	echo -e "\n\033[1;34m=== $1 ===\033[0m"
-}
-
-for cmd in stow git curl; do
-	if ! command -v "$cmd" &>/dev/null; then
-		echo "Error: $cmd is not installed."
-		exit 1
-	fi
-done
+require_cmds stow git curl
 
 log "Enabling multilib repository"
 if grep -q '^#\[multilib\]$' /etc/pacman.conf; then
@@ -53,7 +43,8 @@ log "Stowing dotfiles"
 [ -f "$HOME/.bashrc" ] && mv "$HOME/.bashrc" "$HOME/.bashrc.bak"
 [ -f "$HOME/.zshrc" ] && rm "$HOME/.zshrc"
 [ -d "$HOME/.config" ] && mv "$HOME/.config" "$HOME/.config.bak.$(date +%s)"
-stow */
+backup_path "$HOME/.gitconfig"
+stow_list ".modules-linux"
 
 log "Configuring GTK"
 if command -v gsettings &>/dev/null; then
