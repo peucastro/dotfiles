@@ -22,8 +22,7 @@ brew bundle --file="$SCRIPT_DIR/.packages/Brewfile"
 require_cmds stow git
 
 log "Stowing dotfiles"
-backup_path "$HOME/.bashrc" "$HOME/.config" "$HOME/.gitconfig"
-rm -f "$HOME/.zshrc"
+backup_path "$HOME/.zshrc"
 stow_list ".modules-mac"
 
 log "Linking VS Code settings"

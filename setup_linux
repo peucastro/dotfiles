@@ -39,7 +39,6 @@ else
 fi
 
 log "Stowing dotfiles"
-backup_path "$HOME/.bashrc" "$HOME/.config" "$HOME/.gitconfig"
 stow_list ".modules-linux"
 
 log "Configuring GTK"
