@@ -20,14 +20,7 @@ type -q zoxide; and zoxide init fish | source
 type -q direnv; and direnv hook fish | source
 
 # Aliases
-switch (uname)
-    case Darwin
-        alias ls='ls -G'
-    case Linux
-        alias ls='ls --color=auto'
-        alias dir='dir --color=auto'
-        alias vdir='vdir --color=auto'
-end
+alias ls='ls --color=always'
 alias ll='ls -la'
 alias la='ls -A'
 alias grep='grep --color=auto'
