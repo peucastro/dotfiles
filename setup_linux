@@ -4,8 +4,6 @@ set -euo pipefail
 
 source "$(dirname "${BASH_SOURCE[0]}")/setup_common.sh"
 
-require_cmds stow git curl
-
 log "Enabling multilib repository"
 if grep -q '^#\[multilib\]$' /etc/pacman.conf; then
 	sudo sed -i '/^#\[multilib\]/{s/^#//;n;s/^#//}' /etc/pacman.conf
@@ -20,6 +18,7 @@ if [ -f .packages/pacman.txt ]; then
 else
 	echo "Warning: .packages/pacman.txt not found. Skipping."
 fi
+require_cmds stow git curl
 
 log "Setting up yay"
 if ! command -v yay &>/dev/null; then
@@ -40,10 +39,7 @@ else
 fi
 
 log "Stowing dotfiles"
-[ -f "$HOME/.bashrc" ] && mv "$HOME/.bashrc" "$HOME/.bashrc.bak"
-[ -f "$HOME/.zshrc" ] && rm "$HOME/.zshrc"
-[ -d "$HOME/.config" ] && mv "$HOME/.config" "$HOME/.config.bak.$(date +%s)"
-backup_path "$HOME/.gitconfig"
+backup_path "$HOME/.bashrc" "$HOME/.config" "$HOME/.gitconfig"
 stow_list ".modules-linux"
 
 log "Configuring GTK"

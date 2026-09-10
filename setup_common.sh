@@ -17,9 +17,11 @@ require_cmds() {
 }
 
 backup_path() {
-	if [ -e "$1" ] && [ ! -L "$1" ]; then
-		mv "$1" "$1.bak.$(date +%s)"
-	fi
+	for path in "$@"; do
+		if [ -e "$path" ] && [ ! -L "$path" ]; then
+			mv "$path" "$path.bak.$(date +%s)"
+		fi
+	done
 }
 
 stow_list() {
