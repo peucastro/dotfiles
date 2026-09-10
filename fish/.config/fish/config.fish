@@ -1,7 +1,11 @@
 # PATH
 fish_add_path ~/.local/bin ~/go/bin
 if test (uname) = Darwin
-    fish_add_path /opt/homebrew/bin /opt/homebrew/sbin
+    if test (uname -m) = arm64
+        fish_add_path /opt/homebrew/bin /opt/homebrew/sbin
+    else
+        fish_add_path /usr/local/bin /usr/local/sbin
+    end
 end
 
 if not status is-interactive

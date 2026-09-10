@@ -7,10 +7,15 @@ source "$(dirname "${BASH_SOURCE[0]}")/setup_common.sh"
 require_cmds curl
 
 log "Setting up Homebrew"
-if [ ! -x /opt/homebrew/bin/brew ]; then
+if [ "$(uname -m)" = "arm64" ]; then
+	BREW_PREFIX="/opt/homebrew"
+else
+	BREW_PREFIX="/usr/local"
+fi
+if [ ! -x "$BREW_PREFIX/bin/brew" ]; then
 	/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 fi
-eval "$(/opt/homebrew/bin/brew shellenv)"
+eval "$("$BREW_PREFIX/bin/brew" shellenv)"
 
 log "Installing packages"
 brew bundle --file="$SCRIPT_DIR/.packages/Brewfile"
@@ -28,7 +33,7 @@ backup_path "$VSCODE_USER/settings.json"
 ln -sf "$SCRIPT_DIR/code/.config/Code/User/settings.json" "$VSCODE_USER/settings.json"
 
 log "Setting up shell"
-FISH_PATH="/opt/homebrew/bin/fish"
+FISH_PATH="$BREW_PREFIX/bin/fish"
 if ! grep -q "$FISH_PATH" /etc/shells 2>/dev/null; then
 	echo "$FISH_PATH" | sudo tee -a /etc/shells >/dev/null
 fi

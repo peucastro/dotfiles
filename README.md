@@ -47,9 +47,10 @@ Hyprland dotfiles managed with [GNU Stow](https://www.gnu.org/software/stow/).
   ./setup_linux
   ```
 
-- **macOS** (Apple Silicon):
+- **macOS**:
 
   ```sh
+  xcode-select --install
   ./setup_mac
   ```
 
