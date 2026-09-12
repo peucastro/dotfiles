@@ -11,6 +11,13 @@ source "$(dirname "${BASH_SOURCE[0]}")/setup_common.sh"
 
 require_cmds curl
 
+log "Checking Xcode Command Line Tools"
+if ! xcode-select -p &>/dev/null; then
+	xcode-select --install
+	echo "Xcode Command Line Tools installed. Please re-run after it finishes."
+	exit 0
+fi
+
 log "Setting up Homebrew"
 if [ "$(uname -m)" = "arm64" ]; then
 	BREW_PREFIX="/opt/homebrew"
