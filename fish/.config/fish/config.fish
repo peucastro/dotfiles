@@ -1,10 +1,10 @@
 # PATH
-fish_add_path ~/.local/bin ~/go/bin
+fish_add_path ~/.local/bin
 if test (uname) = Darwin
-    if test (uname -m) = arm64
-        fish_add_path /opt/homebrew/bin /opt/homebrew/sbin
-    else
-        fish_add_path /usr/local/bin /usr/local/sbin
+    if test -x /opt/homebrew/bin/brew
+        eval (/opt/homebrew/bin/brew shellenv)
+    else if test -x /usr/local/bin/brew
+        eval (/usr/local/bin/brew shellenv)
     end
 end
 
