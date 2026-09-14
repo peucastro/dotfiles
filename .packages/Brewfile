@@ -1,0 +1,31 @@
+# CLI tools
+brew "btop"
+brew "fastfetch"
+brew "fd"
+brew "fish"
+brew "fzf"
+brew "gh"
+brew "git-lfs"
+brew "neovim"
+brew "opencode"
+brew "ripgrep"
+brew "stow"
+brew "tmux"
+brew "tree"
+brew "zoxide"
+
+# GUI applications
+cask "discord"
+cask "firefox"
+cask "ghostty"
+cask "google-chrome"
+cask "intellij-idea"
+cask "slack"
+cask "spotify"
+cask "tailscale-app"
+cask "visual-studio-code"
+cask "zed"
+
+# Fonts
+cask "font-fira-code-nerd-font"
+cask "font-jetbrains-mono-nerd-font"

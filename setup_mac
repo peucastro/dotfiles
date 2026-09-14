@@ -1,0 +1,123 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+if [ "$(uname -s)" != "Darwin" ]; then
+	echo "Error: setup_mac only supports macOS (detected $(uname -s))." >&2
+	exit 1
+fi
+
+source "$(dirname "${BASH_SOURCE[0]}")/setup_common.sh"
+
+require_cmds curl
+
+log "Checking Xcode Command Line Tools"
+if ! xcode-select -p &>/dev/null; then
+	xcode-select --install
+	echo "Xcode Command Line Tools installed. Please re-run after it finishes."
+	exit 0
+fi
+
+log "Setting up Homebrew"
+if [ "$(uname -m)" = "arm64" ]; then
+	BREW_PREFIX="/opt/homebrew"
+else
+	BREW_PREFIX="/usr/local"
+fi
+if [ ! -x "$BREW_PREFIX/bin/brew" ]; then
+	/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+fi
+eval "$("$BREW_PREFIX/bin/brew" shellenv)"
+
+log "Installing packages"
+brew bundle --file="$SCRIPT_DIR/.packages/Brewfile"
+require_cmds stow git
+
+log "Stowing dotfiles"
+stow_list ".modules-mac"
+
+log "Linking VS Code settings"
+VSCODE_USER="$HOME/Library/Application Support/Code/User"
+mkdir -p "$VSCODE_USER"
+backup_conflict "$VSCODE_USER/settings.json"
+ln -sf "$HOME/.config/Code/User/settings.json" "$VSCODE_USER/settings.json"
+
+log "Setting up shell"
+FISH_PATH="$BREW_PREFIX/bin/fish"
+if ! grep -q "$FISH_PATH" /etc/shells 2>/dev/null; then
+	echo "$FISH_PATH" | sudo tee -a /etc/shells >/dev/null
+fi
+if [ "${SHELL}" != "$FISH_PATH" ]; then
+	chsh -s "$FISH_PATH"
+else
+	echo "Fish is already your default shell."
+fi
+
+log "Setting up tmux TPM"
+if [ ! -d "$HOME/.tmux/plugins/tpm" ]; then
+	git clone --depth 1 https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+else
+	echo "TPM already installed. Pulling latest updates..."
+	git -C ~/.tmux/plugins/tpm pull
+fi
+
+log "Applying macOS defaults"
+# Global
+defaults write -g AppleInterfaceStyle -string "Dark"
+defaults write -g ApplePressAndHoldEnabled -bool false
+defaults write -g InitialKeyRepeat -int 15
+defaults write -g KeyRepeat -int 2
+defaults write -g NSNavPanelExpandedStateForSaveMode -bool true
+defaults write -g NSGlobalDomain AppleKeyboardUIMode -int "2"
+defaults write NSGlobalDomain "NSDocumentSaveNewDocumentsToCloud" -bool "false"
+
+# Dock
+defaults write com.apple.dock autohide -bool true
+defaults write com.apple.dock autohide-time-modifier -float 0.25
+defaults write com.apple.dock mineffect -string "scale"
+defaults write com.apple.dock show-recents -bool false
+defaults write com.apple.dock tilesize -int 36
+defaults write com.apple.dock minimize-to-application -bool true
+defaults write com.apple.dock mru-spaces -bool false
+defaults write com.apple.dock expose-group-apps -bool true
+
+# Finder
+defaults write com.apple.finder FXPreferredViewStyle -string "Nlsv"
+defaults write com.apple.finder FXDefaultSearchScope -string "SCcf"
+defaults write com.apple.finder NewWindowTarget -string "PfHm"
+defaults write com.apple.finder FXEnableExtensionChangeWarning -bool false
+defaults write com.apple.finder FXRemoveOldTrashItems -bool true
+defaults write com.apple.finder _FXSortFoldersFirst -bool true
+defaults write NSGlobalDomain AppleShowAllExtensions -bool true
+defaults write com.apple.finder AppleShowAllFiles -bool true
+defaults write com.apple.finder ShowPathbar -bool true
+defaults write com.apple.finder ShowStatusBar -bool true
+defaults write com.apple.finder _FXShowPosixPathInTitle -bool true
+defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true
+defaults write com.apple.desktopservices DSDontWriteUSBStores -bool true
+
+# Screenshots
+defaults write com.apple.screencapture location -string "$HOME/Pictures/Screenshots"
+defaults write com.apple.screencapture disable-shadow -bool true
+
+# Trackpad
+defaults write -g com.apple.mouse.tapBehavior -int 1
+defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad Clicking -bool true
+
+# Text formatting
+defaults write -g NSAutomaticQuoteSubstitutionEnabled -bool false
+defaults write -g NSAutomaticDashSubstitutionEnabled -bool false
+defaults write -g NSAutomaticSpellingCorrectionEnabled -bool false
+defaults write -g NSAutomaticCapitalizationEnabled -bool false
+defaults write -g NSAutomaticPeriodSubstitutionEnabled -bool false
+
+# Restart affected apps
+for app in Dock Finder SystemUIServer; do
+	killall "$app" >/dev/null 2>&1 || true
+done
+
+log "Creating user directories"
+mkdir -p ~/Pictures/Screenshots
+
+log "Done"
+echo "Log out and back in for the shell and defaults to take effect."
