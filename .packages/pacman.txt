@@ -1,4 +1,5 @@
 7zip
+alacritty
 android-tools
 base-devel
 blueman
@@ -25,7 +26,6 @@ fuse2
 fzf
 gamemode
 gamescope
-ghostty
 gimp
 git
 git-lfs

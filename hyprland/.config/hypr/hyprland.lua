@@ -29,7 +29,7 @@ hl.monitor({
 ---- MY PROGRAMS ----
 ---------------------
 
-local terminal    = "ghostty"
+local terminal    = "alacritty"
 local fileManager = "thunar"
 local menu        = "rofi -show drun"
 local browser     = "helium-browser"

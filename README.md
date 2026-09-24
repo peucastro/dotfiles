@@ -9,7 +9,7 @@ Dotfiles managed with [GNU Stow](https://www.gnu.org/software/stow/), shared bet
 
 ### Cross-platform
 
-- **Terminal**: [Ghostty](https://ghostty.org/)
+- **Terminal**: [Alacritty](https://alacritty.org/)
 - **Shell**: [Fish](https://fishshell.com/)
 - **Terminal multiplexer**: [Tmux](https://github.com/tmux/tmux)
 - **Editor**: [Neovim](https://neovim.io/), [VS Code](https://code.visualstudio.com/), [Zed](https://zed.dev/)

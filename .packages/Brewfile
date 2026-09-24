@@ -15,9 +15,9 @@ brew "tree"
 brew "zoxide"
 
 # GUI applications
+cask "alacritty"
 cask "discord"
 cask "firefox"
-cask "ghostty"
 cask "google-chrome"
 cask "intellij-idea"
 cask "slack"
