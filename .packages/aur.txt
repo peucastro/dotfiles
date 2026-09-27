@@ -1,6 +1,8 @@
+blipnet
 figma-linux-next
 helium-browser-bin
 heroic-games-launcher-bin
+oh-my-pi-bin
 protonplus
 slack-desktop-wayland
 spotify

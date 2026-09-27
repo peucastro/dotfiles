@@ -16,6 +16,7 @@ brew "zoxide"
 
 # GUI applications
 cask "alacritty"
+cask "blip"
 cask "discord"
 cask "firefox"
 cask "google-chrome"
