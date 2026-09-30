@@ -3,8 +3,10 @@ figma-linux-next
 helium-browser-bin
 heroic-games-launcher-bin
 oh-my-pi-bin
+opencode-bin
 protonplus
 slack-desktop-wayland
 spotify
+t3code-bin
 vesktop-bin
 visual-studio-code-bin

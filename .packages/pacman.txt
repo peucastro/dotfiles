@@ -62,7 +62,6 @@ nm-connection-editor
 noto-fonts
 noto-fonts-emoji
 obsidian
-opencode
 openssh
 otf-font-awesome
 pacman-contrib
