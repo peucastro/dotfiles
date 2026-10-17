@@ -16,14 +16,9 @@ Dotfiles managed with [GNU Stow](https://www.gnu.org/software/stow/), shared bet
 
 ### Arch Linux only
 
-- **Window manager**: [Hyprland](https://hyprland.org/)
-- **Status bar**: [Waybar](https://github.com/Alexays/Waybar)
-- **App launcher**: [Rofi](https://github.com/davatorium/rofi)
-- **Notification daemon**: [Mako](https://github.com/emersion/mako)
-- **Lock screen**: [hyprlock](https://github.com/hyprwm/hyprlock)
-- **Display manager**: [Ly](https://github.com/fairyglade/ly)
-- **File manager**: [Thunar](https://docs.xfce.org/xfce/thunar/start)
-- **Screenshot**: [Swappy](https://github.com/jtheoof/swappy)
+- **Desktop environment**: [GNOME](https://www.gnome.org/)
+- **Display manager**: [GDM](https://wiki.gnome.org/Projects/GDM)
+- **File manager**: [Nautilus](https://apps.gnome.org/Nautilus/)
 - **System monitor**: [btop](https://github.com/aristocratos/btop)
 
 ## Setup
