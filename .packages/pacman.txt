@@ -57,7 +57,6 @@ mangohud
 mpv
 nano
 neovim
-networkmanager-l2tp
 nm-connection-editor
 noto-fonts
 noto-fonts-emoji
@@ -77,7 +76,6 @@ slurp
 speedtest-cli
 steam
 stow
-strongswan
 swappy
 tailscale
 thunar

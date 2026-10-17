@@ -112,9 +112,6 @@ for svc in hyprpolkitagent mako; do
 done
 sudo systemctl enable --now tailscaled.service
 
-log "Configuring strongSwan and L2TP VPN"
-sudo sed -i 's/load = yes/load = no/' /etc/strongswan.d/charon/unity.conf 2>/dev/null || true
-
 log "Creating user directories"
 if command -v xdg-user-dirs-update &>/dev/null; then
 	xdg-user-dirs-update
