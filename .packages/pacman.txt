@@ -30,7 +30,6 @@ libvirt
 man-db
 man-pages
 mangohud
-mpv
 nano
 neovim
 noto-fonts
@@ -50,11 +49,10 @@ tailscale
 tmux
 tree
 ttf-firacode-nerd
-ttf-jetbrains-mono-nerdzip
+ttf-jetbrains-mono-nerd
 vim
 virt-manager
 vulkan-radeon
 wl-clipboard
-xdg-desktop-portal-gtk
 zed
 zoxide
