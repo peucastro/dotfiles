@@ -1,3 +1,4 @@
+antigravity-cli
 blipnet
 figma-linux-next
 helium-browser-bin

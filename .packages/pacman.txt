@@ -41,7 +41,7 @@ hyprland
 hyprlock
 hyprpolkitagent
 hyprsunset
-intellij-idea-community-edition
+intellij-idea-oss
 jq
 jre25-openjdk-headless
 lib32-mesa
