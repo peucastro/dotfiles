@@ -46,12 +46,6 @@ fi
 log "Stowing dotfiles"
 stow_list ".modules-linux"
 
-log "Configuring GTK"
-if command -v gsettings &>/dev/null; then
-	gsettings set org.gnome.desktop.interface color-scheme prefer-dark 2>/dev/null || true
-	gsettings set org.gnome.desktop.interface font-name 'Adwaita Sans 12' 2>/dev/null || true
-fi
-
 log "Setting up shell"
 FISH_PATH="/usr/bin/fish"
 if ! grep -q "$FISH_PATH" /etc/shells 2>/dev/null; then
@@ -97,19 +91,8 @@ else
 	echo "Nix is already installed."
 fi
 
-log "Setting up Display Manager"
-if ! sudo systemctl is-enabled --quiet ly@tty2 2>/dev/null; then
-	sudo systemctl disable getty@tty2 2>/dev/null || true
-	sudo systemctl enable ly@tty2
-else
-	echo "Ly display manager is already enabled."
-fi
-
-log "Enabling user services"
-systemctl --user daemon-reload
-for svc in hyprpolkitagent mako; do
-	systemctl --user enable --now "$svc" 2>/dev/null || echo "Warning: failed to enable $svc"
-done
+log "Enabling services"
+sudo systemctl enable --now gdm.service
 sudo systemctl enable --now tailscaled.service
 
 log "Creating user directories"
