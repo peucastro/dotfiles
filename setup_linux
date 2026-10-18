@@ -92,8 +92,8 @@ else
 fi
 
 log "Enabling services"
-sudo systemctl enable --now gdm.service
-sudo systemctl enable --now tailscaled.service
+sudo systemctl enable gdm.service
+sudo systemctl enable tailscaled.service
 
 log "Refreshing font cache"
 fc-cache -f
