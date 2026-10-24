@@ -20,6 +20,9 @@ git
 git-lfs
 github-cli
 gnome
+gnome-shell-extension-appindicator
+gnome-shell-extension-caffeine
+gnome-shell-extensions
 intellij-idea-oss
 jq
 jre25-openjdk-headless
