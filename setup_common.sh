@@ -30,7 +30,7 @@ backup_conflict() {
 
 stow_module() {
 	local module="$1" rel simulate
-	simulate="$(LC_ALL=C stow --simulate --verbose=0 "$module" 2>&1 >/dev/null)"
+	simulate="$(LC_ALL=C stow --simulate --verbose=0 "$module" 2>&1 >/dev/null || true)"
 	while IFS= read -r rel; do
 		[ -n "$rel" ] || continue
 		backup_conflict "$HOME/$rel"
