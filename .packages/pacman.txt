@@ -36,7 +36,6 @@ noto-fonts
 noto-fonts-emoji
 obsidian
 openssh
-otf-font-awesome
 pacman-contrib
 pycharm-community-edition
 qbittorrent
