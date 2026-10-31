@@ -1,4 +1,7 @@
 {
+  "update.channel": "none",
+  "update.mode": "manual",
+  "window.zoomLevel": 0.25,
   /* Editor font */
   "editor.fontFamily": "'JetBrains Mono'",
   "editor.fontSize": 18,
@@ -50,7 +53,6 @@
   "telemetry.feedback.enabled": false,
   "telemetry.telemetryLevel": "off",
   "update.mode": "manual",
-  "window.zoomLevel": 0.25,
   /* Settings applied to all profiles */
   "workbench.settings.applyToAllProfiles": [
     "editor.fontFamily",
@@ -99,5 +101,8 @@
   "explorer.fileNesting.patterns": {
     "*.ts": "${capture}.js, ${capture}.spec.ts"
   },
-  "explorer.fileNesting.expand": false
+  "explorer.fileNesting.expand": false,
+  "workbench.startupEditor": "none",
+  "update.showReleaseNotes": false,
+  "chat.viewSessions.orientation": "stacked"
 }

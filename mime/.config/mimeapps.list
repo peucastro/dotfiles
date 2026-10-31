@@ -51,3 +51,4 @@ image/jxl=org.gnome.Loupe.desktop
 x-scheme-handler/slack=slack.desktop
 x-scheme-handler/discord=vesktop.desktop
 x-scheme-handler/webcal=helium.desktop
+x-scheme-handler/t3code=com.t3tools.T3Code.desktop
